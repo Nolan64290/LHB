@@ -743,7 +743,7 @@ hr {
     
     header {
         display: flex;
-        padding-bottom: 10%;
+        padding-bottom: 0%;
         flex-direction: column;
         flex-wrap: wrap;
         background-size: 200%;
@@ -760,7 +760,7 @@ hr {
         padding: 0;
     }
     .reseaux {
-        display: none;
+        display: flex;
         padding-top: 3%;
         width: 100%;
         justify-content: center;
@@ -768,6 +768,9 @@ hr {
     }
     .reseaux a {
         padding: 0% 2%;
+    }
+    .reseaux a img {
+        width: 50px;
     }
     .menu {
         display: flex;
@@ -818,9 +821,13 @@ hr {
     }
 
 
+    .prem:hover {
+        border-top: none;
+    }
 
-
-
+    #club-bt {
+        border-radius: 25px;
+    }
     .sous-nav {
         transform: translateY(-10px);
         text-align: center;
