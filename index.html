@@ -27,14 +27,14 @@
             <ul>
                 <li class="menu-button"><a href="#" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></a></li>
                 <li class="has-sous-nav onglet" id = "club-bt">
-                    <a class="prem" href="#">Le Club</a>
-                    <ul class="sous-nav">
-                        <li><a href="#" onclick="showSection('histoire')">• Notre histoire</a></li>
-                        <li><a href="#" onclick="showSection('bureau')">• Le bureau</a></li>
-                        <li><a href="#" onclick="showSection('equipes')">• Nos équipes</a></li>
-                        <li><a href="#" onclick="showSection('objectifs')">• Nos objectifs</a></li>
-                        <li><a href="#" onclick="showSection('licence')">• Licence</a></li>
-                        <li><a href="#" onclick="showSection('partenaires')">• Les partenaires du club</a></li>
+                    <a class="prem" href="#" onclick="toggleSousMenu()">Le Club</a>
+                    <ul class="sous-nav" id="sous-nav">
+                        <li id="histoire-bt"><a href="#" onclick="showSection('histoire')">• Notre histoire</a></li>
+                        <li id="bureau-bt"><a href="#" onclick="showSection('bureau')">• Le bureau</a></li>
+                        <li id="equipes-bt"><a href="#" onclick="showSection('equipes')">• Nos équipes</a></li>
+                        <li id="objectifs"><a href="#" onclick="showSection('objectifs')">• Nos objectifs</a></li>
+                        <li id="licence-bt"><a href="#" onclick="showSection('licence')">• Licence</a></li>
+                        <li id="partenaires"><a href="#" onclick="showSection('partenaires')">• Les partenaires du club</a></li>
                     </ul>
                 </li>
                 <li class="onglet" id = "actus-bt"><a class="prem" href="#" onclick="showSection('actus')">Actualités</a></li>

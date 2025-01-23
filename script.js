@@ -22,6 +22,14 @@ function showSection(sectionId) {
 // Fonction toggleMenu :
 // Fonction qui gère le menu en mode responsive
 let state = 1;
+let stateS = 1;
+let sous_nav = document.getElementById("sous-nav");
+let hitsoire = document.getElementById("histoire-bt");
+let bureau = document.getElementById("bureau-bt");
+let equipes = document.getElementById("equipes-bt");
+let objectifs = document.getElementById("objectifs-bt");
+let licence = document.getElementById("licence-bt");
+let partenaires = document.getElementById("partenaires-bt");
 let club = document.getElementById("club-bt");
 let actus = document.getElementById("actus-bt");
 let calendrier = document.getElementById("calendrier-bt");
@@ -34,6 +42,7 @@ function toggleMenu() {
   if(state == 1){
     console.log("toggle1");
     // club.firstChild.style.display = "block";
+    // Remettre block
     actus.firstChild.style.display = "block";
     calendrier.firstChild.style.display = "block";
     galerie.firstChild.style.display = "block";
@@ -60,6 +69,8 @@ function toggleMenu() {
     state = 0;
   } else {
     console.log("toggle2");
+    stateS = state
+    toggleSousMenu();
     club.style.height = "0";
     club.style.padding = "0";
     club.style.opacity = "0";
@@ -85,6 +96,68 @@ function toggleMenu() {
     boutique.firstChild.style.display = "none";
     contact.firstChild.style.display = "none";
     state = 1;
+  }
+}
+
+function toggleSousMenu() {
+    console.log("toggle Menu :")
+  if(stateS == 1){
+    console.log("toggle1");
+    // Pour enlever les autres options
+    actus.style.height = "0";
+    actus.style.padding = "0";
+    actus.style.opacity = "0";
+    calendrier.style.height = "0";
+    calendrier.style.padding = "0";
+    calendrier.style.opacity = "0";
+    galerie.style.height = "0";
+    galerie.style.padding = "0";
+    galerie.style.opacity = "0";
+    boutique.style.height = "0";
+    boutique.style.padding = "0";
+    boutique.style.opacity = "0";
+    contact.style.height = "0";
+    contact.style.padding = "0";
+    contact.style.opacity = "0";
+    actus.firstChild.style.display = "none";
+    calendrier.firstChild.style.display = "none";
+    galerie.firstChild.style.display = "none";
+    boutique.firstChild.style.display = "none";
+    contact.firstChild.style.display = "none";
+
+    sous_nav.style.display = "flex";
+    sous_nav.style.paddingBottom = "0";
+    stateS = 0;
+  } else {
+    console.log("toggle2");
+    // Remettre les autres boutons
+    actus.firstChild.style.display = "block";
+    calendrier.firstChild.style.display = "block";
+    galerie.firstChild.style.display = "block";
+    boutique.firstChild.style.display = "block";
+    contact.firstChild.style.display = "block";
+    club.style.height = "100%";
+    actus.style.height = "100%";
+    calendrier.style.height = "100%";
+    galerie.style.height = "100%";
+    boutique.style.height = "100%";
+    contact.style.height = "100%";
+    club.style.padding = "2% 0%";
+    actus.style.padding = "2% 0%";
+    calendrier.style.padding = "2% 0%";
+    galerie.style.padding = "2% 0%";
+    boutique.style.padding = "2% 0%";
+    contact.style.padding = "2% 0%";
+    club.style.opacity = "1";
+    actus.style.opacity = "1";
+    calendrier.style.opacity = "1";
+    galerie.style.opacity = "1";
+    boutique.style.opacity = "1";
+    contact.style.opacity = "1";
+
+    sous_nav.style.display = "none";
+    
+    stateS = 1;
   }
 }
 

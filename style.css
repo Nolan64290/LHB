@@ -749,7 +749,6 @@ hr {
         background-size: 200%;
         background-position: bottom;
     }
-
     .logo {
         margin-top: 4%;
         width: 100%;
@@ -757,11 +756,9 @@ hr {
         justify-content: center;
         padding: 0;
     }
-
     .logo a img {
         padding: 0;
     }
-
     .reseaux {
         display: none;
         padding-top: 3%;
@@ -772,7 +769,6 @@ hr {
     .reseaux a {
         padding: 0% 2%;
     }
-
     .menu {
         display: flex;
         padding-top: 3%;
@@ -781,7 +777,6 @@ hr {
         width: 100%;
         background: none;
     }
-
     .menu>ul {
         padding: 0;
         display: flex;
@@ -792,11 +787,9 @@ hr {
         height: 100%;
         width: 50%;
     }
-
     .menu li {
         transition: all 0s ease;
     }
-
     .menu li:first-child{
         display: block;
         height: 100%;
@@ -807,19 +800,17 @@ hr {
     .menu li:hover {
         background-color: grey;
     }
-
     .menu a:first-of-type {
         height: 100%;
     }
-
     .onglet {
         height: 0;
         opacity: 0;
         padding: 0;
         margin: 0;
     }
-
     .onglet a {
+        border-radius: 25px;
         display: none;
         padding: 0;
         margin: 0;
@@ -831,20 +822,34 @@ hr {
 
 
     .sous-nav {
+        transform: translateY(-10px);
+        text-align: center;
         display: none;
+        flex-direction: column;
+        width: 90%;
+        justify-content: center;
+        background-color: rgba(27, 27, 27, 0);
+        border-radius: 25px;
+        position: relative;
+        top : 0;
+        left : 0;
         padding: 0;
         margin: 0;
         border: none;
     }
 
     .sous-nav li {
-        display: none;
-    }.sous-nav a {
-        display: none;
-    }
-
-    .has-sous-nav:hover .sous-nav {
-        display: none;
+        text-align: left;
+        display: block;
+        height: 100%;
+        width: 100%;
+        border-radius: 25px;
+        /* padding: 0% 0; */
+        border-radius: 25px;
+        padding: 0;
+        margin: 0;
+        top: 0;
+        left: 0;
     }
 
     
