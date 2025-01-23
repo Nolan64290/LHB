@@ -16,36 +16,34 @@
 </head>
 
 <body>
-
     <!-- Header de la page -->
     <header>
         <!-- Logo -->
         <div class="logo">
-            <a href="#top"><img src="elements/Logo.png" alt="Logo du club"></a>
+            <a href="#" onclick="showSection('accueil')"><img src="elements/Logo.png" alt="Logo du club"></a>
         </div>
-
         <!-- Menu -->
         <div class="menu">
             <ul>
-                <li class="has-sous-nav">
-                    <a class="prem" href="#top">Le Club</a>
+                <li class="menu-button"><a href="#" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></a></li>
+                <li class="has-sous-nav onglet" id = "club-bt">
+                    <a class="prem" href="#">Le Club</a>
                     <ul class="sous-nav">
-                        <li><a href="pages/Le club/l'histoire.html#corps">• Notre histoire</a></li>
-                        <li><a href="pages/Le club/bureau.html#corps">• Le bureau</a></li>
-                        <li><a href="pages/Le club/équipes.html#corps">• Nos équipes</a></li>
-                        <li><a href="pages/Le club/objectifs.html#corps">• Nos objectifs</a></li>
-                        <li><a href="pages/Le club/licence.html#corps">• Licence</a></li>
-                        <li><a href="pages/Le club/partenaires.html#corps">• Les partenaires du club</a></li>
+                        <li><a href="#" onclick="showSection('histoire')">• Notre histoire</a></li>
+                        <li><a href="#" onclick="showSection('bureau')">• Le bureau</a></li>
+                        <li><a href="#" onclick="showSection('equipes')">• Nos équipes</a></li>
+                        <li><a href="#" onclick="showSection('objectifs')">• Nos objectifs</a></li>
+                        <li><a href="#" onclick="showSection('licence')">• Licence</a></li>
+                        <li><a href="#" onclick="showSection('partenaires')">• Les partenaires du club</a></li>
                     </ul>
                 </li>
-                <li><a class="prem" href="pages/actus.html#corps">Actualités</a></li>
-                <li><a class="prem" href="pages/calendrier.html#corps">Calendrier</a></li>
-                <li><a class="prem" href="pages/galerie.html#corps">Galerie</a></li>
-                <li><a class="prem" href="pages/boutique.html#corps">Boutique</a></li>
-                <li><a class="prem" href="pages/contact.html#corps">Contact</a></li>
+                <li class="onglet" id = "actus-bt"><a class="prem" href="#" onclick="showSection('actus')">Actualités</a></li>
+                <li class="onglet" id = "calendrier-bt"><a class="prem" href="#" onclick="showSection('calendrier')">Calendrier</a></li>
+                <li class="onglet" id = "galerie-bt"><a class="prem" href="#" onclick="showSection('galerie')">Galerie</a></li>
+                <li class="onglet" id = "boutique-bt"><a class="prem" href="#" onclick="showSection('boutique')">Boutique</a></li>
+                <li class="onglet" id = "contact-bt"><a class="prem" href="#" onclick="showSection('contact')">Contact</a></li>
             </ul>
         </div>
-
         <!-- Réseaux -->
         <div class="reseaux">
             <a href="https://www.facebook.com/lasseubehandball"><img class="facebook" src="elements/facebook.png" alt="Icone Facebook"></a>
@@ -53,9 +51,9 @@
         </div>
     </header>
 
-    <!-- Corps de la page -->
-    <div class="corps" id="corps">
-
+    <!-- CORPS DE LA PAGE -->
+    <!-- Accueil -->
+    <section class="corps" id="accueil">
         <!-- Programme du Weekend -->
         <div class="programme" id="Programme">
             <h2>Programme du weekend</h2>
@@ -67,7 +65,6 @@
             </div>
             <!-- <hr style="background-color: yellow; width: 1200px; height: 4px; margin-top: 3%;"> -->
         </div>
-
         <!-- Le club -->
         <div class="club">
             <img src="elements/ballon.png" alt="">
@@ -93,8 +90,529 @@
                 <a href="pages/Le club/partenaires.html#corps">Voir plus  <i xmlns="http://www.w3.org/1999/xhtml" class="fa fa-caret-right"></i></a>
             </div>
         </div>
+    </section>
 
-    </div>
+    <!-- ___Le club___ -->
+    <!-- Notre histoire -->
+    <section class="corps" id="histoire"></section>
+
+    <!-- Le bureau -->
+    <section class="corps" id="bureau">
+        <h2>Le bureau</h2>
+        // présentation des membres du bureau avec leurs rôles
+    </section>
+
+    <!-- Nos équipes -->
+    <section class="corps" id="equipes">
+        <div class="nav-bar">
+            <div class="equipes">
+                <!-- A cause du calendrier : -->
+                <!-- De 1 à 100 -->
+                <p onclick="changeDiv(1, 0)">Séniors Garçons</p>
+                <p onclick="changeDiv(2, 0)">Séniors Filles</p>
+                <p onclick="changeDiv(3, 0)">-18 Garçons</p>
+                <p onclick="changeDiv(4, 0)">-18 Filles</p>
+                <p onclick="changeDiv(5, 0)">U17 France</p>
+                <p onclick="changeDiv(6, 0)">-15 Garçons</p>
+                <p onclick="changeDiv(7, 0)">-15 Filles</p>
+                <p onclick="changeDiv(8, 0)">-13 Garçons</p>
+                <p onclick="changeDiv(9, 0)">-13 Filles</p>
+                <p onclick="changeDiv(10, 0)">-11 Mixtes</p>
+                <p onclick="changeDiv(11, 0)">École de Hand</p>
+                <p onclick="changeDiv(12, 0)">Nos arbitres</p>
+            </div>
+        </div>
+        <div class="team currentDiv" id="0">
+            <h2>Nos équipes</h2>
+        </div>
+        <div class="team" id="1">
+            <h2>Séniors Garçons</h2>
+        </div>
+        <div class="team" id="2">
+            <h2>Séniors Filles</h2>
+        </div>
+        <div class="team" id="3">
+            <h2>-18 Garçons</h2>
+        </div>
+        <div class="team" id="4">
+            <h2>-18 Filles</h2>
+        </div>
+        <div class="team" id="5">
+            <h2>U17 France</h2>
+        </div>
+        <div class="team" id="6">
+            <h2>-15 Garçons</h2>
+        </div>
+        <div class="team" id="7">
+            <h2>-15 Filles</h2>
+        </div>
+        <div class="team" id="8">
+            <h2>-13 Garçons</h2>
+        </div>
+        <div class="team" id="9">
+            <h2>-13 Filles</h2>
+        </div>
+        <div class="team" id="10">
+            <h2>-11 Mixtes</h2>
+        </div>
+        <div class="team" id="11">
+            <h2>École de Hand</h2>
+        </div>
+        <div class="team" id="12">
+            <h2>Nos arbitres</h2>
+        </div>
+    </section>
+
+    <!-- Nos objectifs -->
+    <section class="corps" id="objectifs">
+        <div class="obj">
+            <p>
+                <span>Nos objectifs</span> <br><br> Au Lasseube Handball, nous visons des objectifs ambitieux tout en restant fidèles à nos valeurs de convivialité et de respect. Pour nos équipes séniors, nous nous efforçons de 
+                progresser dans les classements régionaux et départementaux : 
+                <br><br> <b>• Seniors 1 :</b> Notre objectif est d'atteindre la pré-nationale, en consolidant nos performances et en visant les sommets de notre championnat.
+                <br> <b>• Seniors 2 :</b> Nous nous concentrons sur la progression en pré-région, en renforçant notre cohésion d'équipe et en améliorant continuellement notre jeu.
+                <br> <b>• Seniors Filles :</b> Nous aspirons à exceller en départemental excellence, en mettant en avant le talent et la détermination de nos joueuses.
+                <br><br>Pour les plus jeunes catégories, notre priorité est de favoriser leur développement personnel et sportif. Nous encourageons nos jeunes joueurs à se dépasser, à s'amuser et à vivre des expériences enrichissantes sur et en dehors du terrain. Le but est de progresser, de gagner un maximum de matchs tout en partageant des moments mémorables et en cultivant l'esprit d'équipe.
+                <br><br>Au Lasseube Handball, nous croyons que le succès est une combinaison de performance et de plaisir, et nous travaillons chaque jour pour offrir à tous nos membres une expérience sportive épanouissante.
+            </p>
+        </div>
+    </section>
+
+    <!-- Licence -->
+    <section class="corps" id="licence">
+        <h2>La Licence</h2>
+        <div class="licence">
+            <table>
+                <tr>
+                    <td>• École de Hand</td>
+                    <td>100 €</td>
+                </tr>
+                <tr>
+                    <td>• Moins de 11</td>
+                    <td>105 €</td>
+                </tr>
+                <tr>
+                    <td>• Moins de 13</td>
+                    <td>120 €</td>
+                </tr>
+                <tr>
+                    <td>• Moins de 15</td>
+                    <td>125 €</td>
+                </tr>
+                <tr>
+                    <td>• Moins de 18</td>
+                    <td>140 €</td>
+                </tr>
+                <tr>
+                    <td>• Séniors</td>
+                    <td>150 €</td>
+                </tr>
+                <tr>
+                    <td>• Dirigeants</td>
+                    <td>Gratuit</td>
+                </tr>
+            </table>
+            <p>Si vous voulez devenir licencié du Lasseube Handball, merci de bien vouloir faire un mail à cette adresse : <span>elsapouquet.lhb@outlook.fr</span></p>
+        </div>
+    </section>
+
+    <!-- Les partenaires du club -->
+    <section class="corps" id="partenaires">
+        <h2>Les partenaires du club</h2>
+        <!-- Galerie des partenaires -->
+        <div class="sponso">
+            <!-- Images Gallery -->
+            <!-- Assuming images are named img1.jpg to img62.jpg in the images directory -->
+            <!-- Replace src with actual paths of your images -->
+            <img src="elements/partenaires/aluminium habitat.jpg" alt="Image 1">
+            <img src="elements/partenaires/AC THERMIQUE.jpg" alt="Image 2">
+            <img src="elements/partenaires/amc lavage serrois.jpg" alt="Image 3">
+            <img src="elements/partenaires/andré paillas.jpg" alt="Image 4">
+            <img src="elements/partenaires/atelier-ossau.png" alt="Image 5">
+            <img src="elements/partenaires/auberge la promenade.jpg" alt="Image 6">
+            <img src="elements/partenaires/ATOL.jpg" alt="Image 7">
+            <img src="elements/partenaires/autosur.jpg" alt="Image 8">
+            <img src="elements/partenaires/bearn incendie.jpg" alt="Image 9">
+            <img src="elements/partenaires/bidart.jpg" alt="Image 10">
+            <img src="elements/partenaires/bordenave électricité.jpg" alt="Image 11">
+            <img src="elements/partenaires/boérie.jpg" alt="Image 12">
+            <img src="elements/partenaires/bricomarché_oloron.jpg" alt="Image 13">
+            <img src="elements/partenaires/buso.jpg" alt="Image 14">
+            <img src="elements/partenaires/camping belair.jpg" alt="Image 15">
+            <img src="elements/partenaires/carrey.jpg" alt="Image 16">
+            <img src="elements/partenaires/carrosserie-du-piemont.jpg" alt="Image 17">
+            <img src="elements/partenaires/cass auto vigneai.jpg" alt="Image 18">
+            <img src="elements/partenaires/cba_materiaux.jpg" alt="Image 19">
+            <img src="elements/partenaires/Centre de formation ac Fam.jpg" alt="Image 20">
+            <img src="elements/partenaires/CER les gaves.png.jpg" alt="Image 21">
+            <img src="elements/partenaires/Chouette peinture.jpg" alt="Image 22">
+            <img src="elements/partenaires/citroen.jpg" alt="Image 23">
+            <img src="elements/partenaires/clément pairault.jpg" alt="Image 24">
+            <img src="elements/partenaires/clement-servat.jpg" alt="Image 25">
+            <img src="elements/partenaires/coiffure mode conseil.jpg" alt="Image 26">
+            <img src="elements/partenaires/Déchetterie.jpg" alt="Image 27">
+            <img src="elements/partenaires/d'oc charpente.jpg" alt="Image 28">
+            <img src="elements/partenaires/euromagri.jpg" alt="Image 29">
+            <img src="elements/partenaires/Garage monteiro.jpg" alt="Image 30">
+            <img src="elements/partenaires/groupama gan.jpg" alt="Image 31">
+            <img src="elements/partenaires/guiraud.jpg" alt="Image 32">
+            <img src="elements/partenaires/hangar a 2 roues.jpg" alt="Image 33">
+            <img src="elements/partenaires/informatique FLORENT MIRO.jpg" alt="Image 34">
+            <img src="elements/partenaires/labat.jpg" alt="Image 35">
+            <img src="elements/partenaires/lacau.jpg" alt="Image 36">
+            <img src="elements/partenaires/Lacayrelle.jpg" alt="Image 37">
+            <img src="elements/partenaires/lagardere.jpg" alt="Image 38">
+            <img src="elements/partenaires/Le fournil de lasseube.jpg" alt="Image 39">
+            <img src="elements/partenaires/le tire bouchon.jpg" alt="Image 40">
+            <img src="elements/partenaires/les viandes du haut bearn.jpg" alt="Image 41">
+            <img src="elements/partenaires/l'escapade.jpg" alt="Image 42">
+            <img src="elements/partenaires/l'hair naturel.jpg" alt="Image 43">
+            <img src="elements/partenaires/LIENNE STEPHANE.jpg" alt="Image 44">
+            <img src="elements/partenaires/lopez.jpg" alt="Image 45">
+            <img src="elements/partenaires/macon yannick lassalle-001.jpg" alt="Image 46">
+            <img src="elements/partenaires/manutech-Logo.jpg" alt="Image 47">
+            <img src="elements/partenaires/Pedelaborde.jpg" alt="Image 48">
+            <img src="elements/partenaires/phillippe fleur.png.jpg" alt="Image 49">
+            <img src="elements/partenaires/point P.jpg" alt="Image 50">
+            <img src="elements/partenaires/pompes-funebres-lassalle.jpg" alt="Image 51">
+            <img src="elements/partenaires/sanguinet élagage.jpg" alt="Image 52">
+            <img src="elements/partenaires/serrurerie-industrie.jpg" alt="Image 53">
+            <img src="elements/partenaires/SOTRAVOS.jpg" alt="Image 54">
+            <img src="elements/partenaires/tardos maçonnerie.jpg" alt="Image 55">
+            <img src="elements/partenaires/technique tele Ent pon.jpg" alt="Image 56">
+            <img src="elements/partenaires/terrassement bourdet.jpg" alt="Image 57">
+            <img src="elements/partenaires/transport peyroutet.jpg" alt="Image 58">
+            <img src="elements/partenaires/transports mathieu.jpg" alt="Image 59">
+            <img src="elements/partenaires/valentine.jpg" alt="Image 60">
+            <img src="elements/partenaires/vitrage auto béarn.jpg" alt="Image 61">
+            <img src="elements/partenaires/Loustau sarl.jpg" alt="Image 62">
+            <img src="elements/partenaires/soubercaze.jpg" alt="Image 63">
+            <img src="elements/partenaires/bourdet pees.jpg" alt="Image 64">
+            <img src="elements/partenaires/kremer.jpg" alt="Image 65">
+            <img src="elements/partenaires/vival lasseube.jpg" alt="Image 66">
+            <img src="elements/partenaires/tpo.png" alt="Image 67">
+            <img src="elements/partenaires/informatic.jpg" alt="Image 68">
+            <img src="elements/partenaires/couralis.jpg" alt="Image 69">
+        </div>
+    </section>
+
+
+    <!-- Actualités -->
+    <section class="corps" id="actus"></section>
+
+    <!-- Calendrier -->
+    <section class="corps" id="calendrier">
+        <div class="nav-bar">
+            <div class="equipes">
+                <!-- A cause des équipes : -->
+                <!-- De 100 à +200 -->
+                <p onclick="changeDiv(101, 1)">Séniors Garçons</p>
+                <p onclick="changeDiv(102, 1)">Séniors Filles</p>
+                <p onclick="changeDiv(103, 1)">-18 Garçons</p>
+                <p onclick="changeDiv(104, 1)">-18 Filles</p>
+                <p onclick="changeDiv(105, 1)">U17 France</p>
+                <p onclick="changeDiv(106, 1)">-15 Garçons</p>
+                <p onclick="changeDiv(107, 1)">-15 Filles</p>
+                <p onclick="changeDiv(108, 1)">-13 Garçons</p>
+                <p onclick="changeDiv(109, 1)">-13 Filles</p>
+                <p onclick="changeDiv(110, 1)">-11 Mixtes</p>
+                <p onclick="changeDiv(111, 1)">École de Hand</p>
+            </div>
+        </div>
+        <div class="team currentDiv" id="101">
+            <div class="contains">
+                <h2>Séniors Garçons</h2>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <td>Date</td>
+                            <td>Adversaire</td>
+                            <td>Lieu</td>
+                            <td>Résultat</td>
+                        </tr>
+                        <tr>
+                            <td>14 septembre</td>
+                            <td>Entente Barzunaise</td>
+                            <td>Lucq de Béarn</td>
+                            <td>30-28</td>
+                            <td>FDM</td>
+                        </tr>
+                        <tr>
+                            <td>21 septembre</td>
+                            <td>AS Urrunarrak</td>
+                            <td>Urrugne</td>
+                            <td> / </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>28 septembre</td>
+                            <td>Tardets 2</td>
+                            <td>Lucq de Béarn</td>
+                            <td> / </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5 octobre</td>
+                            <td>Hendaye 2</td>
+                            <td>Hendaye</td>
+                            <td> / </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>12 octobre</td>
+                            <td>SA Gazinet Cestas</td>
+                            <td>Lucq de Béarn</td>
+                            <td> / </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>9 novembre</td>
+                            <td>Anglet Biarritz</td>
+                            <td>Anglet</td>
+                            <td> / </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>23 novembre</td>
+                            <td>Orthez 2</td>
+                            <td>Lucq de Béarn</td>
+                            <td> / </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>30 novembre</td>
+                            <td>St Médard</td>
+                            <td>St Médard</td>
+                            <td> / </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>7 décembre</td>
+                            <td>Billere HB 3</td>
+                            <td>Lucq de Béarn</td>
+                            <td> / </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>15 décembre</td>
+                            <td>Buros HB / Nousty 3</td>
+                            <td>Lucq de Béarn</td>
+                            <td> / </td>
+                            <td></td>
+                        </tr>
+                        <tr></tr>
+                        <tr></tr>
+                        <tr></tr>
+                        <tr></tr>
+                        <tr></tr>
+                        <tr></tr>
+                        <tr></tr>
+                        <tr></tr>
+                        <tr></tr>
+                        <tr></tr>
+                        <tr></tr>
+                        <tr></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="team" id="102">
+            <h2>Séniors Filles</h2>
+        </div>
+        <div class="team" id="103">
+            <h2>-18 Garçons</h2>
+        </div>
+        <div class="team" id="104">
+            <h2>-18 Filles</h2>
+        </div>
+        <div class="team" id="105">
+            <h2>U17 France</h2>
+        </div>
+        <div class="team" id="106">
+            <h2>-15 Garçons</h2>
+        </div>
+        <div class="team" id="107">
+            <h2>-15 Filles</h2>
+        </div>
+        <div class="team" id="108">
+            <h2>-13 Garçons</h2>
+        </div>
+        <div class="team" id="109">
+            <h2>-13 Filles</h2>
+        </div>
+        <div class="team" id="110">
+            <h2>-11 Mixtes</h2>
+        </div>
+        <div class="team" id="111">
+            <h2>École de Hand</h2>
+        </div>
+    </section>
+    
+    <!-- Galerie -->
+    <section class="corps" id="galerie">
+        <!-- Galerie d'images -->
+        <h2>Gallerie d'images</h2>
+        <div class="gallery">
+            <a href="#img1"><img src="Elements/Photos gallerie/1.jpg" alt="Image 1"></a>
+            <a href="#img2"><img src="Elements/Photos gallerie/2.jpg" alt="Image 2"></a>
+            <a href="#img3"><img src="Elements/Photos gallerie/3.jpg" alt="Image 3"></a>
+            <a href="#img4"><img src="Elements/Photos gallerie/4.jpg" alt="Image 4"></a>
+            <a href="#img5"><img src="Elements/Photos gallerie/5.jpg" alt="Image 5"></a>
+            <a href="#img6"><img src="Elements/Photos gallerie/6.jpg" alt="Image 6"></a>
+            <a href="#img7"><img src="Elements/Photos gallerie/7.jpg" alt="Image 7"></a>
+            <a href="#img8"><img src="Elements/Photos gallerie/8.jpg" alt="Image 8"></a>
+            <a href="#img9"><img src="Elements/Photos gallerie/9.jpg" alt="Image 9"></a>
+            <a href="#img10"><img src="Elements/Photos gallerie/10.jpg" alt="Image 10"></a>
+            <!-- <a href="#img11"><img src="Elements/Photos gallerie/11.jpg" alt="Image 11"></a>
+            <a href="#img12"><img src="Elements/Photos gallerie/12.jpg" alt="Image 12"></a>
+            <a href="#img13"><img src="Elements/Photos gallerie/13.jpg" alt="Image 13"></a>
+            <a href="#img14"><img src="Elements/Photos gallerie/14.jpg" alt="Image 14"></a>
+            <a href="#img15"><img src="Elements/Photos gallerie/15.jpg" alt="Image 15"></a>
+            <a href="#img16"><img src="Elements/Photos gallerie/16.jpg" alt="Image 16"></a>
+            <a href="#img17"><img src="Elements/Photos gallerie/17.jpg" alt="Image 17"></a>
+            <a href="#img18"><img src="Elements/Photos gallerie/18.jpg" alt="Image 18"></a>
+            <a href="#img19"><img src="Elements/Photos gallerie/19.jpg" alt="Image 19"></a>
+            <a href="#img20"><img src="Elements/Photos gallerie/20.jpg" alt="Image 20"></a>
+            <a href="#img21"><img src="Elements/Photos gallerie/21.jpg" alt="Image 21"></a>
+            <a href="#img22"><img src="Elements/Photos gallerie/22.jpg" alt="Image 22"></a>
+            <a href="#img23"><img src="Elements/Photos gallerie/23.jpg" alt="Image 23"></a>
+            <a href="#img24"><img src="Elements/Photos gallerie/24.jpg" alt="Image 24"></a>
+            <a href="#img25"><img src="Elements/Photos gallerie/25.jpg" alt="Image 25"></a> -->
+        </div>
+
+        <!-- Popups -->
+        <div id="img1" class="popup">
+            <a href="#"><img src="Elements/Photos gallerie/1.jpg" alt="Image 1"></a>
+        </div>
+        <div id="img2" class="popup">
+            <a href="#"><img src="Elements/Photos gallerie/2.jpg" alt="Image 2"></a>
+        </div>
+        <div id="img3" class="popup">
+            <a href="#"><img src="Elements/Photos gallerie/3.jpg" alt="Image 3"></a>
+        </div>
+        <div id="img4" class="popup">
+            <a href="#"><img src="Elements/Photos gallerie/4.jpg" alt="Image 4"></a>
+        </div>
+        <div id="img5" class="popup">
+            <a href="#"><img src="Elements/Photos gallerie/5.jpg" alt="Image 5"></a>
+        </div>
+        <div id="img6" class="popup">
+            <a href="#"><img src="Elements/Photos gallerie/6.jpg" alt="Image 6"></a>
+        </div>
+        <div id="img7" class="popup">
+            <a href="#"><img src="Elements/Photos gallerie/7.jpg" alt="Image 7"></a>
+        </div>
+        <div id="img8" class="popup">
+            <a href="#"><img src="Elements/Photos gallerie/8.jpg" alt="Image 8"></a>
+        </div>
+        <div id="img9" class="popup">
+            <a href="#"><img src="Elements/Photos gallerie/9.jpg" alt="Image 9"></a>
+        </div>
+        <div id="img10" class="popup">
+            <a href="#"><img src="Elements/Photos gallerie/10.jpg" alt="Image 10"></a>
+        </div>
+        <div id="img11" class="popup">
+            <a href="#"><img src="Elements/Photos gallerie/11.jpg" alt="Image 11"></a>
+        </div>
+        <div id="img12" class="popup">
+            <a href="#"><img src="Elements/Photos gallerie/12.jpg" alt="Image 12"></a>
+        </div>
+        <div id="img13" class="popup">
+            <a href="#"><img src="Elements/Photos gallerie/13.jpg" alt="Image 13"></a>
+        </div>
+        <div id="img14" class="popup">
+            <a href="#"><img src="Elements/Photos gallerie/14.jpg" alt="Image 14"></a>
+        </div>
+        <div id="img15" class="popup">
+            <a href="#"><img src="Elements/Photos gallerie/15.jpg" alt="Image 15"></a>
+        </div>
+        <div id="img16" class="popup">
+            <a href="#"><img src="Elements/Photos gallerie/16.jpg" alt="Image 16"></a>
+        </div>
+        <div id="img17" class="popup">
+            <a href="#"><img src="Elements/Photos gallerie/17.jpg" alt="Image 17"></a>
+        </div>
+        <div id="img18" class="popup">
+            <a href="#"><img src="Elements/Photos gallerie/18.jpg" alt="Image 18"></a>
+        </div>
+        <div id="img19" class="popup">
+            <a href="#"><img src="Elements/Photos gallerie/19.jpg" alt="Image 19"></a>
+        </div>
+        <div id="img20" class="popup">
+            <a href="#"><img src="Elements/Photos gallerie/20.jpg" alt="Image 20"></a>
+        </div>
+        <div id="img21" class="popup">
+            <a href="#"><img src="Elements/Photos gallerie/21.jpg" alt="Image 21"></a>
+        </div>
+        <div id="img22" class="popup">
+            <a href="#"><img src="Elements/Photos gallerie/22.jpg" alt="Image 22"></a>
+        </div>
+        <div id="img23" class="popup">
+            <a href="#"><img src="Elements/Photos gallerie/23.jpg" alt="Image 23"></a>
+        </div>
+        <div id="img24" class="popup">
+            <a href="#"><img src="Elements/Photos gallerie/24.jpg" alt="Image 24"></a>
+        </div>
+        <div id="img25" class="popup">
+            <a href="#"><img src="Elements/Photos gallerie/25.jpg" alt="Image 25"></a>
+        </div>
+    </section>
+
+    <!-- Boutique -->
+    <section class="corps" id="boutique">
+        <h2>Boutique du club</h2>
+        <!-- Boutique -->
+        <div class="boutique">
+            <img src="elements/boutique 2.png" alt="Image de la boutique du club">
+            <p>Pour passer une commande, si vous êtes licencié, vous pouvez aller sur HelloAsso (<a href="https://www.helloasso.com/associations/lasseube-handball/boutiques/boutique-macron-saison-2024-2025">Lien ci-dessous</a>). Sinon veuillez faire un mail
+                à cette adresse : <span>elsapouquet.lhb@outlook.fr</span></p>
+        </div>
+        <div class="logos_sport">
+            <img src="elements/sportR.png" alt="Logo de Sport'R">
+            <img src="elements/logo_macron.png" alt="Logo de macron">
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="corps" id="contact">
+        <h2>Contactez-nous</h2>
+        <!-- Contact -->
+        <div class="contactez-nous">
+            <div class="infos">
+                <p>
+                    <i class="fa-solid fa-phone"></i> 06.73.57.25.27 <br><i class="fa-solid fa-phone"></i> 06.79.50.99.39 <br><i class="fa-solid fa-envelope"></i> elsapouquet.lhb@outlook.fr
+                </p>
+                <p>
+                    <br><a href="https://www.facebook.com/lasseubehandball"><i class="fa-brands fa-facebook-f"></i></a> &nbsp;&nbsp;
+                    <a href="https://www.instagram.com/lasseube_handball/"><i class="fa-brands fa-instagram"></i></a>
+                </p>
+            </div>
+
+            <!-- Formulaire -->
+            <div class="formulaire">
+                <div class="form-container">
+                    <form id="contact-form">
+                        <label for="firstName">Prénom :</label>
+                        <input type="text" id="firstName" name="firstName" required>
+
+                        <label for="lastName">Nom :</label>
+                        <input type="text" id="lastName" name="lastName" required>
+
+                        <label for="email">Email :</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="message">Message :</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <br>
+                        <button type="submit">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
 
     <!-- Footer de la page -->
     <footer>

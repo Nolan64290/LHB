@@ -9,300 +9,662 @@
 }
 
 
-/* ______Header______ */
+/* ===========================Header=========================== */
 
 header {
-    user-select: none;
-    background-image: url(elements/Fond\ header.png);
+    /* Background */
+    background-image: url(elements/Header_BG.png);
     background-size: cover;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
-    width: auto;
-    height: auto;
-    padding: 0.3%;
+    /* Display */
     display: flex;
     justify-content: center;
     align-items: center;
+    /* Sizes */
+    width: auto;
+    height: auto;
+    padding: 0.3%;
+    /* Other */
+    user-select: none;
 }
-
-
 /* Logo */
-
 .logo a img {
     padding-top: 2%;
     padding-left: 40px;
     width: 100px;
     transition: transform .1s;
 }
-
 .logo a img:hover {
     transform: scale(1.08);
     transition: transform .1s;
 }
-
-
 /* menu */
-
 .menu {
+    background-color: white;
     position: sticky;
     top: 0;
     left: 150px;
-    background-color: white;
 }
-
 .prem {
     padding: 3px;
+    margin: 20px;
     border-top: 5px rgba(255, 0, 0, 0) solid;
     transition: all 0.2s ease-in-out;
-    margin: 20px;
 }
-
 .prem:hover {
     border-top: 5px red solid;
     transition: all 0.2s ease-in-out;
 }
-
 .menu>ul {
     display: flex;
     list-style: none;
 }
-
 .menu ul {
     padding: 10px;
 }
-
 .menu li>a {
+    /* Display */
+    display: block;
+    /* Text */
+    text-decoration: none;
     font-size: 1.3em;
     font-weight: 500;
-    text-decoration: none;
     color: black;
-    display: block;
 }
-
 .sous-nav {
-    font-size: 0.8em;
-    list-style: none;
+    /* Display */
     display: none;
     position: absolute;
     top: 69px;
     left: 0;
+    /* Background */
     background: rgb(255, 255, 255);
-    border: 1px solid black;
+    /* Text */
+    font-size: 0.8em;
+    list-style: none;
+    /* Sizes */
     width: max-content;
+    /* Other */
+    border: 1px solid black;
 }
-
 .sous-nav li {
     padding: 10px;
 }
-
 .sous-nav li:hover {
     background: rgb(185, 185, 185);
 }
-
 .sous-nav li a {
     padding: 10px;
 }
-
 .has-sous-nav:hover .sous-nav {
     display: block;
 }
-
 .has-sous-nav {
     position: relative;
 }
-
-
 /* Reseaux */
-
 .reseaux {
     display: flex;
     flex-direction: column;
 }
-
 .reseaux img {
     width: 60px;
     transition: all 0.2s ease-in-out
 }
-
 .instagram:hover {
     transform: rotate(25deg);
     transition: all 0.2s ease-in-out;
 }
-
 .facebook:hover {
     transform: rotate(-25deg);
     transition: all 0.2s ease-in-out;
 }
 
-
-/* ______Corps______ */
-
-.corps {
-    height: max-content;
-    padding-bottom: 5%;
+/* ===========================CORPS=========================== */
+section.corps {
+    /* Background */
     background-image: url(elements/fond1.png);
     background-size: cover;
     background-position: right;
+    /* Display */
+    display: none;
+    opacity: 0;
+    /* Sizes */
+    height: max-content;
+    padding-bottom: 5%;
 }
 
+section.active {
+    display: block;
+    opacity: 1;
+}
 
+/* ===========================ACCEUIL=========================== */
 /* Programme */
-
 .programme {
+    /* Display */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* Sizes */
     padding-top: 2%;
-    text-align: center;
+    /* Text */
     color: white;
-    font-weight: bold;
     font-size: 1.8em;
-}
-
-.programme i {
     text-align: center;
+    font-weight: bold;
+}
+.programme i {
+    /* Text */
+    text-align: center;
+    font-size: 1.6em;
+    /* Sizes */
     width: 60px;
     margin-top: 0%;
-    font-size: 1.6em;
+    /* Other */
     transition: all 0.2s ease-in-out;
 }
-
 .programme i:hover {
     cursor: pointer;
     transform: scale(1.2);
     transition: all 0.2s ease-in-out;
 }
-
 .toggle-div {
+    /* Background */
+    background-image: url(elements/Fond\ programme.png);
+    background-size: cover;
+    /* Display */
     display: flex;
     justify-content: space-evenly;
+    overflow: hidden;
+    /* Sizes */
     margin-top: 1%;
     padding: 0;
     width: 100%;
     height: 0;
-    overflow: hidden;
+    /* Other */
     transition: all 0.3s ease-out;
-    background-image: url(elements/Fond\ programme.png);
-    background-size: cover;
 }
-
 .expanded {
     padding: 1% 0;
     height: max-content;
     transition: all 0.3s ease-out;
 }
-
 .toggle-div img {
     height: 100%;
     width: 600px;
 }
-
-
 /* Le club */
-
 .club {
-    margin-top: 5%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    margin-top: 5%;
 }
-
 .club img {
     margin-left: 100px;
     width: 300px;
     height: 100%;
 }
-
 .club p {
-    user-select: none;
+    /* Background */
+    background-color: rgba(185, 185, 185, 0.226);
+    /* Text */
     color: whitesmoke;
     font-size: 1.1em;
     text-align: center;
+    /* Sizes */
     padding: 30px;
     width: 600px;
     height: max-content;
-    background-color: rgba(185, 185, 185, 0.226);
+    /* Other */
     border-radius: 15px;
+    user-select: none;
 }
-
 .club span {
     font-size: 1.3em;
 }
-
-
 /* Partenaires */
-
 .box-partenaires {
     padding-top: 2%;
-    text-align: center;
+    /* Text */
     color: white;
-    font-weight: bold;
     font-size: 1.8em;
+    text-align: center;
+    font-weight: bold;
 }
-
 .partenaires {
+    /* Display */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 70px;
+    /* Sizes */
     width: 90%;
     padding: 2% 5%;
 }
-
 .partenaires img {
+    /* Sizes */
     width: 110%;
     height: auto;
-    cursor: pointer;
+    /* Other */
     transition: transform 0.2s;
+    cursor: pointer;
     user-select: none;
 }
-
 .partenaires img:hover {
     transform: scale(1.05);
 }
-/*
-.partenaires {
-    margin-top: 3.5%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: nowrap;
-}
-
-.partenaires img {
-    user-select: none;
-    -webkit-user-drag: none;
-    width: 400px;
-    height: 100%;
-} */
-
 .box-partenaires div {
     margin-top: 2%;
 }
-
 .box-partenaires a {
-    margin-top: 30px;
+    /* Text */
     color: white;
     font-size: 0.65em;
     text-decoration: none;
+    /* Sizes */
+    margin-top: 30px;
     padding: 0.5% 1%;
+    /* Other */
     border-radius: 15px;
 }
-
 .box-partenaires a:hover {
     background-color: rgba(185, 185, 185, 0.226);
 }
 
+/* ===========================Notre histoire=========================== */
 
-/* Footer */
+
+/* ===========================Le bureau=========================== */
+
+
+/* ===========================Nos équipes=========================== */
+
+
+/* ===========================Objectifs=========================== */
+.obj {
+    /* Display */
+    display: flex;
+    justify-content: center;
+    /* Sizes */
+    padding-top: 3%;
+    width: 100%;
+}
+.obj p {
+    /* Background */
+    background-color: rgba(185, 185, 185, 0.226);
+    /* Text */
+    color: whitesmoke;
+    font-size: 1.1em;
+    text-align: center;
+    /* Sizes */
+    padding: 30px;
+    width: 80%;
+    height: max-content;
+    /* Other */
+    border-radius: 15px;
+    user-select: none;
+}
+.obj span {
+    font-size: 1.9em;
+}
+
+/* ===========================La licence=========================== */
+.licence {
+    /* Display */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* Sizes */
+    padding-top: 2%;
+}
+.licence table tr,
+.licence td {
+    /* Background */
+    background-color: white;
+    /* Sizes */
+    width: 300px;
+    padding: 3%;
+    /* Text */
+    font-size: 1.2em;
+    font-weight: 500;
+}
+.licence table tr td:nth-of-type(2) {
+    text-align: center;
+}
+.licence p {
+    padding-top: 3%;
+    /* Text */
+    font-size: larger;
+    color: white;
+}
+.licence p span {
+    color: yellow;
+}
+
+/* ===========================Les partenaires=========================== */
+/* Galerie sponsors */
+.sponso {
+    /* Display */
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 20px;
+    /* Sizes */
+    width: 90%;
+    margin: 20px auto;
+}
+.sponso img {
+    user-select: none;
+    width: 100%;
+    height: auto;
+}
+
+/* ===========================Actualités=========================== */
+
+
+/* ===========================Calendrier=========================== */
+.table {
+    display: flex;
+    justify-content: center;
+}
+.table table {
+    margin-top: 3%;
+    border-spacing: 10px;
+    /* border-collapse: collapse; */
+}
+.table tr:first-of-type td {
+    /* Background */
+    background-color: rgba(255, 0, 0, 0);
+    /* Text */
+    color: yellow;
+    font-size: 1.3em;
+    font-weight: 700;
+    /* Les deux props suivantes sont peut-être en trop */
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: black;
+    /* Sizes */
+    height: 50px;
+}
+.table td {
+    /* Background */
+    background-color: rgba(185, 185, 185, 0.226);
+    /* Sizes */
+    height: 75px;
+    width: 250px;
+    padding: 0 2%;
+    margin: 30%;
+    /* Text */
+    color: white;
+    text-align: center;
+    /* Other */
+    border-radius: 20px;
+}
+.table tr td:last-of-type {
+    background-color: rgba(255, 0, 0, 0);
+    width: 100px;
+}
+.tr {
+    margin: 12%;
+}
+.corps table {
+    justify-content: left;
+}
+/* Nav-bar */
+.nav-bar {
+    /* Background */
+    background-color: rgba(128, 128, 128, 0.267);
+    /* Display */
+    position: absolute;
+    left: 0;
+    /* Sizes */
+    width: 18%;
+    height: 1800px;
+}
+.equipes {
+    /* Display */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: left;
+    /* Sizes */
+    padding-top: 10%;
+    /* padding-left: 20%; */
+}
+.equipes p {
+    /* Text */
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+    /* Sizes */
+    margin: 4% 20%;
+    padding: 2%;
+    /* Other */
+    transition: all 0.1s ease-out;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.equipes p:hover {
+    background-color: red;
+    color: black;
+    transition: all 0.1s ease-out;
+}
+/* Teams */
+.team {
+    /* Display */
+    display: none;
+    justify-content: center;
+    /* Sizes */
+    margin-left: 18%;
+    width: 82%;
+    height: 1800px;
+}
+.currentDiv {
+    display: flex;
+}
+
+
+/* ===========================GALERIE=========================== */
+h2 {
+    /* Text */
+    font-family: "Kanit", 'Courier New';
+    color: white;
+    font-size: 2.6em;
+    text-align: center;
+    font-weight: bold;
+    /* Sizes */
+    padding-top: 2%;
+}
+.gallery {
+    /* Display */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 50px;
+    /* Sizes */
+    width: 90%;
+    padding: 2% 5%;
+}
+.gallery img {
+    /* Sizes */
+    width: 110%;
+    height: auto;
+    /* Other */
+    transition: transform 0.2s;
+    cursor: pointer;
+    user-select: none;
+}
+.gallery img:hover {
+    transform: scale(1.05);
+}
+.popup {
+    /* Background */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Display */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* Sizes */
+    width: 110%;
+    height: 100%;
+}
+.popup a {
+    width: max-content;
+    height: max-content;
+}
+.popup img {
+    user-select: none;
+    /* Sizes */
+    max-width: 90%;
+    max-height: 90%;
+}
+.popup:target {
+    display: flex;
+}
+
+
+/* ===========================Boutique=========================== */
+.boutique {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+.boutique img {
+    width: 1200px;
+    height: auto;
+}
+.boutique p {
+    width: 1500px;
+    color: white;
+    font-size: larger;
+}
+.boutique p a {
+    color: rgb(179, 179, 179);
+    transition: all 0.1s ease-in;
+}
+.boutique p a:hover {
+    color: red;
+    transition: all 0.1s ease-in;
+}
+.boutique span {
+    color: yellow;
+}
+.logos_sport {
+    /* Display */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* Sizes */
+    padding-top: 2%;
+    padding-bottom: 3%;
+}
+.logos_sport img {
+    width: 200px;
+}
+
+/* ===========================Contact=========================== */
+.contactez-nous {
+    /* Display */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* Sizes */
+    margin-top: 3%;
+}
+.contactez-nous .infos {
+    /* Display */
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    /* Text */
+    color: white;
+    font-size: 1.8em;
+    /* Sizes */
+    margin-left: 100px;
+}
+.contactez-nous .infos a {
+    color: white;
+    font-size: 1.9em;
+    padding: 1%;
+    transition: all 0.2s ease-out;
+}
+.contactez-nous .infos a:hover {
+    color: red;
+    transition: all 0.2s ease-out;
+}
+/* Formulaire */
+.form-container {
+    /* Background */
+    background-color: white;
+    /* Sizes */
+    max-width: 900px;
+    width: 350px;
+    /* margin: 0 auto; */
+    padding: 20px 50px;
+    /* Other */
+    border: 2px solid black;
+    border-radius: 15px;
+}
+.form-container label {
+    /* Display */
+    display: block;
+    /* Sizes */
+    margin-bottom: 8px;
+    /* Text */
+    font-weight: bold;
+}
+.form-container input,
+.form-container textarea {
+    /* Sizes */
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 15px;
+    /* Other */
+    border: 2px solid black;
+    border-radius: 4px;
+}
+.form-container textarea {
+    resize: vertical;
+    overflow: auto;
+    /* Sizes */
+    max-height: 370px;
+    min-height: 100px;
+}
+.form-container button {
+    /* Background */
+    background-color: #28a745;
+    /* Sizes */
+    padding: 10px 15px;
+    /* Text */
+    color: white;
+    /* Other */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.form-container button:hover {
+    background-color: #218838;
+}
+
+
+/* ===========================Footer=========================== */
 
 footer {
+    /* Background */
     background-color: white;
-    padding: 2%;
-    height: max-content;
+    /* Display */
     display: flex;
     justify-content: space-around;
     align-items: center;
+    /* Sizes */
+    padding: 2%;
+    height: max-content;
 }
 
 footer img {
@@ -310,23 +672,31 @@ footer img {
 }
 
 footer p {
+    /* Text */
     font-weight: 500;
     font-size: 1.3em;
+    /* Sizes */
     margin-bottom: 1%;
 }
 
 footer .contact {
-    font-size: 0.8em;
-    margin-left: 100px;
+    /* Display */
     display: flex;
     flex-direction: column;
     justify-content: left;
+    /* Text */
+    font-size: 0.8em;
+    /* Sizes */
+    margin-left: 100px;
 }
 
 footer a {
+    /* Text */
     color: black;
     font-size: 1.9em;
+    /* Sizes */
     padding: 1%;
+    /* Other  */
     transition: all 0.2s ease-out;
 }
 
@@ -336,12 +706,14 @@ footer a:hover {
 }
 
 footer .place {
+    /* Display */
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: row;
-    text-align: right;
     right: 1;
+    /* Text */
+    text-align: right;
     font-size: 0.8em;
 }
 
@@ -350,9 +722,143 @@ footer .place p {
 }
 
 hr {
+    /* Background */
+    background-color: black;
+    /* Sizes */
     height: 300px;
     width: 4px;
+    /* Text */
     color: black;
+    /* Other */
     border: none;
-    background-color: black;
+}
+
+/* A buoger */
+.menu li:first-child{
+    display: none;
+}
+
+/* Téléphones */
+@media (max-width: 767px) {
+    
+    header {
+        display: flex;
+        padding-bottom: 10%;
+        flex-direction: column;
+        flex-wrap: wrap;
+        background-size: 200%;
+        background-position: bottom;
+    }
+
+    .logo {
+        margin-top: 4%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .logo a img {
+        padding: 0;
+    }
+
+    .reseaux {
+        display: none;
+        padding-top: 3%;
+        width: 100%;
+        justify-content: center;
+        flex-direction: row;
+    }
+    .reseaux a {
+        padding: 0% 2%;
+    }
+
+    .menu {
+        display: flex;
+        padding-top: 3%;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        background: none;
+    }
+
+    .menu>ul {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        background-color: rgba(27, 27, 27, 0.678);
+        border-radius: 25px;
+        height: 100%;
+        width: 50%;
+    }
+
+    .menu li {
+        transition: all 0s ease;
+    }
+
+    .menu li:first-child{
+        display: block;
+        height: 100%;
+        width: 100%;
+        padding: 2% 0;
+        border-radius: 25px;
+    }
+    .menu li:hover {
+        background-color: grey;
+    }
+
+    .menu a:first-of-type {
+        height: 100%;
+    }
+
+    .onglet {
+        height: 0;
+        opacity: 0;
+        padding: 0;
+        margin: 0;
+    }
+
+    .onglet a {
+        display: none;
+        padding: 0;
+        margin: 0;
+        border: none;
+    }
+
+
+
+
+
+    .sous-nav {
+        display: none;
+        padding: 0;
+        margin: 0;
+        border: none;
+    }
+
+    .sous-nav li {
+        display: none;
+    }.sous-nav a {
+        display: none;
+    }
+
+    .has-sous-nav:hover .sous-nav {
+        display: none;
+    }
+
+    
+    footer {
+        display : none;
+    }
+    
+}
+
+
+
+/* Tablettes */
+@media (max-width: 1024px) {
+    
+
+
 }
