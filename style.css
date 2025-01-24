@@ -761,7 +761,7 @@ hr {
     }
     .reseaux {
         display: flex;
-        padding-top: 3%;
+        padding-top: 4%;
         width: 100%;
         justify-content: center;
         flex-direction: row;
@@ -789,6 +789,9 @@ hr {
         border-radius: 25px;
         height: 100%;
         width: 50%;
+    }
+    .menu>ul>li>ul {
+        padding: 0;
     }
     .menu li {
         transition: all 0s ease;
@@ -835,7 +838,7 @@ hr {
         text-align: center;
         display: none;
         flex-direction: column;
-        width: 90%;
+        width: 100%;
         justify-content: center;
         background-color: rgb(84, 84, 84);
         border-radius: 25px;
