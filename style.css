@@ -832,6 +832,7 @@ hr {
 
     #club-bt {
         border-radius: 25px;
+        padding: 0;
     }
     .sous-nav {
         /* transform: translateY(-10px); */

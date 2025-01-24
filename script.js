@@ -31,6 +31,7 @@ let objectifs = document.getElementById("objectifs-bt");
 let licence = document.getElementById("licence-bt");
 let partenaires = document.getElementById("partenaires-bt");
 let club = document.getElementById("club-bt");
+let club_a = document.getElementById("club-a-bt");
 let actus = document.getElementById("actus-bt");
 let calendrier = document.getElementById("calendrier-bt");
 let galerie = document.getElementById("galerie-bt");
@@ -66,6 +67,7 @@ function toggleMenu() {
     galerie.style.opacity = "1";
     boutique.style.opacity = "1";
     contact.style.opacity = "1";
+    club_a.textContent = "Le Club :"
     state = 0;
   } else {
     console.log("toggle2");
@@ -95,6 +97,7 @@ function toggleMenu() {
     galerie.firstChild.style.display = "none";
     boutique.firstChild.style.display = "none";
     contact.firstChild.style.display = "none";
+    club_a.textContent = "Le Club"
     state = 1;
   }
 }
@@ -124,9 +127,10 @@ function toggleSousMenu() {
     galerie.firstChild.style.display = "none";
     boutique.firstChild.style.display = "none";
     contact.firstChild.style.display = "none";
-
+    
     sous_nav.style.display = "flex";
     sous_nav.style.paddingBottom = "0";
+    club.style.padding = "0"
     stateS = 0;
   } else {
     console.log("toggle2");
