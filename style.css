@@ -130,6 +130,7 @@ section.corps {
     /* Display */
     display: none;
     opacity: 0;
+    flex-direction: column;
     /* Sizes */
     height: max-content;
     padding-bottom: 5%;
@@ -193,8 +194,8 @@ section.active {
     transition: all 0.3s ease-out;
 }
 .toggle-div img {
-    height: 100%;
-    width: 600px;
+    /* height: 100%; */
+    width: 33%;
 }
 /* Le club */
 .club {
@@ -923,11 +924,13 @@ hr {
     }
     .toggle-div {
         flex-direction: column;
+        align-items: center;
+        background: none;
         background-color: rgba(255, 255, 255, 0);
         margin-top: 3%;
     }
     .toggle-div img {
-        width: 100%;
+        width: 95%;
         padding-bottom: 2%;
         background-color: rgba(255, 255, 255, 0);
     }
