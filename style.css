@@ -865,6 +865,10 @@ hr {
         left: 0;
     }
 
+    .sous-nav a {
+        display: none;
+    }
+
     
     footer {
         display : none;

@@ -180,6 +180,102 @@ function programme() {
         index = 1;
     }
 }
+// Affichage aléatoire de sponsors
+// Liste des images disponibles dans le dossier
+const sponsorImages = [
+    "elements/partenaires/aluminium habitat.jpg",
+    "elements/partenaires/AC THERMIQUE.jpg",
+    "elements/partenaires/amc lavage serrois.jpg",
+    "elements/partenaires/andré paillas.jpg",
+    "elements/partenaires/atelier-ossau.png",
+    "elements/partenaires/auberge la promenade.jpg",
+    "elements/partenaires/ATOL.jpg",
+    "elements/partenaires/autosur.jpg",
+    "elements/partenaires/bearn incendie.jpg",
+    "elements/partenaires/bidart.jpg" ,
+    "elements/partenaires/bordenave électricité.jpg" ,
+    "elements/partenaires/boérie.jpg" ,
+    "elements/partenaires/bricomarché_oloron.jpg" ,
+    "elements/partenaires/buso.jpg" ,
+    "elements/partenaires/camping belair.jpg" ,
+    "elements/partenaires/carrey.jpg" ,
+    "elements/partenaires/carrosserie-du-piemont.jpg" ,
+    "elements/partenaires/cass auto vigneai.jpg" ,
+    "elements/partenaires/cba_materiaux.jpg" ,
+    "elements/partenaires/Centre de formation ac Fam.jpg" ,
+    "elements/partenaires/CER les gaves.png.jpg" ,
+    "elements/partenaires/Chouette peinture.jpg" ,
+    "elements/partenaires/citroen.jpg" ,
+    "elements/partenaires/clément pairault.jpg" ,
+    "elements/partenaires/clement-servat.jpg" ,
+    "elements/partenaires/coiffure mode conseil.jpg" ,
+    "elements/partenaires/Déchetterie.jpg" ,
+    "elements/partenaires/d'oc charpente.jpg" ,
+    "elements/partenaires/euromagri.jpg" ,
+    "elements/partenaires/Garage monteiro.jpg" ,
+    "elements/partenaires/groupama gan.jpg" ,
+    "elements/partenaires/guiraud.jpg" ,
+    "elements/partenaires/hangar a 2 roues.jpg" ,
+    "elements/partenaires/informatique FLORENT MIRO.jpg" ,
+    "elements/partenaires/labat.jpg" ,
+    "elements/partenaires/lacau.jpg" ,
+    "elements/partenaires/Lacayrelle.jpg" ,
+    "elements/partenaires/lagardere.jpg" ,
+    "elements/partenaires/Le fournil de lasseube.jpg" ,
+    "elements/partenaires/le tire bouchon.jpg" ,
+    "elements/partenaires/les viandes du haut bearn.jpg" ,
+    "elements/partenaires/l'escapade.jpg" ,
+    "elements/partenaires/l'hair naturel.jpg" ,
+    "elements/partenaires/LIENNE STEPHANE.jpg" ,
+    "elements/partenaires/lopez.jpg" ,
+    "elements/partenaires/macon yannick lassalle-001.jpg" ,
+    "elements/partenaires/manutech-Logo.jpg" ,
+    "elements/partenaires/Pedelaborde.jpg" ,
+    "elements/partenaires/phillippe fleur.png.jpg" ,
+    "elements/partenaires/point P.jpg" ,
+    "elements/partenaires/pompes-funebres-lassalle.jpg" ,
+    "elements/partenaires/sanguinet élagage.jpg" ,
+    "elements/partenaires/serrurerie-industrie.jpg" ,
+    "elements/partenaires/SOTRAVOS.jpg" ,
+    "elements/partenaires/tardos maçonnerie.jpg" ,
+    "elements/partenaires/technique tele Ent pon.jpg" ,
+    "elements/partenaires/terrassement bourdet.jpg" ,
+    "elements/partenaires/transport peyroutet.jpg" ,
+    "elements/partenaires/transports mathieu.jpg" ,
+    "elements/partenaires/valentine.jpg" ,
+    "elements/partenaires/vitrage auto béarn.jpg" ,
+    "elements/partenaires/Loustau sarl.jpg" ,
+    "elements/partenaires/soubercaze.jpg" ,
+    "elements/partenaires/bourdet pees.jpg" ,
+    "elements/partenaires/kremer.jpg" ,
+    "elements/partenaires/vival lasseube.jpg" ,
+    "elements/partenaires/tpo.png" ,
+    "elements/partenaires/informatic.jpg" ,
+    "elements/partenaires/couralis.jpg" ,
+];  
+
+// Fonction pour choisir des images aléatoires
+function getRandomSponsors(images, count) {
+    const selected = [];
+    const usedIndices = new Set();
+    while (selected.length < count && usedIndices.size < images.length) {
+            const randomIndex = Math.floor(Math.random() * images.length);
+
+            if (!usedIndices.has(randomIndex)) {
+            usedIndices.add(randomIndex);
+            selected.push(images[randomIndex]);
+            }
+    }
+    return selected;
+}
+// Sélectionnez 4 images aléatoires
+const randomSponsors = getRandomSponsors(sponsorImages, 4);
+// Appliquez les images aux balises <img>
+randomSponsors.forEach((image, index) => {
+    const sponsorImg = document.getElementById(`sponsor${index + 1}`);
+    sponsorImg.src = image;
+});
+  
 
 
 // Equipes et Calendrier
