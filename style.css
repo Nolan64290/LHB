@@ -867,8 +867,17 @@ hr {
 
     .sous-nav a {
         display: none;
+        padding: 0;
+        margin: 0;
+        height: 0;
     }
 
+    .instagram:hover {
+        transform: none;
+    }
+    .facebook:hover {
+        transform: none;
+    }
     
     footer {
         display : none;
