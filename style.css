@@ -136,7 +136,7 @@ section.corps {
 }
 
 section.active {
-    display: block;
+    display: flex;
     opacity: 1;
 }
 
@@ -663,8 +663,33 @@ footer {
     justify-content: space-around;
     align-items: center;
     /* Sizes */
-    padding: 2%;
+    padding: 1.5%;
     height: max-content;
+}
+
+footer div.left,
+footer div.right {
+    width: 49%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+footer .right {
+    /* Display */
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    right: 1; */
+    /* Text */
+    text-align: right;
+    font-size: 0.8em;
+}
+
+footer .right p {
+    margin-right: 50px;
 }
 
 footer img {
@@ -705,27 +730,12 @@ footer a:hover {
     transition: all 0.2s ease-out;
 }
 
-footer .place {
-    /* Display */
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: row;
-    right: 1;
-    /* Text */
-    text-align: right;
-    font-size: 0.8em;
-}
-
-footer .place p {
-    margin-right: 50px;
-}
-
 hr {
     /* Background */
     background-color: black;
     /* Sizes */
-    height: 300px;
+    /* height: 250px; */
+    height: 200px;
     width: 4px;
     /* Text */
     color: black;
@@ -738,9 +748,28 @@ hr {
     display: none;
 }
 
-/* Téléphones */
+/* ===========================Téléphones================================================================================= */
 @media (max-width: 767px) {
-    
+    /* ===========================All=========================== */
+    section.corps {
+        background-image: url(elements/fond1.png);
+        background-size: cover;
+        flex-direction: column;
+        background-position: right;
+        /* display: none;
+        opacity: 0; */
+        height: max-content;
+        padding-bottom: 5%;
+    } 
+    h2 {
+        font-family: "Kanit", 'Courier New';
+        color: white;
+        font-size: 1.5em;
+        text-align: center;
+        font-weight: bold;
+        padding-top: 2%;
+    }
+    /* ===========================Header=========================== */
     header {
         display: flex;
         padding-bottom: 0%;
@@ -878,9 +907,130 @@ hr {
     .facebook:hover {
         transform: none;
     }
-    
+
+
+    /* ===========================Accueil=========================== */
+    .programme {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 2%;
+        color: white;
+        font-size: 1.8em;
+        text-align: center;
+        font-weight: bold;
+    }
+    .toggle-div {
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0);
+        margin-top: 3%;
+    }
+    .toggle-div img {
+        width: 100%;
+        padding-bottom: 2%;
+        background-color: rgba(255, 255, 255, 0);
+    }
+    .club {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+        flex-direction: column;
+    }    
+    .club img {
+        /* margin-left: 100px; */
+        width: 100px;
+        /* height: 100%; */
+        display: none;
+    }   
+    .club p {
+        background-color: rgba(185, 185, 185, 0.226);
+        color: whitesmoke;
+        font-size: 1.1em;
+        text-align: center;
+        padding: 30px;
+        width: 70%;
+        height: max-content;
+        border-radius: 15px;
+        user-select: none;
+    }
+    .box-partenaires {
+        padding-top: 2%;
+        color: white;
+        font-size: 1.8em;
+        text-align: center;
+        font-weight: bold;
+    }
+    .partenaires {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        gap: 0;
+        padding: 0;
+    }
+    .partenaires img {
+        width: 40%;
+        height: auto;
+        transition: transform 0.2s;
+        cursor: pointer;
+        user-select: none;
+        padding: 2%;
+    }
+
+
+
+
+
+
+
+    /* ===========================Footer=========================== */
     footer {
-        display : none;
+        display : flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    footer div.left,
+    footer div.right {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        padding: 6% 0;
+    }
+    footer .left {
+        order: 3;
+    }
+    footer .left img {
+        width: 150px;
+    }
+    footer .contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        font-size: 0.8em;
+        margin-left: 0;
+        height: max-content;
+    }
+    .contact p {
+        margin: 0;
+    }
+    .contact p:last-of-type br {
+        display: none;
+    }
+    footer hr{
+        order: 2;
+        width: 90%;
+        height: 4px;
+    }
+    .right iframe {
+        display: none;
+        margin: 0;
+    }
+    footer .right p {
+        margin: 0;
+        text-align: center;
     }
     
 }
