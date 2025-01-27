@@ -27,8 +27,9 @@ Boutique : Photos articles + lien HelloAsso
 Contact : Mail, numéro co-présidents, réseaux
 
 !!! RENDRE LE SITE RESPONSIVE !!!
-Revoir les couleurs dans le menu des onglet en mode mobile
-Pour le programme du weekend, enlever la zone avec les images et mettre le logo insta et facebook pour rediriger vers les réseaux du club (Plus simple pour entretenir le site, pas besoin de le faire chaque semaine).
+Revoir les tailles des objets (vh, em, %, ...)
+S'assurer du bon alignement de tous les objets et de leur distances entre eux
+Pour le programme du weekend, réfléchir à enlever la zone avec les images et mettre le logo insta et facebook pour rediriger vers les réseaux du club (Plus simple pour entretenir le site, pas besoin de le faire chaque semaine).
 Section arbitre (Préciser les arbitres, leurs catégories et à quel niveaux ils arbitrent)
 Mettre un formulaire d'inscription à une newsletter entre le programme et les partenaires
 Mettre un tableau avec tous les matchs prévus et le lien de la poule pour chaque équipe dans l'onglet Calendrier

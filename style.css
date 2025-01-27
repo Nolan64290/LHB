@@ -121,6 +121,7 @@ header {
     transition: all 0.2s ease-in-out;
 }
 
+
 /* ===========================CORPS=========================== */
 section.corps {
     /* Background */
@@ -673,20 +674,20 @@ footer div.right {
     width: 49%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 
 footer .right {
     /* Display */
-    /* display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    right: 1; */
+    right: 1;
     /* Text */
     text-align: right;
     font-size: 0.8em;
+    align-items: flex-end;
 }
 
 footer .right p {
@@ -711,12 +712,10 @@ footer .contact {
     flex-direction: column;
     justify-content: left;
     /* Text */
-    font-size: 0.8em;
-    /* Sizes */
-    margin-left: 100px;
+    font-size: 0.8em; 
 }
 
-footer a {
+footer .left a {
     /* Text */
     color: black;
     font-size: 1.9em;
@@ -724,6 +723,10 @@ footer a {
     padding: 1%;
     /* Other  */
     transition: all 0.2s ease-out;
+}
+footer .right a {
+    text-decoration: none;
+    color: black;
 }
 
 footer a:hover {
@@ -958,6 +961,9 @@ hr {
         border-radius: 15px;
         user-select: none;
     }
+    #trait {
+        padding-top: 6%;
+    }
     .box-partenaires {
         padding-top: 2%;
         color: white;
@@ -980,6 +986,15 @@ hr {
         cursor: pointer;
         user-select: none;
         padding: 2%;
+    }
+    .box-partenaires a {
+        color: white;
+        background-color: rgba(185, 185, 185, 0.226);
+        font-size: 0.65em;
+        text-decoration: none;
+        margin-top: 30px;
+        padding: 2% 3%;
+        border-radius: 15px;
     }
 
 
