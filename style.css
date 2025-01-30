@@ -41,7 +41,7 @@ header {
 }
 /* menu */
 .menu {
-    background-color: white;
+    background-color: none;
     position: sticky;
     top: 0;
     left: 150px;
@@ -368,103 +368,126 @@ section.active {
 
 
 /* ===========================Calendrier=========================== */
-.table {
+#calendrier,
+#equipes {
     display: flex;
-    justify-content: center;
+    height: max-content;
+    width: 100%;
+    flex-direction: row;
+    padding-bottom: 0;
 }
-.table table {
-    margin-top: 3%;
-    border-spacing: 10px;
-    /* border-collapse: collapse; */
+
+#calendrier .nav-bar,
+#equipes .nav-bar {
+    width: 18%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.267);
 }
-.table tr:first-of-type td {
-    /* Background */
-    background-color: rgba(255, 0, 0, 0);
-    /* Text */
-    color: yellow;
+.nav-bar p {
+    width: 100%;
+    padding: 8%;
+    padding-left: 5%;
+    box-sizing: border-box;
+    color: white;
+    font-weight: bold;
     font-size: 1.3em;
-    font-weight: 700;
-    /* Les deux props suivantes sont peut-être en trop */
-    -webkit-text-stroke-width: 0.5px;
-    -webkit-text-stroke-color: black;
-    /* Sizes */
-    height: 50px;
+    /* Other */
+    transition: all 0.1s ease-out;
+    /* border-radius: 10px; */
+    cursor: pointer;
+    /* border-bottom: 4px solid rgba(12, 12, 12, 0.267); */
 }
-.table td {
+.nav-bar p:hover {
+    background-color: red;
+    color: black;
+    /* border-bottom: 4px solid red; */
+    transition: all 0.1s ease-out;
+}
+
+.nav-bar hr {
+    height: 4px;
+    width: 100%;
+    background-color: rgba(12, 12, 12, 0.445);
+}
+    
+
+.team h2 {
+    display: none;
+}
+.team {
+    width: 82%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.team table {
+    justify-content: center;
+    width: 90%;
+    border-collapse: separate; /* Permet de séparer les cellules */
+    border-spacing: 5px;
+}
+.team table tr {
+    width: 10%;
+    height: 100%;
+}
+.team table td {
     /* Background */
     background-color: rgba(185, 185, 185, 0.226);
     /* Sizes */
-    height: 75px;
-    width: 250px;
-    padding: 0 2%;
-    margin: 30%;
+    height: 100%;
+    width: 20%;
+    padding: 2% 1%;
+    margin: 10%;
     /* Text */
     color: white;
     text-align: center;
+    font-size: 1.2em;
     /* Other */
     border-radius: 20px;
 }
-.table tr td:last-of-type {
-    background-color: rgba(255, 0, 0, 0);
-    width: 100px;
+.team table td:first-of-type {
+    text-decoration: underline;
 }
-.tr {
-    margin: 12%;
-}
-.corps table {
-    justify-content: left;
-}
-/* Nav-bar */
-.nav-bar {
+.team table tr:first-of-type td{
     /* Background */
-    background-color: rgba(128, 128, 128, 0.267);
-    /* Display */
-    position: absolute;
-    left: 0;
-    /* Sizes */
-    width: 18%;
-    height: 1800px;
-}
-.equipes {
-    /* Display */
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: left;
-    /* Sizes */
-    padding-top: 10%;
-    /* padding-left: 20%; */
-}
-.equipes p {
+    background-color: rgba(0, 0, 0, 0);
     /* Text */
-    color: white;
-    font-size: 1.3em;
+    text-decoration: none;
+    color: yellow;
+    font-size: 1.5em;
     font-weight: bold;
-    /* Sizes */
-    margin: 4% 20%;
-    padding: 2%;
-    /* Other */
-    transition: all 0.1s ease-out;
-    border-radius: 10px;
-    cursor: pointer;
 }
-.equipes p:hover {
-    background-color: red;
+.team table td:last-of-type {
+    width: 8%;
+    height: 8%;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+.team a {
     color: black;
-    transition: all 0.1s ease-out;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2em;
 }
-/* Teams */
-.team {
-    /* Display */
-    display: none;
-    justify-content: center;
-    /* Sizes */
-    margin-left: 18%;
-    width: 82%;
-    height: 1800px;
-}
+
 .currentDiv {
     display: flex;
+}
+.currentDiv h2 {
+    display: block;
+}
+
+section:not(.active) .nav-bar {
+    display: none;
+}
+section:not(.active) .currentDiv {
+    display: none;
+}
+section:not(.active) h2 {
+    display: none;
 }
 
 

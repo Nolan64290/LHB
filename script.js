@@ -285,20 +285,22 @@ randomSponsors.forEach((image, index) => {
 // Changediv récupère le numéro de la div à afficher et en fonction de val
 // il modifie la partie qu'il faut sans modifier l'autre
 
-currentDivIndexEquipes = 0;
-currentDivIndexCalendrier = 101;
+var currentDivIndexEquipes = 0;
+var currentDivIndexCalendrier = 101;
 function changeDiv(n, val) { // val étant la valeur pour savoir si c'est calendrier ou equipe
     console.log(val);
     if (val == 0){
         var currentDiv = document.getElementById(currentDivIndexEquipes);
         currentDiv.classList.remove('currentDiv');
         currentDivIndexEquipes = n;
+        // console.log(currentDivIndexEquipes);
         var newCurrentDiv = document.getElementById(currentDivIndexEquipes);
         newCurrentDiv.classList.add('currentDiv');
     } else {
         var currentDiv = document.getElementById(currentDivIndexCalendrier);
         currentDiv.classList.remove('currentDiv');
         currentDivIndexCalendrier = n;
+        // console.log(currentDivIndexCalendrier);
         var newCurrentDiv = document.getElementById(currentDivIndexCalendrier);
         newCurrentDiv.classList.add('currentDiv');
     }
