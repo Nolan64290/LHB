@@ -54,7 +54,7 @@
 
     <!-- CORPS DE LA PAGE -->
     <!-- Accueil -->
-    <section class="corps active" id="accueil">
+    <section class="corps" id="accueil">
         <!-- Programme du Weekend -->
         <div class="programme" id="Programme">
             <h2>Programme du weekend</h2>
@@ -463,7 +463,7 @@
     </section>
     
     <!-- Galerie -->
-    <section class="corps" id="galerie">
+    <section class="corps active" id="galerie">
         <!-- Galerie d'images -->
         <h2>Gallerie d'images</h2>
         <div class="gallery">
@@ -493,9 +493,16 @@
             <a href="#img24"><img src="Elements/Photos gallerie/24.jpg" alt="Image 24"></a>
             <a href="#img25"><img src="Elements/Photos gallerie/25.jpg" alt="Image 25"></a> -->
         </div>
-
+        <div id="imageModal" class="modal">
+            <span class="close">&times;</span>
+            <span class="prev">&#10094;</span>  <!-- Flèche gauche -->
+            <img class="modal-content" id="modalImage">
+            <span class="next">&#10095;</span>  <!-- Flèche droite -->
+        </div>
+        
+        
         <!-- Popups -->
-        <div id="img1" class="popup">
+        <!-- <div id="img1" class="popup">
             <a href="#"><img src="Elements/Photos gallerie/1.jpg" alt="Image 1"></a>
         </div>
         <div id="img2" class="popup">
@@ -569,7 +576,7 @@
         </div>
         <div id="img25" class="popup">
             <a href="#"><img src="Elements/Photos gallerie/25.jpg" alt="Image 25"></a>
-        </div>
+        </div> -->
     </section>
 
     <!-- Boutique -->

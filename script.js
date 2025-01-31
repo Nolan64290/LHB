@@ -335,3 +335,48 @@ document.getElementById('contact-form').addEventListener('submit', function(even
             alert('Il y a eu un problème avec l\'envoi du message.');
         });
 });
+
+// Gallerie :
+// Sélection des éléments
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImage");
+const closeBtn = document.querySelector(".close");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+
+const images = Array.from(document.querySelectorAll(".gallery img")); // Liste des images
+let currentIndex = 0; // Index de l'image affichée
+
+// Fonction pour afficher une image dans la pop-up
+function showImage(index) {
+    if (index >= 0 && index < images.length) {
+        modal.style.display = "flex";
+        modalImg.src = images[index].src;
+        currentIndex = index;
+    }
+}
+
+// Ajouter un écouteur d'événements sur chaque image de la galerie
+images.forEach((img, index) => {
+    img.addEventListener("click", () => showImage(index));
+});
+
+// Navigation avec les flèches
+prevBtn.addEventListener("click", () => {
+    let newIndex = currentIndex - 1;
+    if (newIndex < 0) newIndex = images.length - 1; // Revient à la dernière image si on est au début
+    showImage(newIndex);
+});
+
+nextBtn.addEventListener("click", () => {
+    let newIndex = currentIndex + 1;
+    if (newIndex >= images.length) newIndex = 0; // Revient à la première image si on est à la fin
+    showImage(newIndex);
+});
+
+// Fermer la pop-up en cliquant sur la croix ou en dehors de l'image
+modal.addEventListener("click", (e) => {
+    if (e.target === modal || e.target === closeBtn) {
+        modal.style.display = "none";
+    }
+});

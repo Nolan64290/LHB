@@ -492,6 +492,9 @@ section:not(.active) h2 {
 
 
 /* ===========================GALERIE=========================== */
+#galerie {
+    padding-bottom: 0;
+}
 h2 {
     /* Text */
     font-family: "Kanit", 'Courier New';
@@ -503,18 +506,19 @@ h2 {
     padding-top: 2%;
 }
 .gallery {
-    /* Display */
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 50px;
-    /* Sizes */
-    width: 90%;
-    padding: 2% 5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 2%;
+    gap: 18px;
+}
+.gallery a {
+    width: 19%;
 }
 .gallery img {
-    /* Sizes */
-    width: 110%;
-    height: auto;
+    width: 100%;
     /* Other */
     transition: transform 0.2s;
     cursor: pointer;
@@ -523,33 +527,65 @@ h2 {
 .gallery img:hover {
     transform: scale(1.05);
 }
-.popup {
-    /* Background */
-    background-color: rgba(0, 0, 0, 0.8);
-    /* Display */
-    display: none;
+
+/* Pop-up d'affichage en grand */
+.modal {
+    display: none; /* Caché par défaut */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fond noir transparent */
     justify-content: center;
     align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    /* Sizes */
-    width: 110%;
-    height: 100%;
 }
-.popup a {
-    width: max-content;
-    height: max-content;
-}
-.popup img {
-    user-select: none;
-    /* Sizes */
+
+
+/* Image affichée en grand */
+.modal-content {
     max-width: 90%;
     max-height: 90%;
 }
-.popup:target {
-    display: flex;
+
+/* Icône de fermeture */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
 }
+
+.close:hover {
+    color: red;
+}
+
+/* Style des flèches */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    user-select: none;
+}
+
+.prev { left: 20px; }  /* Position gauche */
+.next { right: 20px; } /* Position droite */
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+
 
 
 /* ===========================Boutique=========================== */
@@ -1023,7 +1059,91 @@ hr {
 
 
 
-
+/* ===========================Footer=========================== */
+    #galerie {
+        padding-bottom: 0;
+    }
+    h2 {
+        /* Text */
+        font-family: "Kanit", 'Courier New';
+        color: white;
+        font-size: 2.6em;
+        text-align: center;
+        font-weight: bold;
+        /* Sizes */
+        padding-top: 2%;
+    }
+    /*  */
+    .gallery {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 2% 2%;
+        gap: 12px;
+    }
+    /*  */
+    .gallery a {
+        width: 48%;
+    }
+    .gallery img {
+        width: 100%;
+        /* Other */
+        transition: transform 0.2s;
+        cursor: pointer;
+        user-select: none;
+    }
+    .gallery img:hover {
+        transform: scale(1.05);
+    }
+    .modal {
+        display: none; /* Caché par défaut */
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8); /* Fond noir transparent */
+        justify-content: center;
+        align-items: center;
+    }
+    .modal-content {
+        max-width: 90%;
+        max-height: 90%;
+    }
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 25px;
+        color: white;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .close:hover {
+        color: red;
+    }
+    /*  */
+    .prev, .next {
+        position: relative;
+        /* top: 50%; */
+        transform: translateY(-300%);
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+        padding: 10px;
+        margin: 0 -10%;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        user-select: none;
+    }
+    .prev { left: 20px; }  /* Position gauche */
+    .next { right: 20px; } /* Position droite */
+    .prev:hover, .next:hover {
+        background: rgba(0, 0, 0, 0.8);
+    }
 
 
     /* ===========================Footer=========================== */
