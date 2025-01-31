@@ -1063,11 +1063,11 @@ hr {
     #galerie {
         padding-bottom: 0;
     }
-    h2 {
+    #galerie h2 {
         /* Text */
         font-family: "Kanit", 'Courier New';
         color: white;
-        font-size: 2.6em;
+        font-size: 2.4em;
         text-align: center;
         font-weight: bold;
         /* Sizes */
