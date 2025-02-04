@@ -338,10 +338,12 @@ document.getElementById('contact-form').addEventListener('submit', function(even
 
 // Gallerie :
 // Sélection des éléments
-// Sélection des éléments
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImage");
 const images = Array.from(document.querySelectorAll(".gallery img"));
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+const closeBtn = document.querySelector(".close");
 let currentIndex = 0;
 
 // Fonction pour afficher une image
@@ -352,12 +354,10 @@ function showImage(index) {
         currentIndex = index;
     }
 }
-
 // Ouvre l'image en grand lorsqu'on clique dessus
 images.forEach((img, index) => {
     img.addEventListener("click", () => showImage(index));
 });
-
 // Ferme la modale en cliquant en dehors
 modal.addEventListener("click", (e) => {
     if (e.target === modal) {
@@ -368,22 +368,18 @@ modal.addEventListener("click", (e) => {
 // Gestion du swipe sur mobile
 let touchStartX = 0;
 let touchEndX = 0;
-
 // Détecte quand l'utilisateur commence à toucher l'écran
 modal.addEventListener("touchstart", (e) => {
     touchStartX = e.touches[0].clientX;
 });
-
 // Détecte quand l'utilisateur lève son doigt
 modal.addEventListener("touchend", (e) => {
     touchEndX = e.changedTouches[0].clientX;
     handleSwipe();
 });
-
 // Fonction qui gère le swipe gauche/droite
 function handleSwipe() {
     let swipeDistance = touchEndX - touchStartX;
-
     if (swipeDistance > 50) { 
         // Swipe vers la droite → image précédente
         showImage(currentIndex - 1);
@@ -392,12 +388,14 @@ function handleSwipe() {
         showImage(currentIndex + 1);
     }
 }
-// Sélection des flèches
-const prevBtn = document.querySelector(".prev");
-const nextBtn = document.querySelector(".next");
-
 // Gestion des boutons "précédent" et "suivant" sur PC
 if (prevBtn && nextBtn) {
     prevBtn.addEventListener("click", () => showImage(currentIndex - 1));
     nextBtn.addEventListener("click", () => showImage(currentIndex + 1));
+}
+// Ferme la modale quand on clique sur la croix
+if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+        modal.style.display = "none"; // Cache la modale
+    });
 }
