@@ -338,16 +338,13 @@ document.getElementById('contact-form').addEventListener('submit', function(even
 
 // Gallerie :
 // Sélection des éléments
+// Sélection des éléments
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImage");
-const closeBtn = document.querySelector(".close");
-const prevBtn = document.querySelector(".prev");
-const nextBtn = document.querySelector(".next");
+const images = Array.from(document.querySelectorAll(".gallery img"));
+let currentIndex = 0;
 
-const images = Array.from(document.querySelectorAll(".gallery img")); // Liste des images
-let currentIndex = 0; // Index de l'image affichée
-
-// Fonction pour afficher une image dans la pop-up
+// Fonction pour afficher une image
 function showImage(index) {
     if (index >= 0 && index < images.length) {
         modal.style.display = "flex";
@@ -356,27 +353,51 @@ function showImage(index) {
     }
 }
 
-// Ajouter un écouteur d'événements sur chaque image de la galerie
+// Ouvre l'image en grand lorsqu'on clique dessus
 images.forEach((img, index) => {
     img.addEventListener("click", () => showImage(index));
 });
 
-// Navigation avec les flèches
-prevBtn.addEventListener("click", () => {
-    let newIndex = currentIndex - 1;
-    if (newIndex < 0) newIndex = images.length - 1; // Revient à la dernière image si on est au début
-    showImage(newIndex);
-});
-
-nextBtn.addEventListener("click", () => {
-    let newIndex = currentIndex + 1;
-    if (newIndex >= images.length) newIndex = 0; // Revient à la première image si on est à la fin
-    showImage(newIndex);
-});
-
-// Fermer la pop-up en cliquant sur la croix ou en dehors de l'image
+// Ferme la modale en cliquant en dehors
 modal.addEventListener("click", (e) => {
-    if (e.target === modal || e.target === closeBtn) {
+    if (e.target === modal) {
         modal.style.display = "none";
     }
 });
+
+// Gestion du swipe sur mobile
+let touchStartX = 0;
+let touchEndX = 0;
+
+// Détecte quand l'utilisateur commence à toucher l'écran
+modal.addEventListener("touchstart", (e) => {
+    touchStartX = e.touches[0].clientX;
+});
+
+// Détecte quand l'utilisateur lève son doigt
+modal.addEventListener("touchend", (e) => {
+    touchEndX = e.changedTouches[0].clientX;
+    handleSwipe();
+});
+
+// Fonction qui gère le swipe gauche/droite
+function handleSwipe() {
+    let swipeDistance = touchEndX - touchStartX;
+
+    if (swipeDistance > 50) { 
+        // Swipe vers la droite → image précédente
+        showImage(currentIndex - 1);
+    } else if (swipeDistance < -50) { 
+        // Swipe vers la gauche → image suivante
+        showImage(currentIndex + 1);
+    }
+}
+// Sélection des flèches
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+
+// Gestion des boutons "précédent" et "suivant" sur PC
+if (prevBtn && nextBtn) {
+    prevBtn.addEventListener("click", () => showImage(currentIndex - 1));
+    nextBtn.addEventListener("click", () => showImage(currentIndex + 1));
+}
