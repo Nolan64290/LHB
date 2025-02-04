@@ -1160,7 +1160,7 @@ hr {
     footer div.left,
     footer div.right {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         width: 100%;
         padding: 6% 0;
     }
@@ -1168,21 +1168,22 @@ hr {
         order: 3;
     }
     footer .left img {
-        width: 150px;
+        width: 130px;
     }
     footer .contact {
         display: flex;
         flex-direction: column;
-        justify-content: left;
+        justify-content: center;
         font-size: 0.8em;
         margin-left: 0;
         height: max-content;
     }
     .contact p {
         margin: 0;
+        font-size: 1em;
     }
     .contact p:first-of-type br:last-of-type {
-        display: block;
+        display: none;
     }
     .contact p:last-of-type br {
         display: none;
