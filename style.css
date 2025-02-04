@@ -21,6 +21,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
     /* Sizes */
     width: auto;
     height: auto;
@@ -62,6 +63,9 @@ header {
 }
 .menu ul {
     padding: 10px;
+}
+.menu li:first-child{
+    display: none;
 }
 .menu li>a {
     /* Display */
@@ -773,7 +777,9 @@ footer .contact {
     /* Text */
     font-size: 0.8em; 
 }
-
+.contact p:first-of-type br:last-of-type {
+    display: none;
+}
 footer .left a {
     /* Text */
     color: black;
@@ -806,10 +812,6 @@ hr {
     border: none;
 }
 
-/* A buoger */
-.menu li:first-child{
-    display: none;
-}
 
 /* ===========================Téléphones================================================================================= */
 @media (max-width: 767px) {
@@ -840,6 +842,7 @@ hr {
         flex-wrap: wrap;
         background-size: 200%;
         background-position: bottom;
+        position: relative;
     }
     .logo {
         margin-top: 4%;
@@ -890,6 +893,7 @@ hr {
     }
     .menu li:first-child{
         display: block;
+        /* position: fixed; */
         height: 100%;
         width: 100%;
         padding: 2% 0;
@@ -1176,6 +1180,9 @@ hr {
     }
     .contact p {
         margin: 0;
+    }
+    .contact p:first-of-type br:last-of-type {
+        display: block;
     }
     .contact p:last-of-type br {
         display: none;
