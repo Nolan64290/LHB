@@ -920,7 +920,31 @@ hr {
         margin: 0;
         border: none;
     }
-
+    .onglet {
+        pointer-events: none; /* Désactive les liens */
+        height: 0;
+        opacity: 0;
+        padding: 0;
+        margin: 0;
+        overflow: hidden; /* Cache le contenu */
+    }
+    
+    .onglet a {
+        display: none;
+    }
+    
+    .menu-ouvert .onglet {
+        pointer-events: auto; /* Réactive les liens */
+        height: auto;
+        opacity: 1;
+        padding: 2% 0%;
+        margin: 0;
+    }
+    
+    .menu-ouvert .onglet a {
+        display: block;
+    }
+    
 
     .prem:hover {
         border-top: none;
@@ -967,6 +991,25 @@ hr {
         margin: 0;
         height: 0;
     }
+    .sous-nav {
+        pointer-events: none; /* Désactive les interactions */
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    .sous-menu-ouvert .sous-nav {
+        pointer-events: auto; /* Active les interactions */
+        opacity: 1;
+        height: auto;
+    }
+    
+    /* Cacher les onglets principaux lorsque le sous-menu est ouvert */
+    .sous-menu-ouvert .onglet {
+        display: none;
+    }
+    
 
     .instagram:hover {
         transform: none;
@@ -1063,7 +1106,7 @@ hr {
 
 
 
-/* ===========================Footer=========================== */
+/* ===========================Galerie=========================== */
     #galerie {
         padding-bottom: 0;
     }

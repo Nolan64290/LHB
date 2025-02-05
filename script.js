@@ -39,132 +39,48 @@ let boutique = document.getElementById("boutique-bt");
 let contact = document.getElementById("contact-bt");
 
 function toggleMenu() {
-    console.log("toggle Menu :")
-  if(state == 1){
-    console.log("toggle1");
-    // club.firstChild.style.display = "block";
-    // Remettre block
-    actus.firstChild.style.display = "block";
-    calendrier.firstChild.style.display = "block";
-    galerie.firstChild.style.display = "block";
-    boutique.firstChild.style.display = "block";
-    contact.firstChild.style.display = "block";
-    club.style.height = "100%";
-    actus.style.height = "100%";
-    calendrier.style.height = "100%";
-    galerie.style.height = "100%";
-    boutique.style.height = "100%";
-    contact.style.height = "100%";
-    club.style.padding = "2% 0%";
-    actus.style.padding = "2% 0%";
-    calendrier.style.padding = "2% 0%";
-    galerie.style.padding = "2% 0%";
-    boutique.style.padding = "2% 0%";
-    contact.style.padding = "2% 0%";
-    club.style.opacity = "1";
-    actus.style.opacity = "1";
-    calendrier.style.opacity = "1";
-    galerie.style.opacity = "1";
-    boutique.style.opacity = "1";
-    contact.style.opacity = "1";
-    club_a.textContent = "Le Club :"
-    state = 0;
-  } else {
-    console.log("toggle2");
-    stateS = state
-    toggleSousMenu();
-    club.style.height = "0";
-    club.style.padding = "0";
-    club.style.opacity = "0";
-    actus.style.height = "0";
-    actus.style.padding = "0";
-    actus.style.opacity = "0";
-    calendrier.style.height = "0";
-    calendrier.style.padding = "0";
-    calendrier.style.opacity = "0";
-    galerie.style.height = "0";
-    galerie.style.padding = "0";
-    galerie.style.opacity = "0";
-    boutique.style.height = "0";
-    boutique.style.padding = "0";
-    boutique.style.opacity = "0";
-    contact.style.height = "0";
-    contact.style.padding = "0";
-    contact.style.opacity = "0";
-    // club.firstChild.style.display = "none";
-    actus.firstChild.style.display = "none";
-    calendrier.firstChild.style.display = "none";
-    galerie.firstChild.style.display = "none";
-    boutique.firstChild.style.display = "none";
-    contact.firstChild.style.display = "none";
-    club_a.textContent = "Le Club"
-    state = 1;
-  }
-}
+    let menu = document.querySelector(".menu ul");
+    let sousMenu = document.getElementById("sous-nav");
+    let club = document.getElementById("club-bt");
+    let onglets = document.querySelectorAll(".onglet:not(#club-bt)"); // Tous les onglets sauf "Le Club"
 
-function toggleSousMenu() {
-    if (screen.width <= 767) {
-        if(stateS == 1){
-          console.log("toggle1");
-          // Pour enlever les autres options
-          actus.style.height = "0";
-          actus.style.padding = "0";
-          actus.style.opacity = "0";
-          calendrier.style.height = "0";
-          calendrier.style.padding = "0";
-          calendrier.style.opacity = "0";
-          galerie.style.height = "0";
-          galerie.style.padding = "0";
-          galerie.style.opacity = "0";
-          boutique.style.height = "0";
-          boutique.style.padding = "0";
-          boutique.style.opacity = "0";
-          contact.style.height = "0";
-          contact.style.padding = "0";
-          contact.style.opacity = "0";
-          actus.firstChild.style.display = "none";
-          calendrier.firstChild.style.display = "none";
-          galerie.firstChild.style.display = "none";
-          boutique.firstChild.style.display = "none";
-          contact.firstChild.style.display = "none";
-          
-          sous_nav.style.display = "flex";
-          sous_nav.style.paddingBottom = "0";
-          club.style.padding = "0"
-          stateS = 0;
-        } else {
-          console.log("toggle2");
-          // Remettre les autres boutons
-          actus.firstChild.style.display = "block";
-          calendrier.firstChild.style.display = "block";
-          galerie.firstChild.style.display = "block";
-          boutique.firstChild.style.display = "block";
-          contact.firstChild.style.display = "block";
-          club.style.height = "100%";
-          actus.style.height = "100%";
-          calendrier.style.height = "100%";
-          galerie.style.height = "100%";
-          boutique.style.height = "100%";
-          contact.style.height = "100%";
-          club.style.padding = "2% 0%";
-          actus.style.padding = "2% 0%";
-          calendrier.style.padding = "2% 0%";
-          galerie.style.padding = "2% 0%";
-          boutique.style.padding = "2% 0%";
-          contact.style.padding = "2% 0%";
-          club.style.opacity = "1";
-          actus.style.opacity = "1";
-          calendrier.style.opacity = "1";
-          galerie.style.opacity = "1";
-          boutique.style.opacity = "1";
-          contact.style.opacity = "1";
-      
-          sous_nav.style.display = "none";
-          
-          stateS = 1;
-        }
+    if (state == 1) {
+        menu.classList.add("menu-ouvert");
+        state = 0;
+    } else {
+        menu.classList.remove("menu-ouvert");
+
+        // Fermer le sous-menu en même temps
+        sousMenu.classList.remove("sous-menu-ouvert");
+        club.classList.remove("sous-menu-ouvert");
+        onglets.forEach(onglet => onglet.style.display = "block"); // Réafficher les autres onglets
+        stateS = 1; // Remettre l'état du sous-menu à fermé
+
+        state = 1;
     }
 }
+
+
+function toggleSousMenu() {
+    let sousMenu = document.getElementById("sous-nav");
+    let club = document.getElementById("club-bt");
+    let onglets = document.querySelectorAll(".onglet:not(#club-bt)"); // Tous les onglets sauf "Le Club"
+
+    if (stateS == 1) {
+        sousMenu.classList.add("sous-menu-ouvert");
+        club.classList.add("sous-menu-ouvert");
+        onglets.forEach(onglet => onglet.style.display = "none"); // Cache les autres onglets
+        stateS = 0;
+    } else {
+        sousMenu.classList.remove("sous-menu-ouvert");
+        club.classList.remove("sous-menu-ouvert");
+        onglets.forEach(onglet => onglet.style.display = "block"); // Réaffiche les onglets
+        stateS = 1;
+    }
+}
+
+
+
 
 
 // Accueil
