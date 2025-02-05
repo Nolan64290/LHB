@@ -1182,6 +1182,36 @@ hr {
         background: rgba(0, 0, 0, 0.8);
     }
 
+    /* ===========================Boutique=========================== */
+    #boutique {
+        align-items: center;
+    }
+    .boutique {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 2%;
+    }
+    .boutique img {
+        width: 90%;
+        height: auto;
+    }
+    .boutique p {
+        padding-top: 5%;
+        width: 90%;
+        color: white;
+        font-size: larger;
+    }
+    .logos_sport {
+        width: 90%;
+        padding-top: 10%;
+        padding-left: 3%;
+    }
+    .logos_sport img {
+        width: 50%;
+    }
 
     /* ===========================Footer=========================== */
     footer {
