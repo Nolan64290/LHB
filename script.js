@@ -11,7 +11,7 @@ function showSection(sectionId) {
     const activeSection = document.getElementById(sectionId);
     activeSection.classList.add('active');
     // Aller à la section demandée
-    if(screen.width <=767){
+    if((screen.width <= 767) || (window.innerWidth <= 767)){
         state = 0;
         toggleMenu();
     } else {
