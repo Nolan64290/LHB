@@ -3,21 +3,24 @@
 
 // Fonction qui gère l'affichage des différentes pages
 function showSection(sectionId) {
-    // Sélectionner toutes les sections
     const sections = document.querySelectorAll('section');
-    // Masquer toutes les sections
-    sections.forEach((section) => {section.classList.remove('active');});
-    // Afficher la section demandée
+    sections.forEach(section => section.classList.remove('active'));
+
     const activeSection = document.getElementById(sectionId);
     activeSection.classList.add('active');
-    // Aller à la section demandée
-    if((screen.width <= 767) || (window.innerWidth <= 767)){
-        state = 0;
-        toggleMenu();
+
+    // Vérifier si on est sur mobile et forcer la fermeture du menu
+    if ((screen.width <= 767) || (window.innerWidth <= 767)) {
+        setTimeout(() => {
+            if (state === 0) { // S'assurer que le menu est ouvert avant de tenter de le fermer
+                toggleMenu();
+            }
+        }, 100); // Petite pause pour éviter un conflit d'événements
     } else {
-        window.scrollTo({top: activeSection.offsetTop, behavior: 'smooth'});
+        window.scrollTo({ top: activeSection.offsetTop, behavior: 'smooth' });
     }
 }
+
 
 // Fonction toggleMenu :
 // Fonction qui gère le menu en mode responsive
