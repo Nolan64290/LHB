@@ -829,7 +829,7 @@ hr {
     h2 {
         font-family: "Kanit", 'Courier New';
         color: white;
-        font-size: 1.5em;
+        font-size: 1.8em;
         text-align: center;
         font-weight: bold;
         padding-top: 2%;
@@ -1103,22 +1103,40 @@ hr {
         border-radius: 15px;
     }
 
+/* ===========================Objectifs=========================== */
+#objectifs {
+    align-items: center;
+}
+.obj {
+    width: 95%;
+}
+.obj p {
+    background-color: rgba(185, 185, 185, 0.226);
+    color: whitesmoke;
+    font-size: 1.1em;
+    text-align: center;
+    padding: 3%;
+    width: 80%;
+    height: max-content;
+    border-radius: 15px;
+    user-select: none;
+}
 
-
+/* ===========================Licence=========================== */
+.licence table {
+    width: 90%;
+}
+.licence p {
+    width: 90%;
+    text-align: center;
+    padding-top: 3%;
+    font-size: larger;
+    color: white;
+}
 
 /* ===========================Galerie=========================== */
     #galerie {
         padding-bottom: 0;
-    }
-    #galerie h2 {
-        /* Text */
-        font-family: "Kanit", 'Courier New';
-        color: white;
-        font-size: 2.4em;
-        text-align: center;
-        font-weight: bold;
-        /* Sizes */
-        padding-top: 2%;
     }
     /*  */
     .gallery {
