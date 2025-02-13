@@ -22,6 +22,25 @@ function showSection(sectionId) {
 }
 
 
+// Fonction qui permet de désactiver le bouton 'le club' en mode pc
+document.addEventListener("DOMContentLoaded", function () {
+    let clubButton = document.getElementById("club-a-bt");
+
+    function updateClubButton() {
+        if (window.innerWidth > 767) { // Si écran PC
+            clubButton.removeAttribute("onclick"); // Supprime l'événement de clic
+        } else { // Si mobile
+            clubButton.setAttribute("onclick", "toggleSousMenu()");
+        }
+    }
+
+    // Exécuter au chargement
+    updateClubButton();
+
+    // Mettre à jour quand on redimensionne la fenêtre
+    window.addEventListener("resize", updateClubButton);
+});
+
 // Fonction toggleMenu :
 // Fonction qui gère le menu en mode responsive
 let state = 1;
