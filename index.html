@@ -4,15 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light only"> <!-- Pas de darkmod -->
     <!-- Liens Fontawesome -->
     <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script src="https://kit.fontawesome.com/2ace140b7d.js" crossorigin="anonymous"></script>
-    <!-- Lier le css -->
+    <!-- Lier les css -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_responsive.css">
     <!-- Titre de l'onglet -->
     <title>Lasseube handball</title>
     <!-- Icone de l'onglet -->
-    <link rel="icon" type="image/icon" href="elements/Logo_ico.ico">
+    <link rel="icon" type="image/icon" href="assets/Logo_ico.ico">
 </head>
 
 <body>
@@ -20,7 +22,7 @@
     <header>
         <!-- Logo -->
         <div class="logo">
-            <a href="#" onclick="showSection('accueil')"><img src="elements/Logo.png" alt="Logo du club"></a>
+            <a href="#" onclick="showSection('accueil')"><img src="assets/Logo.png" alt="Logo du club"></a>
         </div>
         <!-- Menu -->
         <div class="menu">
@@ -46,8 +48,8 @@
         </div>
         <!-- Réseaux -->
         <div class="reseaux">
-            <a href="https://www.facebook.com/lasseubehandball"><img class="facebook" src="elements/facebook.png" alt="Icone Facebook"></a>
-            <a href="https://www.instagram.com/lasseube_handball/"><img class="instagram" src="elements/instagram.png" alt="Icone Instagram"></a>
+            <a href="https://www.facebook.com/lasseubehandball"><img class="facebook" src="assets/facebook.png" alt="Icone Facebook"></a>
+            <a href="https://www.instagram.com/lasseube_handball/"><img class="instagram" src="assets/instagram.png" alt="Icone Instagram"></a>
         </div>
     </header>
     
@@ -60,15 +62,16 @@
             <h2>Programme du weekend</h2>
             <i class="fa-solid fa-angles-down" style="color: yellow;" onclick="programme()"></i>
             <div class="toggle-div" id="toggle-div">
-                <img src="elements/Domicile.png" alt="Programme du weekend à domicile">
-                <img src="elements/Extérieur.png" alt="Programme du weekend à l'extérieur">
-                <img src="elements/Plateau EDH.png" alt="Programme du weekend pour l'école de hand">
+                <img src="assets/Domicile.png" alt="Programme du weekend à domicile">
+                <img src="assets/Extérieur.png" alt="Programme du weekend à l'extérieur">
+                <!-- <img src="assets/Plateau EDH.png" alt="Programme du weekend pour l'école de hand"> -->
+                <!-- <img src="https://lh3.googleusercontent.com/d/1KKItBgCRMy8h8NFifwgPd_kgv2p80kN8" alt="Affiche du week-end" style="width:30%;"> -->
             </div>
             <!-- <hr style="background-color: yellow; width: 1200px; height: 4px; margin-top: 3%;"> -->
         </div>
         <!-- Le club -->
         <div class="club">
-            <img src="elements/ballon.png" alt="">
+            <img src="assets/ballon.png" alt="">
             <p>
                 <span>Bienvenue sur le site du Lasseube Handball !</span> <br><br> Le club du Lasseube handball vous ouvre ses portes pour découvrir une véritable communauté sportive où chacun a sa place. Ici, la convivialité, le dépassement de soi et
                 le respect sont nos valeurs fondamentales. Que vous soyez joueur, supporter, bénévole ou simplement curieux, vous trouverez au sein du Lasseube Handball une grande famille prête à vous accueillir. Ensemble, nous partageons notre passion
@@ -233,75 +236,75 @@
             <!-- Images Gallery -->
             <!-- Assuming images are named img1.jpg to img62.jpg in the images directory -->
             <!-- Replace src with actual paths of your images -->
-            <img src="elements/partenaires/aluminium habitat.jpg" alt="Image 1">
-            <img src="elements/partenaires/AC THERMIQUE.jpg" alt="Image 2">
-            <img src="elements/partenaires/amc lavage serrois.jpg" alt="Image 3">
-            <img src="elements/partenaires/andré paillas.jpg" alt="Image 4">
-            <img src="elements/partenaires/atelier-ossau.png" alt="Image 5">
-            <img src="elements/partenaires/auberge la promenade.jpg" alt="Image 6">
-            <img src="elements/partenaires/ATOL.jpg" alt="Image 7">
-            <img src="elements/partenaires/autosur.jpg" alt="Image 8">
-            <img src="elements/partenaires/bearn incendie.jpg" alt="Image 9">
-            <img src="elements/partenaires/bidart.jpg" alt="Image 10">
-            <img src="elements/partenaires/bordenave électricité.jpg" alt="Image 11">
-            <img src="elements/partenaires/boérie.jpg" alt="Image 12">
-            <img src="elements/partenaires/bricomarché_oloron.jpg" alt="Image 13">
-            <img src="elements/partenaires/buso.jpg" alt="Image 14">
-            <img src="elements/partenaires/camping belair.jpg" alt="Image 15">
-            <img src="elements/partenaires/carrey.jpg" alt="Image 16">
-            <img src="elements/partenaires/carrosserie-du-piemont.jpg" alt="Image 17">
-            <img src="elements/partenaires/cass auto vigneai.jpg" alt="Image 18">
-            <img src="elements/partenaires/cba_materiaux.jpg" alt="Image 19">
-            <img src="elements/partenaires/Centre de formation ac Fam.jpg" alt="Image 20">
-            <img src="elements/partenaires/CER les gaves.png.jpg" alt="Image 21">
-            <img src="elements/partenaires/Chouette peinture.jpg" alt="Image 22">
-            <img src="elements/partenaires/citroen.jpg" alt="Image 23">
-            <img src="elements/partenaires/clément pairault.jpg" alt="Image 24">
-            <img src="elements/partenaires/clement-servat.jpg" alt="Image 25">
-            <img src="elements/partenaires/coiffure mode conseil.jpg" alt="Image 26">
-            <img src="elements/partenaires/Déchetterie.jpg" alt="Image 27">
-            <img src="elements/partenaires/d'oc charpente.jpg" alt="Image 28">
-            <img src="elements/partenaires/euromagri.jpg" alt="Image 29">
-            <img src="elements/partenaires/Garage monteiro.jpg" alt="Image 30">
-            <img src="elements/partenaires/groupama gan.jpg" alt="Image 31">
-            <img src="elements/partenaires/guiraud.jpg" alt="Image 32">
-            <img src="elements/partenaires/hangar a 2 roues.jpg" alt="Image 33">
-            <img src="elements/partenaires/informatique FLORENT MIRO.jpg" alt="Image 34">
-            <img src="elements/partenaires/labat.jpg" alt="Image 35">
-            <img src="elements/partenaires/lacau.jpg" alt="Image 36">
-            <img src="elements/partenaires/Lacayrelle.jpg" alt="Image 37">
-            <img src="elements/partenaires/lagardere.jpg" alt="Image 38">
-            <img src="elements/partenaires/Le fournil de lasseube.jpg" alt="Image 39">
-            <img src="elements/partenaires/le tire bouchon.jpg" alt="Image 40">
-            <img src="elements/partenaires/les viandes du haut bearn.jpg" alt="Image 41">
-            <img src="elements/partenaires/l'escapade.jpg" alt="Image 42">
-            <img src="elements/partenaires/l'hair naturel.jpg" alt="Image 43">
-            <img src="elements/partenaires/LIENNE STEPHANE.jpg" alt="Image 44">
-            <img src="elements/partenaires/lopez.jpg" alt="Image 45">
-            <img src="elements/partenaires/macon yannick lassalle-001.jpg" alt="Image 46">
-            <img src="elements/partenaires/manutech-Logo.jpg" alt="Image 47">
-            <img src="elements/partenaires/Pedelaborde.jpg" alt="Image 48">
-            <img src="elements/partenaires/phillippe fleur.png.jpg" alt="Image 49">
-            <img src="elements/partenaires/point P.jpg" alt="Image 50">
-            <img src="elements/partenaires/pompes-funebres-lassalle.jpg" alt="Image 51">
-            <img src="elements/partenaires/sanguinet élagage.jpg" alt="Image 52">
-            <img src="elements/partenaires/serrurerie-industrie.jpg" alt="Image 53">
-            <img src="elements/partenaires/SOTRAVOS.jpg" alt="Image 54">
-            <img src="elements/partenaires/tardos maçonnerie.jpg" alt="Image 55">
-            <img src="elements/partenaires/technique tele Ent pon.jpg" alt="Image 56">
-            <img src="elements/partenaires/terrassement bourdet.jpg" alt="Image 57">
-            <img src="elements/partenaires/transport peyroutet.jpg" alt="Image 58">
-            <img src="elements/partenaires/transports mathieu.jpg" alt="Image 59">
-            <img src="elements/partenaires/valentine.jpg" alt="Image 60">
-            <img src="elements/partenaires/vitrage auto béarn.jpg" alt="Image 61">
-            <img src="elements/partenaires/Loustau sarl.jpg" alt="Image 62">
-            <img src="elements/partenaires/soubercaze.jpg" alt="Image 63">
-            <img src="elements/partenaires/bourdet pees.jpg" alt="Image 64">
-            <img src="elements/partenaires/kremer.jpg" alt="Image 65">
-            <img src="elements/partenaires/vival lasseube.jpg" alt="Image 66">
-            <img src="elements/partenaires/tpo.png" alt="Image 67">
-            <img src="elements/partenaires/informatic.jpg" alt="Image 68">
-            <img src="elements/partenaires/couralis.jpg" alt="Image 69">
+            <img src="assets/partenaires/aluminium habitat.jpg" alt="Image 1">
+            <img src="assets/partenaires/AC THERMIQUE.jpg" alt="Image 2">
+            <img src="assets/partenaires/amc lavage serrois.jpg" alt="Image 3">
+            <img src="assets/partenaires/andré paillas.jpg" alt="Image 4">
+            <img src="assets/partenaires/atelier-ossau.png" alt="Image 5">
+            <img src="assets/partenaires/auberge la promenade.jpg" alt="Image 6">
+            <img src="assets/partenaires/ATOL.jpg" alt="Image 7">
+            <img src="assets/partenaires/autosur.jpg" alt="Image 8">
+            <img src="assets/partenaires/bearn incendie.jpg" alt="Image 9">
+            <img src="assets/partenaires/bidart.jpg" alt="Image 10">
+            <img src="assets/partenaires/bordenave électricité.jpg" alt="Image 11">
+            <img src="assets/partenaires/boérie.jpg" alt="Image 12">
+            <img src="assets/partenaires/bricomarché_oloron.jpg" alt="Image 13">
+            <img src="assets/partenaires/buso.jpg" alt="Image 14">
+            <img src="assets/partenaires/camping belair.jpg" alt="Image 15">
+            <img src="assets/partenaires/carrey.jpg" alt="Image 16">
+            <img src="assets/partenaires/carrosserie-du-piemont.jpg" alt="Image 17">
+            <img src="assets/partenaires/cass auto vigneai.jpg" alt="Image 18">
+            <img src="assets/partenaires/cba_materiaux.jpg" alt="Image 19">
+            <img src="assets/partenaires/Centre de formation ac Fam.jpg" alt="Image 20">
+            <img src="assets/partenaires/CER les gaves.png.jpg" alt="Image 21">
+            <img src="assets/partenaires/Chouette peinture.jpg" alt="Image 22">
+            <img src="assets/partenaires/citroen.jpg" alt="Image 23">
+            <img src="assets/partenaires/clément pairault.jpg" alt="Image 24">
+            <img src="assets/partenaires/clement-servat.jpg" alt="Image 25">
+            <img src="assets/partenaires/coiffure mode conseil.jpg" alt="Image 26">
+            <img src="assets/partenaires/Déchetterie.jpg" alt="Image 27">
+            <img src="assets/partenaires/d'oc charpente.jpg" alt="Image 28">
+            <img src="assets/partenaires/euromagri.jpg" alt="Image 29">
+            <img src="assets/partenaires/Garage monteiro.jpg" alt="Image 30">
+            <img src="assets/partenaires/groupama gan.jpg" alt="Image 31">
+            <img src="assets/partenaires/guiraud.jpg" alt="Image 32">
+            <img src="assets/partenaires/hangar a 2 roues.jpg" alt="Image 33">
+            <img src="assets/partenaires/informatique FLORENT MIRO.jpg" alt="Image 34">
+            <img src="assets/partenaires/labat.jpg" alt="Image 35">
+            <img src="assets/partenaires/lacau.jpg" alt="Image 36">
+            <img src="assets/partenaires/Lacayrelle.jpg" alt="Image 37">
+            <img src="assets/partenaires/lagardere.jpg" alt="Image 38">
+            <img src="assets/partenaires/Le fournil de lasseube.jpg" alt="Image 39">
+            <img src="assets/partenaires/le tire bouchon.jpg" alt="Image 40">
+            <img src="assets/partenaires/les viandes du haut bearn.jpg" alt="Image 41">
+            <img src="assets/partenaires/l'escapade.jpg" alt="Image 42">
+            <img src="assets/partenaires/l'hair naturel.jpg" alt="Image 43">
+            <img src="assets/partenaires/LIENNE STEPHANE.jpg" alt="Image 44">
+            <img src="assets/partenaires/lopez.jpg" alt="Image 45">
+            <img src="assets/partenaires/macon yannick lassalle-001.jpg" alt="Image 46">
+            <img src="assets/partenaires/manutech-Logo.jpg" alt="Image 47">
+            <img src="assets/partenaires/Pedelaborde.jpg" alt="Image 48">
+            <img src="assets/partenaires/phillippe fleur.png.jpg" alt="Image 49">
+            <img src="assets/partenaires/point P.jpg" alt="Image 50">
+            <img src="assets/partenaires/pompes-funebres-lassalle.jpg" alt="Image 51">
+            <img src="assets/partenaires/sanguinet élagage.jpg" alt="Image 52">
+            <img src="assets/partenaires/serrurerie-industrie.jpg" alt="Image 53">
+            <img src="assets/partenaires/SOTRAVOS.jpg" alt="Image 54">
+            <img src="assets/partenaires/tardos maçonnerie.jpg" alt="Image 55">
+            <img src="assets/partenaires/technique tele Ent pon.jpg" alt="Image 56">
+            <img src="assets/partenaires/terrassement bourdet.jpg" alt="Image 57">
+            <img src="assets/partenaires/transport peyroutet.jpg" alt="Image 58">
+            <img src="assets/partenaires/transports mathieu.jpg" alt="Image 59">
+            <img src="assets/partenaires/valentine.jpg" alt="Image 60">
+            <img src="assets/partenaires/vitrage auto béarn.jpg" alt="Image 61">
+            <img src="assets/partenaires/Loustau sarl.jpg" alt="Image 62">
+            <img src="assets/partenaires/soubercaze.jpg" alt="Image 63">
+            <img src="assets/partenaires/bourdet pees.jpg" alt="Image 64">
+            <img src="assets/partenaires/kremer.jpg" alt="Image 65">
+            <img src="assets/partenaires/vival lasseube.jpg" alt="Image 66">
+            <img src="assets/partenaires/tpo.png" alt="Image 67">
+            <img src="assets/partenaires/informatic.jpg" alt="Image 68">
+            <img src="assets/partenaires/couralis.jpg" alt="Image 69">
         </div>
     </section>
 
@@ -467,31 +470,31 @@
         <!-- Galerie d'images -->
         <h2>Gallerie d'images</h2>
         <div class="gallery">
-            <a href="#img1"><img src="./elements/Photos_gallerie/1.jpg" alt="Image 1"></a>
-            <a href="#img2"><img src="./elements/Photos_gallerie/2.jpg" alt="Image 2"></a>
-            <a href="#img3"><img src="./elements/Photos_gallerie/3.jpg" alt="Image 3"></a>
-            <a href="#img4"><img src="./elements/Photos_gallerie/4.jpg" alt="Image 4"></a>
-            <a href="#img5"><img src="./elements/Photos_gallerie/5.jpg" alt="Image 5"></a>
-            <a href="#img6"><img src="./elements/Photos_gallerie/6.jpg" alt="Image 6"></a>
-            <a href="#img7"><img src="./elements/Photos_gallerie/7.jpg" alt="Image 7"></a>
-            <a href="#img8"><img src="./elements/Photos_gallerie/8.jpg" alt="Image 8"></a>
-            <a href="#img9"><img src="./elements/Photos_gallerie/9.jpg" alt="Image 9"></a>
-            <a href="#img10"><img src="./elements/Photos_gallerie/10.jpg" alt="Image 10"></a>
-            <!-- <a href="#img11"><img src="Elements/Photos gallerie/11.jpg" alt="Image 11"></a>
-            <a href="#img12"><img src="Elements/Photos gallerie/12.jpg" alt="Image 12"></a>
-            <a href="#img13"><img src="Elements/Photos gallerie/13.jpg" alt="Image 13"></a>
-            <a href="#img14"><img src="Elements/Photos gallerie/14.jpg" alt="Image 14"></a>
-            <a href="#img15"><img src="Elements/Photos gallerie/15.jpg" alt="Image 15"></a>
-            <a href="#img16"><img src="Elements/Photos gallerie/16.jpg" alt="Image 16"></a>
-            <a href="#img17"><img src="Elements/Photos gallerie/17.jpg" alt="Image 17"></a>
-            <a href="#img18"><img src="Elements/Photos gallerie/18.jpg" alt="Image 18"></a>
-            <a href="#img19"><img src="Elements/Photos gallerie/19.jpg" alt="Image 19"></a>
-            <a href="#img20"><img src="Elements/Photos gallerie/20.jpg" alt="Image 20"></a>
-            <a href="#img21"><img src="Elements/Photos gallerie/21.jpg" alt="Image 21"></a>
-            <a href="#img22"><img src="Elements/Photos gallerie/22.jpg" alt="Image 22"></a>
-            <a href="#img23"><img src="Elements/Photos gallerie/23.jpg" alt="Image 23"></a>
-            <a href="#img24"><img src="Elements/Photos gallerie/24.jpg" alt="Image 24"></a>
-            <a href="#img25"><img src="Elements/Photos gallerie/25.jpg" alt="Image 25"></a> -->
+            <a href="#img1"><img src="./assets/Photos_gallerie/1.jpg" alt="Image 1"></a>
+            <a href="#img2"><img src="./assets/Photos_gallerie/2.jpg" alt="Image 2"></a>
+            <a href="#img3"><img src="./assets/Photos_gallerie/3.jpg" alt="Image 3"></a>
+            <a href="#img4"><img src="./assets/Photos_gallerie/4.jpg" alt="Image 4"></a>
+            <a href="#img5"><img src="./assets/Photos_gallerie/5.jpg" alt="Image 5"></a>
+            <a href="#img6"><img src="./assets/Photos_gallerie/6.jpg" alt="Image 6"></a>
+            <a href="#img7"><img src="./assets/Photos_gallerie/7.jpg" alt="Image 7"></a>
+            <a href="#img8"><img src="./assets/Photos_gallerie/8.jpg" alt="Image 8"></a>
+            <a href="#img9"><img src="./assets/Photos_gallerie/9.jpg" alt="Image 9"></a>
+            <a href="#img10"><img src="./assets/Photos_gallerie/10.jpg" alt="Image 10"></a>
+            <!-- <a href="#img11"><img src="assets/Photos gallerie/11.jpg" alt="Image 11"></a>
+            <a href="#img12"><img src="assets/Photos gallerie/12.jpg" alt="Image 12"></a>
+            <a href="#img13"><img src="assets/Photos gallerie/13.jpg" alt="Image 13"></a>
+            <a href="#img14"><img src="assets/Photos gallerie/14.jpg" alt="Image 14"></a>
+            <a href="#img15"><img src="assets/Photos gallerie/15.jpg" alt="Image 15"></a>
+            <a href="#img16"><img src="assets/Photos gallerie/16.jpg" alt="Image 16"></a>
+            <a href="#img17"><img src="assets/Photos gallerie/17.jpg" alt="Image 17"></a>
+            <a href="#img18"><img src="assets/Photos gallerie/18.jpg" alt="Image 18"></a>
+            <a href="#img19"><img src="assets/Photos gallerie/19.jpg" alt="Image 19"></a>
+            <a href="#img20"><img src="assets/Photos gallerie/20.jpg" alt="Image 20"></a>
+            <a href="#img21"><img src="assets/Photos gallerie/21.jpg" alt="Image 21"></a>
+            <a href="#img22"><img src="assets/Photos gallerie/22.jpg" alt="Image 22"></a>
+            <a href="#img23"><img src="assets/Photos gallerie/23.jpg" alt="Image 23"></a>
+            <a href="#img24"><img src="assets/Photos gallerie/24.jpg" alt="Image 24"></a>
+            <a href="#img25"><img src="assets/Photos gallerie/25.jpg" alt="Image 25"></a> -->
         </div>
         <div id="imageModal" class="modal">
             <span class="close">&times;</span>
@@ -503,79 +506,79 @@
         
         <!-- Popups -->
         <!-- <div id="img1" class="popup">
-            <a href="#"><img src="Elements/Photos gallerie/1.jpg" alt="Image 1"></a>
+            <a href="#"><img src="assets/Photos gallerie/1.jpg" alt="Image 1"></a>
         </div>
         <div id="img2" class="popup">
-            <a href="#"><img src="Elements/Photos gallerie/2.jpg" alt="Image 2"></a>
+            <a href="#"><img src="assets/Photos gallerie/2.jpg" alt="Image 2"></a>
         </div>
         <div id="img3" class="popup">
-            <a href="#"><img src="Elements/Photos gallerie/3.jpg" alt="Image 3"></a>
+            <a href="#"><img src="assets/Photos gallerie/3.jpg" alt="Image 3"></a>
         </div>
         <div id="img4" class="popup">
-            <a href="#"><img src="Elements/Photos gallerie/4.jpg" alt="Image 4"></a>
+            <a href="#"><img src="assets/Photos gallerie/4.jpg" alt="Image 4"></a>
         </div>
         <div id="img5" class="popup">
-            <a href="#"><img src="Elements/Photos gallerie/5.jpg" alt="Image 5"></a>
+            <a href="#"><img src="assets/Photos gallerie/5.jpg" alt="Image 5"></a>
         </div>
         <div id="img6" class="popup">
-            <a href="#"><img src="Elements/Photos gallerie/6.jpg" alt="Image 6"></a>
+            <a href="#"><img src="assets/Photos gallerie/6.jpg" alt="Image 6"></a>
         </div>
         <div id="img7" class="popup">
-            <a href="#"><img src="Elements/Photos gallerie/7.jpg" alt="Image 7"></a>
+            <a href="#"><img src="assets/Photos gallerie/7.jpg" alt="Image 7"></a>
         </div>
         <div id="img8" class="popup">
-            <a href="#"><img src="Elements/Photos gallerie/8.jpg" alt="Image 8"></a>
+            <a href="#"><img src="assets/Photos gallerie/8.jpg" alt="Image 8"></a>
         </div>
         <div id="img9" class="popup">
-            <a href="#"><img src="Elements/Photos gallerie/9.jpg" alt="Image 9"></a>
+            <a href="#"><img src="assets/Photos gallerie/9.jpg" alt="Image 9"></a>
         </div>
         <div id="img10" class="popup">
-            <a href="#"><img src="Elements/Photos gallerie/10.jpg" alt="Image 10"></a>
+            <a href="#"><img src="assets/Photos gallerie/10.jpg" alt="Image 10"></a>
         </div>
         <div id="img11" class="popup">
-            <a href="#"><img src="Elements/Photos gallerie/11.jpg" alt="Image 11"></a>
+            <a href="#"><img src="assets/Photos gallerie/11.jpg" alt="Image 11"></a>
         </div>
         <div id="img12" class="popup">
-            <a href="#"><img src="Elements/Photos gallerie/12.jpg" alt="Image 12"></a>
+            <a href="#"><img src="assets/Photos gallerie/12.jpg" alt="Image 12"></a>
         </div>
         <div id="img13" class="popup">
-            <a href="#"><img src="Elements/Photos gallerie/13.jpg" alt="Image 13"></a>
+            <a href="#"><img src="assets/Photos gallerie/13.jpg" alt="Image 13"></a>
         </div>
         <div id="img14" class="popup">
-            <a href="#"><img src="Elements/Photos gallerie/14.jpg" alt="Image 14"></a>
+            <a href="#"><img src="assets/Photos gallerie/14.jpg" alt="Image 14"></a>
         </div>
         <div id="img15" class="popup">
-            <a href="#"><img src="Elements/Photos gallerie/15.jpg" alt="Image 15"></a>
+            <a href="#"><img src="assets/Photos gallerie/15.jpg" alt="Image 15"></a>
         </div>
         <div id="img16" class="popup">
-            <a href="#"><img src="Elements/Photos gallerie/16.jpg" alt="Image 16"></a>
+            <a href="#"><img src="assets/Photos gallerie/16.jpg" alt="Image 16"></a>
         </div>
         <div id="img17" class="popup">
-            <a href="#"><img src="Elements/Photos gallerie/17.jpg" alt="Image 17"></a>
+            <a href="#"><img src="assets/Photos gallerie/17.jpg" alt="Image 17"></a>
         </div>
         <div id="img18" class="popup">
-            <a href="#"><img src="Elements/Photos gallerie/18.jpg" alt="Image 18"></a>
+            <a href="#"><img src="assets/Photos gallerie/18.jpg" alt="Image 18"></a>
         </div>
         <div id="img19" class="popup">
-            <a href="#"><img src="Elements/Photos gallerie/19.jpg" alt="Image 19"></a>
+            <a href="#"><img src="assets/Photos gallerie/19.jpg" alt="Image 19"></a>
         </div>
         <div id="img20" class="popup">
-            <a href="#"><img src="Elements/Photos gallerie/20.jpg" alt="Image 20"></a>
+            <a href="#"><img src="assets/Photos gallerie/20.jpg" alt="Image 20"></a>
         </div>
         <div id="img21" class="popup">
-            <a href="#"><img src="Elements/Photos gallerie/21.jpg" alt="Image 21"></a>
+            <a href="#"><img src="assets/Photos gallerie/21.jpg" alt="Image 21"></a>
         </div>
         <div id="img22" class="popup">
-            <a href="#"><img src="Elements/Photos gallerie/22.jpg" alt="Image 22"></a>
+            <a href="#"><img src="assets/Photos gallerie/22.jpg" alt="Image 22"></a>
         </div>
         <div id="img23" class="popup">
-            <a href="#"><img src="Elements/Photos gallerie/23.jpg" alt="Image 23"></a>
+            <a href="#"><img src="assets/Photos gallerie/23.jpg" alt="Image 23"></a>
         </div>
         <div id="img24" class="popup">
-            <a href="#"><img src="Elements/Photos gallerie/24.jpg" alt="Image 24"></a>
+            <a href="#"><img src="assets/Photos gallerie/24.jpg" alt="Image 24"></a>
         </div>
         <div id="img25" class="popup">
-            <a href="#"><img src="Elements/Photos gallerie/25.jpg" alt="Image 25"></a>
+            <a href="#"><img src="assets/Photos gallerie/25.jpg" alt="Image 25"></a>
         </div> -->
     </section>
 
@@ -584,13 +587,13 @@
         <h2>Boutique du club</h2>
         <!-- Boutique -->
         <div class="boutique">
-            <img src="elements/boutique 2.png" alt="Image de la boutique du club">
+            <img src="assets/boutique 2.png" alt="Image de la boutique du club">
             <p>Pour passer une commande, si vous êtes licencié, vous pouvez aller sur HelloAsso (<a href="https://www.helloasso.com/associations/lasseube-handball/boutiques/boutique-macron-saison-2024-2025">Lien ci-dessous</a>). Sinon veuillez faire un mail
                 à cette adresse : <span>elsapouquet.lhb@outlook.fr</span></p>
         </div>
         <div class="logos_sport">
-            <img src="elements/sportR.png" alt="Logo de Sport'R">
-            <img src="elements/logo_macron.png" alt="Logo de macron">
+            <img src="assets/sportR.png" alt="Logo de Sport'R">
+            <img src="assets/logo_macron.png" alt="Logo de macron">
         </div>
     </section>
 
@@ -638,7 +641,7 @@
     <!-- Footer de la page -->
     <footer>
         <div class="left">
-            <img src="elements/Logo.png" alt="">
+            <img src="assets/Logo.png" alt="">
             <div class="contact">
                 <p>
                     <i class="fa-solid fa-phone"></i> 06.73.57.25.27 <br><i class="fa-solid fa-phone"></i> 06.79.50.99.39 <br><i class="fa-solid fa-envelope"></i><br> elsapouquet.lhb@outlook.fr
