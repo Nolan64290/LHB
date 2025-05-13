@@ -295,6 +295,19 @@
     }
 
 /* ===========================Objectifs=========================== */
+#favorites-form {
+    padding: 15px 20px;
+    margin: 20px;
+}
+#favorites-form label {
+    font-size: 14px;
+}
+#favorites-form button {
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* ===========================Objectifs=========================== */
 #objectifs {
     align-items: center;
 }

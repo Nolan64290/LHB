@@ -57,7 +57,7 @@
 
     <!-- CORPS DE LA PAGE -->
     <!-- Accueil -->
-    <section class="corps active" id="accueil">
+    <section class="corps" id="accueil">
         <!-- Programme du Weekend -->
         <div class="programme" id="Programme">
             <h2>Programme du weekend</h2>
@@ -108,7 +108,7 @@
     </section>
 
     <!-- Nos équipes -->
-    <section class="corps" id="equipes">
+    <section class="corps active" id="equipes">
         <div class="nav-bar">
             <p onclick="changeDiv(1, 0)">Séniors Garçons</p>
             <hr>
@@ -137,6 +137,14 @@
         </div>
         <div class="team currentDiv" id="0">
             <h2>Nos équipes</h2>
+            <form id="favorites-form">
+            <label><input type="checkbox" value="https://www.ffhandball.fr/competitions/saison-2024-2025-20/regional/excellence-regionale-masculine-25827/">Séniors garçons 1</label><br>
+            <label><input type="checkbox" value="https://www.ffhandball.fr/competitions/saison-2024-2025-20/departemental/16-ans-masculins-pre-region-25907/">Séniors garçons 2</label><br>
+            <label><input type="checkbox" value="https://www.ffhandball.fr/competitions/saison-2024-2025-20/departemental/16-ans-feminins-excellence-honneur-25916/poule-159350/">Séniors filles</label><br>
+            <label><input type="checkbox" value="https://www.ffhandball.fr/competitions/saison-2024-2025-20/departemental/championnat-18-ans-masculins-26463/poule-159689/">-18 garçons</label><br>
+            <button type="button" onclick="generateBookmarks()">Télécharger mes favoris</button>
+            </form>
+
         </div>
         <div class="team" id="1">
             <h2>Séniors Garçons</h2>
