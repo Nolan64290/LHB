@@ -47,7 +47,7 @@ header {
 /* menu */
 .menu {
     background-color: none;
-    position: sticky;
+    /* position: sticky; */
     top: 0;
     left: 150px;
 }

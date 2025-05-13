@@ -208,6 +208,9 @@
 
 
     /* ===========================Accueil=========================== */
+    #accueil h2 {
+        font-size: 1.4em;
+    }
     .programme {
         display: flex;
         flex-direction: column;
