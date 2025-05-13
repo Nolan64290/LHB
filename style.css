@@ -424,6 +424,11 @@ section.active {
     color: white;
     text-align: center;
 }
+#protected-content iframe {
+    width: 80%;
+    height: 800px;
+    border : none;
+}
 
 /* ===========================Actualités=========================== */
 
