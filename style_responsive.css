@@ -502,6 +502,12 @@
         background: rgba(0, 0, 0, 0.8);
     }
 
+    .gallery_bt a {
+        font-size: 1.3em;
+        padding: 1% 3%;
+        margin: 2% auto;
+    }
+
     /* ===========================Boutique=========================== */
     #boutique {
         align-items: center;
