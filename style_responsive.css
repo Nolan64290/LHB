@@ -296,6 +296,13 @@
         border-radius: 15px;
     }
 
+    /* Bureau */
+    #bureau img {
+        height: auto;
+        width: 90%;
+    }
+
+
     /* ===========================Nos équipes=========================== */
     #favorites-form {
         padding: 15px 20px;

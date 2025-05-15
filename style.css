@@ -284,11 +284,16 @@ section.active {
     background-color: rgba(185, 185, 185, 0.226);
 }
 
-/* ===========================Notre histoire=========================== */
-
 
 /* ===========================Le bureau=========================== */
-
+#bureau div {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+#bureau img {
+    height: 80vh;
+}
 
 /* ===========================Nos équipes=========================== */
 #favorites-form {
