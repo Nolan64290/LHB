@@ -260,7 +260,7 @@ section.active {
     height: auto;
     /* Other */
     transition: transform 0.2s;
-    cursor: pointer;
+    /* cursor: pointer; */
     user-select: none;
 }
 .partenaires img:hover {
