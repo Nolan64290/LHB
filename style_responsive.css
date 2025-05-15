@@ -2,6 +2,8 @@
     CSS RESPONSIVE
 ========================================================================================================================*/
 
+/* Téléphones */
+/*============*/
 @media (max-width: 767px) {
     /* ===========================All=========================== */
     section.corps {
@@ -312,7 +314,7 @@
         align-items: center;
     }
     .obj {
-        width: 95%;
+        margin: 5% auto;
     }
     .obj p {
         background-color: rgba(185, 185, 185, 0.226);
@@ -529,6 +531,36 @@
     }
     .logos_sport img {
         width: 50%;
+    }
+
+    /* ===========================Contact=========================== */
+    .contactez-nous {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5%;
+    }
+
+    .contactez-nous .infos {
+        margin-left: 0;
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 1.3em;
+    }
+
+    .contactez-nous .infos a {
+        font-size: 1.6em;
+    }
+
+    .formulaire {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-container {
+        width: 70%;
+        padding: 20px;
     }
 
     /* ===========================Footer=========================== */
