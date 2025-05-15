@@ -57,7 +57,7 @@
 
     <!-- CORPS DE LA PAGE -->
     <!-- Accueil -->
-    <section class="corps active" id="accueil">
+    <section class="corps" id="accueil">
         <!-- Programme du Weekend -->
         <div class="programme" id="Programme">
             <h2>Programme du weekend</h2>
@@ -109,7 +109,8 @@
     </section>
 
     <!-- Nos équipes -->
-    <section class="corps" id="equipes">
+    <section class="corps active" id="equipes">
+        <h2 class="mobile-title">Nos équipes</h2>
         <div class="nav-bar">
             <p onclick="changeDiv(1, 0)">Séniors Garçons</p>
             <hr>
@@ -135,6 +136,24 @@
             <hr>
             <p onclick="changeDiv(12, 0)">Nos arbitres</p>
             <hr>
+        </div>
+        <div class="mobile-select">
+            <!-- <label for="categorySelect">Catégorie :</label> -->
+            <select id="categorySelect" onchange="changeDiv(this.value, 0)">
+                <option value="0">Nos équipes</option>
+                <option value="1">Séniors Garçons</option>
+                <option value="2">Séniors Filles</option>
+                <option value="3">-18 Garçons</option>
+                <option value="4">-18 Filles</option>
+                <option value="5">U17 France</option>
+                <option value="6">-15 Garçons</option>
+                <option value="7">-15 Filles</option>
+                <option value="8">-13 Garçons</option>
+                <option value="9">-13 Filles</option>
+                <option value="10">-11 Mixtes</option>
+                <option value="11">École de Hand</option>
+                <option value="12">Nos arbitres</option>
+            </select>
         </div>
         <div class="team currentDiv" id="0">
             <h2>Nos équipes</h2>

@@ -389,7 +389,8 @@
         display: none;
     }
     
-    #calendrier .nav-bar {
+    #calendrier .nav-bar,
+    #equipes .nav-bar {
         display: none;
     }
 
