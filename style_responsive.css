@@ -542,13 +542,20 @@
 
     .contactez-nous .infos {
         margin-left: 0;
-        margin-bottom: 20px;
+        margin-bottom: 3%;
         text-align: center;
         font-size: 1.3em;
     }
 
     .contactez-nous .infos a {
         font-size: 1.6em;
+    }
+
+    .contactez-nous .infos p:nth-of-type(2) br {
+        display: none;
+    }
+    .contactez-nous .infos p:nth-of-type(2) i {
+        margin-top: 7%;
     }
 
     .formulaire {
