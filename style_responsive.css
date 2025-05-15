@@ -338,6 +338,12 @@
         color: white;
     }
 
+    /* ===========================Nos partenaires=========================== */
+    .sponso {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
     /* ===========================Espace réservé=========================== */
     #private-section {
         padding: 20px;
