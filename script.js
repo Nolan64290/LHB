@@ -7,6 +7,7 @@
     6. Formulaire de contact (à revoir)
     7. Gestion de la gallerie
     8. Espace reservé
+    9. Newsletter
 */
 
 document.querySelectorAll('a[href="#"]').forEach(link => {
@@ -296,32 +297,6 @@ function generateBookmarks() {
 // Formulaire de contact (à revoir) :
 // ================================================================================================================
 // Envoie de formulaire
-// document.getElementById('contact-form').addEventListener('submit', function(event) {
-//     event.preventDefault(); // Empêcher le formulaire de soumettre de manière traditionnelle
-//     var formData = new FormData(event.target);
-//     var data = {
-//         firstName: formData.get('firstName'),
-//         lastName: formData.get('lastName'),
-//         email: formData.get('email'),
-//         message: formData.get('message')
-//     };
-//     fetch('https://example.com/send-email', { //http://localhost:3000/send-email
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json'
-//             },
-//             body: JSON.stringify(data)
-//         })
-//         .then(response => response.json())
-//         .then(result => {
-//             alert('Message envoyé avec succès !');
-//         })
-//         .catch(error => {
-//             console.error('Erreur:', error);
-//             alert('Il y a eu un problème avec l\'envoi du message.');
-//         });
-// });
-
 const form = document.getElementById("contact-form");
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -444,3 +419,25 @@ document.getElementById("password-input").addEventListener("keydown", function(e
 
 
 
+// ================================================================================================================
+// Newsletter :
+// ================================================================================================================
+document.getElementById("newsletter-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message");
+
+    fetch("https://script.google.com/macros/s/AKfycbw5DilHQd6edPO7xagggV0DfHZZJBovQEbp9-Nl-4jVvuWHZw2o7RKax7TmyrS734pV1g/exec", {
+      method: "POST",
+      mode: "no-cors", // pas de retour, mais fonctionne sans problème
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: `email=${encodeURIComponent(email)}`
+    });
+
+    message.textContent = "Merci ! Votre inscription a bien été prise en compte.";
+    message.style.color = "green";
+    this.reset();
+  });

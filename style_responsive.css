@@ -213,6 +213,35 @@
     #accueil h2 {
         font-size: 1.4em;
     }
+
+    .newsletter-container {
+        order: 2;
+    }
+
+    .newsletter-container form {
+        flex-direction: column;
+        align-items: center;
+        max-width: 90%;
+        width: 100%;
+    }
+    .newsletter-container h3{
+        font-size: 1.5em;
+    }
+
+    .newsletter-container input[type="email"],
+    .newsletter-container button {
+        width: 70%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        border-radius: 6px;
+    }
+
+    .newsletter-container button {
+        padding: 12px 0;
+        width: 50%;
+        font-size: 1.1em;
+    }
+
     .programme {
         display: flex;
         flex-direction: column;
@@ -261,9 +290,17 @@
         user-select: none;
     }
     #trait {
-        padding-top: 6%;
+        order: 3;
+        padding-top: 0;
+    }
+    #trait2 {
+        display: flex; 
+        justify-content: center;
+        margin-top: 6%;
+        margin-bottom: 2%;
     }
     .box-partenaires {
+        order: 4;
         padding-top: 2%;
         color: white;
         font-size: 1.8em;
