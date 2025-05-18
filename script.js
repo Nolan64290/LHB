@@ -443,3 +443,64 @@ document.getElementById("newsletter-form").addEventListener("submit", function (
     message.style.color = "green";
     this.reset();
   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  const repoOwner = "tonNomGitHub";      // Remplace par ton user GitHub
+  const repoName = "tonRepo";             // Remplace par le nom de ton repo
+  const folderPath = "actus";             // dossier où sont les fichiers
+
+  // Fonction pour récupérer la liste des fichiers dans le dossier 'actus'
+  async function getFiles() {
+    const url = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${folderPath}`;
+    const response = await fetch(url);
+    const files = await response.json();
+    return files.filter(f => f.name.endsWith(".md"));
+  }
+
+  // Fonction pour récupérer le contenu d’un fichier Markdown
+  async function getFileContent(url) {
+    const response = await fetch(url);
+    const data = await response.json();
+    // Le contenu est en base64
+    return atob(data.content);
+  }
+
+  // Afficher les actus
+  async function displayActus() {
+    const files = await getFiles();
+    const container = document.getElementById("actus-list");
+    container.innerHTML = "";
+
+    for (const file of files) {
+      const mdContent = await getFileContent(file.url);
+      // Pour extraire le frontmatter YAML (titre, date, image), il faudra un parseur YAML
+      // Ou tu peux simplifier et juste afficher tout le markdown pour commencer
+
+      // Convertir Markdown en HTML
+      const html = marked.parse(mdContent);
+
+      // Créer un élément pour l’actu
+      const div = document.createElement("div");
+      div.classList.add("actus-item");
+      div.innerHTML = html;
+      container.appendChild(div);
+    }
+  }
+
+  displayActus();
