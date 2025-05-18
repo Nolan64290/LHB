@@ -10,11 +10,6 @@
     9. Newsletter
 */
 
-document.querySelectorAll('a[href="#"]').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-    });
-});
 // ================================================================================================================
 // Fonction changement de section :
 // ================================================================================================================
@@ -22,7 +17,7 @@ document.querySelectorAll('a[href="#"]').forEach(link => {
 function showSection(sectionId) {
     const sections = document.querySelectorAll('section');
     sections.forEach(section => section.classList.remove('active'));
-
+    
     const activeSection = document.getElementById(sectionId);
     activeSection.classList.add('active');
 
@@ -39,6 +34,13 @@ function showSection(sectionId) {
         // window.scrollTo({ top: none, behavior: 'smooth' });
     }
 }
+
+// Script qui gère le bug de l'auto-scroll
+document.querySelectorAll('a[href="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+    });
+});
 
 
 
