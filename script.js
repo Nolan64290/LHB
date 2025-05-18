@@ -461,8 +461,8 @@ document.getElementById("newsletter-form").addEventListener("submit", function (
 
 
 
-  const repoOwner = "tonNomGitHub";      // Remplace par ton user GitHub
-  const repoName = "tonRepo";             // Remplace par le nom de ton repo
+  const repoOwner = "Nolan64290";      // Remplace par ton user GitHub
+  const repoName = "LHB";             // Remplace par le nom de ton repo
   const folderPath = "actus";             // dossier où sont les fichiers
 
   // Fonction pour récupérer la liste des fichiers dans le dossier 'actus'
