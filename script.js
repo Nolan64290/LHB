@@ -463,7 +463,7 @@ document.getElementById("newsletter-form").addEventListener("submit", function (
 
   const repoOwner = "Nolan64290";      // Remplace par ton user GitHub
   const repoName = "LHB";             // Remplace par le nom de ton repo
-  const folderPath = "actus";             // dossier où sont les fichiers
+  const folderPath = "admin/actus";             // dossier où sont les fichiers
 
   // Fonction pour récupérer la liste des fichiers dans le dossier 'actus'
   async function getFiles() {
@@ -482,25 +482,28 @@ document.getElementById("newsletter-form").addEventListener("submit", function (
   }
 
   // Afficher les actus
-  async function displayActus() {
-    const files = await getFiles();
-    const container = document.getElementById("actus-list");
-    container.innerHTML = "";
+    async function displayActus() {
+    try {
+        const files = await getFiles();
+        console.log("Fichiers:", files);
+        const container = document.getElementById("actus-list");
+        container.innerHTML = "";
 
-    for (const file of files) {
-      const mdContent = await getFileContent(file.url);
-      // Pour extraire le frontmatter YAML (titre, date, image), il faudra un parseur YAML
-      // Ou tu peux simplifier et juste afficher tout le markdown pour commencer
+        for (const file of files) {
+        console.log("Récupération du fichier:", file.name);
+        const mdContent = await getFileContent(file.url);
+        console.log("Contenu markdown:", mdContent);
 
-      // Convertir Markdown en HTML
-      const html = marked.parse(mdContent);
-
-      // Créer un élément pour l’actu
-      const div = document.createElement("div");
-      div.classList.add("actus-item");
-      div.innerHTML = html;
-      container.appendChild(div);
+        const html = marked.parse(mdContent);
+        const div = document.createElement("div");
+        div.classList.add("actus-item");
+        div.innerHTML = html;
+        container.appendChild(div);
+        }
+    } catch (error) {
+        console.error("Erreur lors de l’affichage des actus:", error);
     }
-  }
+    }
+
 
   displayActus();
