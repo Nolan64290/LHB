@@ -296,30 +296,48 @@ function generateBookmarks() {
 // Formulaire de contact (à revoir) :
 // ================================================================================================================
 // Envoie de formulaire
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Empêcher le formulaire de soumettre de manière traditionnelle
-    var formData = new FormData(event.target);
-    var data = {
-        firstName: formData.get('firstName'),
-        lastName: formData.get('lastName'),
-        email: formData.get('email'),
-        message: formData.get('message')
-    };
-    fetch('https://example.com/send-email', { //http://localhost:3000/send-email
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => response.json())
-        .then(result => {
-            alert('Message envoyé avec succès !');
-        })
-        .catch(error => {
-            console.error('Erreur:', error);
-            alert('Il y a eu un problème avec l\'envoi du message.');
-        });
+// document.getElementById('contact-form').addEventListener('submit', function(event) {
+//     event.preventDefault(); // Empêcher le formulaire de soumettre de manière traditionnelle
+//     var formData = new FormData(event.target);
+//     var data = {
+//         firstName: formData.get('firstName'),
+//         lastName: formData.get('lastName'),
+//         email: formData.get('email'),
+//         message: formData.get('message')
+//     };
+//     fetch('https://example.com/send-email', { //http://localhost:3000/send-email
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             },
+//             body: JSON.stringify(data)
+//         })
+//         .then(response => response.json())
+//         .then(result => {
+//             alert('Message envoyé avec succès !');
+//         })
+//         .catch(error => {
+//             console.error('Erreur:', error);
+//             alert('Il y a eu un problème avec l\'envoi du message.');
+//         });
+// });
+
+const form = document.getElementById("contact-form");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: data,
+      headers: { Accept: "application/json" },
+    });
+
+    if (response.ok) {
+      alert("Merci, votre message a bien été envoyé !");
+      form.reset();
+    } else {
+      alert("Une erreur est survenue.");
+    }
 });
 
 
