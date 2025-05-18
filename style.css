@@ -565,7 +565,22 @@ section.active {
 }
 
 /* ===========================Actualités=========================== */
+#actus-container {
+  padding: 2rem;
+}
 
+#actus-container article {
+  margin-bottom: 3rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#actus-container h1,
+#actus-container h2 {
+  color: #e53935;
+}
 
 /* ===========================Calendrier=========================== */
 #calendrier,

@@ -461,49 +461,26 @@ document.getElementById("newsletter-form").addEventListener("submit", function (
 
 
 
-  const repoOwner = "Nolan64290";      // Remplace par ton user GitHub
-  const repoName = "LHB";             // Remplace par le nom de ton repo
-  const folderPath = "admin/actus";             // dossier où sont les fichiers
+const container = document.getElementById("actus-container");
 
-  // Fonction pour récupérer la liste des fichiers dans le dossier 'actus'
-  async function getFiles() {
-    const url = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${folderPath}`;
-    const response = await fetch(url);
-    const files = await response.json();
-    return files.filter(f => f.name.endsWith(".md"));
+  async function loadActus() {
+    const url = "https://api.github.com/repos/Nolan64290/LHB/contents/admin/actus";
+    const res = await fetch(url);
+    const files = await res.json();
+
+    for (const file of files) {
+      if (file.name.endsWith(".md")) {
+        const contentRes = await fetch(file.download_url);
+        const mdText = await contentRes.text();
+
+        // Optionnel : extraire un titre ou date en tête du markdown
+        const html = marked.parse(mdText);
+
+        const article = document.createElement("article");
+        article.innerHTML = html;
+        container.appendChild(article);
+      }
+    }
   }
 
-  // Fonction pour récupérer le contenu d’un fichier Markdown
-  async function getFileContent(url) {
-    const response = await fetch(url);
-    const data = await response.json();
-    // Le contenu est en base64
-    return atob(data.content);
-  }
-
-  // Afficher les actus
-    async function displayActus() {
-    try {
-        const files = await getFiles();
-        console.log("Fichiers:", files);
-        const container = document.getElementById("actus-list");
-        container.innerHTML = "";
-
-        for (const file of files) {
-        console.log("Récupération du fichier:", file.name);
-        const mdContent = await getFileContent(file.url);
-        console.log("Contenu markdown:", mdContent);
-
-        const html = marked.parse(mdContent);
-        const div = document.createElement("div");
-        div.classList.add("actus-item");
-        div.innerHTML = html;
-        container.appendChild(div);
-        }
-    } catch (error) {
-        console.error("Erreur lors de l’affichage des actus:", error);
-    }
-    }
-
-
-  displayActus();
+  loadActus();
