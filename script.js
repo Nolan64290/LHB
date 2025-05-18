@@ -498,7 +498,7 @@ document.getElementById("newsletter-form").addEventListener("submit", function (
           article.style.boxShadow = "0 0 10px rgba(0,0,0,0.1)";
 
           article.innerHTML = `
-            ${meta.image ? `<img src="${meta.image}" alt="Image actu" style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 6px;">` : ""}
+            ${meta.image ? `<img src="${meta.image}" alt="Image actu" style="width: 100%; max-width: 600px; height: auto; object-fit: cover; border-radius: 6px;">` : ""}
             <h3 style="margin-top: 1rem;">${meta.title || "Titre non défini"}</h3>
             ${meta.date ? `<p style="color: #777; font-size: 0.9em;">${new Date(meta.date).toLocaleDateString()}</p>` : ""}
             <div>${marked.parse(content)}</div>
