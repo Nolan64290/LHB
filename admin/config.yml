@@ -2,13 +2,13 @@ backend:
   name: git-gateway
   branch: main  # adapte selon ta branche GitHub principale
 
-media_folder: "/medias"   # dossier où seront stockées les images dans le repo
-public_folder: "/medias"        # URL publique des images
+media_folder: "medias"   # dossier où seront stockées les images dans le repo
+public_folder: "medias"        # URL publique des images
 
 collections:
   - name: "actualites"
     label: "Actualités"
-    folder: "/actus"  # dossier dans le repo où seront stockés les articles
+    folder: "actus"  # dossier dans le repo où seront stockés les articles
     create: true
     slug: "{{slug}}"
     fields:
