@@ -19,7 +19,7 @@ collections:
         widget: "list"
         allow_add: true
         required: false
-        field:
+        fields:
           label: "Image"
           name: "image"
           widget: "image"
