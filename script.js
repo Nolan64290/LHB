@@ -458,68 +458,73 @@ document.getElementById("newsletter-form").addEventListener("submit", function (
 
 
 
-  const container = document.getElementById("actus-container");
+const container = document.getElementById("actus-container");
 
-  async function loadActus() {
-    try {
-      const res = await fetch("https://api.github.com/repos/Nolan64290/LHB/contents/admin/actus");
-      const files = await res.json();
+async function loadActus() {
+  try {
+    const res = await fetch("https://api.github.com/repos/Nolan64290/LHB/contents/admin/actus");
+    const files = await res.json();
 
-      if (!Array.isArray(files)) throw new Error("Dossier actus vide ou erreur API");
+    if (!Array.isArray(files)) throw new Error("Dossier actus vide ou erreur API");
 
-      for (const file of files) {
-        if (file.name.endsWith(".md")) {
-          const mdRes = await fetch(file.download_url);
-          const mdText = await mdRes.text();
+    const articles = [];
 
-          // Extraire le front matter (entre ---)
-          const match = mdText.match(/^---\s*([\s\S]*?)\s*---\s*([\s\S]*)$/);
-          let meta = {};
-          let content = mdText;
+    for (const file of files) {
+      if (file.name.endsWith(".md")) {
+        const mdRes = await fetch(file.download_url);
+        const mdText = await mdRes.text();
 
-          if (match) {
-            const yaml = match[1];
-            content = match[2];
+        const match = mdText.match(/^---\s*([\s\S]*?)\s*---\s*([\s\S]*)$/);
+        let meta = {};
+        let content = mdText;
 
-            yaml.split('\n').forEach(line => {
-              const [key, ...rest] = line.split(':');
-              if (key && rest.length) {
-                meta[key.trim()] = rest.join(':').trim();
-              }
-            });
-          }
+        if (match) {
+          const yaml = match[1];
+          content = match[2];
 
-          const article = document.createElement("article");
-          article.style.padding = "1.5rem";
-          article.style.marginBottom = "2rem";
-          article.style.background = "#ffffff";
-          article.style.border = "1px solid #ddd";
-          article.style.borderRadius = "8px";
-          article.style.boxShadow = "0 0 10px rgba(0,0,0,0.1)";
-
-          article.innerHTML = `
-            <h3 style="margin-top: 1rem;">${meta.title || "Titre non défini"}</h3>
-            ${meta.date ? `<p style="color: #777; font-size: 0.9em;">${new Date(meta.date).toLocaleDateString()}</p>` : ""}
-            <div>${marked.parse(content)}</div>
-            ${meta.image ? `<img src="${meta.image}" alt="Image actu" style="width: 100%; max-width: 400px; height: auto; object-fit: cover; border-radius: 6px;">` : ""}
-          `;
-
-          container.appendChild(article);
+          yaml.split('\n').forEach(line => {
+            const [key, ...rest] = line.split(':');
+            if (key && rest.length) {
+              meta[key.trim()] = rest.join(':').trim();
+            }
+          });
         }
+
+        articles.push({
+          title: meta.title || "Titre non défini",
+          date: meta.date ? new Date(meta.date) : new Date(0),
+          image: meta.image || null,
+          content: content
+        });
       }
-    } catch (error) {
-      console.error("Erreur de chargement des actus :", error);
-      container.innerHTML = "<p>Impossible de charger les actualités.</p>";
     }
+
+    // 🔽 Tri des articles par date décroissante (plus récent en premier)
+    articles.sort((a, b) => b.date - a.date);
+
+    for (const meta of articles) {
+      const article = document.createElement("article");
+      article.style.padding = "1.5rem";
+      article.style.marginBottom = "2rem";
+      article.style.background = "#ffffff";
+      article.style.border = "1px solid #ddd";
+      article.style.borderRadius = "8px";
+      article.style.boxShadow = "0 0 10px rgba(0,0,0,0.1)";
+
+      article.innerHTML = `
+        <h3 style="margin-top: 1rem;">${meta.title}</h3>
+        ${meta.date ? `<p style="color: #777; font-size: 0.9em;">${meta.date.toLocaleDateString()}</p>` : ""}
+        <div>${marked.parse(meta.content)}</div>
+        ${meta.image ? `<img src="${meta.image}" alt="Image actu" style="width: 100%; max-width: 400px; height: auto; object-fit: cover; border-radius: 6px;">` : ""}
+      `;
+
+      container.appendChild(article);
+    }
+  } catch (error) {
+    console.error("Erreur de chargement des actus :", error);
+    container.innerHTML = "<p>Impossible de charger les actualités.</p>";
   }
-
-  loadActus();
-
-//   Fonction de redirection pour création de mdp
-const urlParams = new URLSearchParams(window.location.hash.substring(1)); // Vérifie si un invite_token est présent dans l'URL
-const inviteToken = urlParams.get('invite_token');
-
-if (inviteToken) {
-// Redirige vers la page d'inscription admin avec le token
-window.location.href = `/admin/#/invite?invite_token=${inviteToken}`;
 }
+
+loadActus();
+

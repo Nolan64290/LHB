@@ -15,4 +15,4 @@ collections:
       - { label: "Titre", name: "title", widget: "string", required: false}
       - { label: "Date", name: "date", widget: "datetime", required: false}
       - { label: "Image", name: "image", widget: "image", required: false}
-      - { label: "Contenu", name: "body", widget: "markdown", required: false}
+      - { label: "Contenu", name: "body", widget: "text", required: false}
