@@ -1,27 +1,26 @@
 backend:
   name: git-gateway
-  branch: main  # adapte selon ta branche GitHub principale
+  branch: main
 
-media_folder: "admin/medias"   # dossier où seront stockées les images dans le repo
-public_folder: "admin/medias"        # URL publique des images
+media_folder: "admin/medias"
+public_folder: "admin/medias"
 
 collections:
   - name: "actualites"
     label: "Actualités"
-    folder: "admin/actus"  # dossier dans le repo où seront stockés les articles
+    folder: "admin/actus"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Date", name: "date", widget: "datetime", required: false}
-      - { label: "Titre", name: "title", widget: "string", required: false}
+      - { label: "Date", name: "date", widget: "datetime", required: false }
+      - { label: "Titre", name: "title", widget: "string", required: false }
       - label: "Galerie d'images"
         name: "images"
         widget: "list"
         allow_add: true
         required: false
+        # ⬇️ ICI on enlève le "field:" imbriqué avec name/image
         field:
-          label: "Image"
-          name: "image"
           widget: "image"
           required: false
-      - { label: "Contenu", name: "body", widget: "text", required: false}
+      - { label: "Contenu", name: "body", widget: "text", required: false }
