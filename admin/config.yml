@@ -19,8 +19,9 @@ collections:
         widget: "list"
         allow_add: true
         required: false
-        # ⬇️ ICI on enlève le "field:" imbriqué avec name/image
         field:
+          label: "Image"
+          name: "image"
           widget: "image"
           required: false
       - { label: "Contenu", name: "body", widget: "text", required: false }
