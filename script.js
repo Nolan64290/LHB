@@ -458,6 +458,11 @@ document.getElementById("newsletter-form").addEventListener("submit", function (
 
 
 
+
+
+
+
+
 const container = document.getElementById("actus-container");
 
 async function loadActus() {
@@ -489,26 +494,29 @@ async function loadActus() {
             }
           });
 
-          // Convertir une liste YAML d'images si elle existe
-          if (meta.images?.startsWith("[")) {
-            try {
-              meta.images = JSON.parse(meta.images.replace(/'/g, '"'));
-            } catch (e) {
-              meta.images = [];
+          // Parse YAML correctement si le champ images est en JSON
+          try {
+            const yamlParsed = jsyaml.load(yaml);
+            if (yamlParsed.images) {
+              meta.images = yamlParsed.images;
             }
+          } catch (e) {
+            console.warn("Erreur de parsing YAML:", e);
           }
         }
 
         articles.push({
           title: meta.title || "Titre non défini",
           date: meta.date ? new Date(meta.date) : new Date(0),
-          content: content,
-          images: meta.images || (meta.image ? [meta.image] : []) // support backward compatibilité
+          images: Array.isArray(meta.images)
+            ? meta.images.map(imgObj => typeof imgObj === 'string' ? imgObj : imgObj.image)
+            : [],
+          content: content
         });
       }
     }
 
-    // 🔽 Tri des articles par date décroissante (plus récent en premier)
+    // 🔽 Tri des articles par date décroissante
     articles.sort((a, b) => b.date - a.date);
 
     for (const meta of articles) {
@@ -520,22 +528,18 @@ async function loadActus() {
       article.style.borderRadius = "8px";
       article.style.boxShadow = "0 0 10px rgba(0,0,0,0.1)";
 
-      let imagesHTML = "";
-      if (Array.isArray(meta.images)) {
-        imagesHTML = meta.images
-          .map(img => `<img src="${img}" alt="Image actu" style="width: 100%; max-width: 400px; margin-top: 10px; height: auto; object-fit: cover; border-radius: 6px;">`)
-          .join("");
-      }
-
       article.innerHTML = `
         ${meta.date ? `<p style="color: #777; font-size: 0.9em;">${meta.date.toLocaleDateString()}</p>` : ""}
         <h3 style="margin-top: 1rem;">${meta.title}</h3>
         <div>${marked.parse(meta.content)}</div>
-        ${imagesHTML}
+        ${meta.images.map(img => `
+          <img src="${img}" alt="Image actu" style="width: 100%; max-width: 400px; height: auto; object-fit: cover; border-radius: 6px; margin-top: 1rem;">
+        `).join("")}
       `;
 
       container.appendChild(article);
     }
+
   } catch (error) {
     console.error("Erreur de chargement des actus :", error);
     container.innerHTML = "<p>Impossible de charger les actualités.</p>";
