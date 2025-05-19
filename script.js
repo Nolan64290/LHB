@@ -512,8 +512,8 @@ async function loadActus() {
       article.style.boxShadow = "0 0 10px rgba(0,0,0,0.1)";
 
       article.innerHTML = `
-        <h3 style="margin-top: 1rem;">${meta.title}</h3>
         ${meta.date ? `<p style="color: #777; font-size: 0.9em;">${meta.date.toLocaleDateString()}</p>` : ""}
+        <h3 style="margin-top: 1rem;">${meta.title}</h3>
         <div>${marked.parse(meta.content)}</div>
         ${meta.image ? `<img src="${meta.image}" alt="Image actu" style="width: 100%; max-width: 400px; height: auto; object-fit: cover; border-radius: 6px;">` : ""}
       `;
