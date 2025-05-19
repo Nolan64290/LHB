@@ -511,17 +511,18 @@ try {
 
     for (const meta of articles) {
     const article = document.createElement("article");
-    article.style.padding = "1.5rem";
-    article.style.marginBottom = "2rem";
-    article.style.background = "#ffffff";
-    article.style.border = "1px solid #ddd";
-    article.style.borderRadius = "8px";
-    article.style.boxShadow = "0 0 10px rgba(0,0,0,0.1)";
+    article.classList.add("actu-card");
+    // article.style.padding = "1.5rem";
+    // article.style.marginBottom = "2rem";
+    // article.style.background = "#ffffff";
+    // article.style.border = "1px solid #ddd";
+    // article.style.borderRadius = "8px";
+    // article.style.boxShadow = "0 0 10px rgba(0,0,0,0.1)";
 
     let imagesHTML = "";
     if (Array.isArray(meta.images)) {
         imagesHTML = meta.images
-        .map(img => `<img src="${img}" alt="Image actu" style="width: 100%; max-width: 400px; margin-top: 10px; height: auto; object-fit: cover; border-radius: 6px;">`)
+        .map(img => `<img src="${img}" alt="Image actu" class="actu-image">`)
         .join("");
     }
 
