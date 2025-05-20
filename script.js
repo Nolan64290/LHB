@@ -8,6 +8,7 @@
     7. Gestion de la gallerie
     8. Espace reservé
     9. Newsletter
+    10. Gestion des actualités
 */
 
 // ================================================================================================================
@@ -453,29 +454,19 @@ document.getElementById("newsletter-form").addEventListener("submit", function (
 
 
 
+// ================================================================================================================
+// Gestion des actualités :
+// ================================================================================================================
+// Redirige sur la page de register de admin à partir du lien envoyé par mail lors d'une invitation si il y a un invite_token sur la page
+const urlParams = new
+URLSearchParams(window.location.hash.substring(1));
+const inviteToken = urlParams.get('invite_token');
+if(inviteToken) {
+    window.location.href = `/admin/#/invite?invite_token=${inviteToken}`;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Affiche les actus du format .md => .html
 const container = document.getElementById("actus-container");
-
 async function loadActus() {
 try {
     const res = await fetch("https://api.github.com/repos/Nolan64290/LHB/contents/admin/actus");
