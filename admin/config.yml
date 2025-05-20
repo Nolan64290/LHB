@@ -17,6 +17,7 @@ collections:
       - label: "Galerie d'images"
         name: "images"
         widget: "list"
+        hint: "Ajoutez jusqu'à 4 images maximum."
         allow_add: true
         max: 4
         required: false
