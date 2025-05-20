@@ -80,26 +80,30 @@
             <h2>Programme du weekend</h2>
             <i id="programme-bt" class="fa-solid fa-angles-down pulse" style="color: yellow;" onclick="programme()"></i>
             <div class="toggle-div" id="toggle-div">
-                <script>
-                    fetch('/admin/programme.yml')
-                    .then(res => res.text())
-                    .then(text => jsyaml.load(text))
-                    .then(data => {
-                    const container = document.getElementById('toggle-div');
-                    container.innerHTML = '';
-                    data.images.forEach(item => {
-                        const img = document.createElement('img');
-                        img.src = item.image;
-                        container.appendChild(img);
-                    });
-                    });
-                </script>
                 <!-- <img src="admin/medias/P_DOMICILE.jpg" alt="Programme du weekend à domicile"> -->
                 <!-- <img src="admin/medias/P_EXTERIEUR.jpg" alt="Programme du weekend à l'extérieur"> -->
                 <!-- <img src="assets/Plateau EDH.png" alt="Programme du weekend pour l'école de hand"> -->
                 <!-- <img src="https://lh3.googleusercontent.com/d/1ZnJwON826eKkDJkMw_uRWSIP96GWSHw-" alt="Affiche du week-end">
                 <img src="https://lh3.googleusercontent.com/d/1Ib-h2Jor0bYDSWgpyNsaPEj6LmWCTJqA" alt="Affiche du week-end"> -->
             </div>
+            <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+            <script>
+            fetch('/admin/programme.yml')
+                .then(res => res.text())
+                .then(text => jsyaml.load(text))
+                .then(data => {
+                const container = document.getElementById('toggle-div');
+                container.innerHTML = '';
+                data.images.forEach(obj => {
+                    const img = document.createElement('img');
+                    img.src = obj.image;
+                    img.alt = "Programme du weekend";
+                    container.appendChild(img);
+                });
+                })
+                .catch(err => console.error("Erreur lors du chargement du programme:", err));
+            </script>
+
             <hr id="trait3" style="background-color: white; width: 80%; height: 4px; margin-top: 3%;">
         </div>
         <!-- Le club -->

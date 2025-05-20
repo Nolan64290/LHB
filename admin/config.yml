@@ -33,7 +33,7 @@ collections:
     files:
       - file: "admin/programme.yml"
         label: "Images du programme"
-        name: "images_programme"
+        name: "programme_images"
         fields:
           - label: "Images"
             name: "images"
