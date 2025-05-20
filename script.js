@@ -534,11 +534,16 @@ try {
     }
 
     article.innerHTML = `
-        ${meta.date ? `<p style="color: #777; font-size: 0.9em;">${meta.date.toLocaleDateString()}</p>` : ""}
-        <h3 style="margin-top: 1rem;">${meta.title}</h3>
-        <div>${marked.parse(meta.content)}</div>
-        ${imagesHTML}
+    <div class="actu-text">
+        ${meta.date ? `<p class="actu-date">${meta.date.toLocaleDateString()}</p>` : ""}
+        <h3 class="actu-title">${meta.title}</h3>
+        <div class="actu-content">${marked.parse(meta.content)}</div>
+    </div>
+    <div class="actu-images">
+        ${meta.images.map(img => `<img src="${img}" alt="Image actu" class="actu-image">`).join("")}
+    </div>
     `;
+
 
     container.appendChild(article);
     }

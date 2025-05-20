@@ -424,6 +424,35 @@
         font-size: 12px;
     }
 
+
+    /* ===========================Actualités=========================== */
+    .actu-card {
+        flex-direction: column;         /* empile le texte et les images */
+        width: 85%;                     /* un peu plus large sur mobile */
+        padding: 1rem;
+    }
+    .actu-text {
+        width: 100%;
+        min-width: auto;
+        border-radius: 10px;
+    }
+    .actu-images {
+        grid-template-columns: 1fr;     /* images empilées sur une colonne */
+        width: 100%;
+        flex: unset;
+        max-width: 100%;
+    }
+    .actu-image {
+        aspect-ratio: 16/9;             /* un peu plus étiré pour mobile */
+    }
+    .actu-title {
+        font-size: 1.2rem;
+    }
+    .actu-content {
+        font-size: 0.95rem;
+    }
+
+
     /* ===========================Calendrier=========================== */
     
     #calendrier,
