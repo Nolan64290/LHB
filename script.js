@@ -131,11 +131,14 @@ function toggleSousMenu() {
 let index = 1;
 function programme() {
     var div = document.getElementById("toggle-div");
+    var bt = document.getElementById("programme-bt");
     if (index === 1) {
+        bt.classList.remove('pulse');
         div.classList.add('expanded');
         index = 2;
     } else if (index === 2) {
-        div.classList.remove('expanded')
+        bt.classList.add('pulse');
+        div.classList.remove('expanded');
         index = 1;
     }
 }
