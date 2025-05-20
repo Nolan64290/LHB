@@ -435,7 +435,7 @@ document.getElementById("password-input").addEventListener("keydown", function(e
 document.getElementById("newsletter-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const email = document.getElementById("email").value;
+    const email = document.getElementById("email2").value;
     const message = document.getElementById("message");
 
     fetch("https://script.google.com/macros/s/AKfycbw5DilHQd6edPO7xagggV0DfHZZJBovQEbp9-Nl-4jVvuWHZw2o7RKax7TmyrS734pV1g/exec", {
