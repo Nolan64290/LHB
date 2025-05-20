@@ -462,7 +462,7 @@ const urlParams = new
 URLSearchParams(window.location.hash.substring(1));
 const inviteToken = urlParams.get('invite_token');
 if(inviteToken) {
-    window.location.href = `/admin/#/invite?invite_token=${inviteToken}`;
+    window.location.replace(`/admin/#/invite?invite_token=${inviteToken}`);
 }
 
 // Affiche les actus du format .md => .html
