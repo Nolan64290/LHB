@@ -299,6 +299,9 @@
         margin-top: 6%;
         margin-bottom: 2%;
     }
+    #trait3 {
+        display: none;
+    }
     .box-partenaires {
         order: 4;
         padding-top: 2%;
