@@ -662,7 +662,8 @@ section.active {
     text-align: center;
 }
 .team iframe {
-    width: 80%;
+    width: 90%;
+    margin-top: 2%;
     height: 100vh;
     background-color: white;
     border: none;

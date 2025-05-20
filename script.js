@@ -258,6 +258,8 @@ function changeDiv(n, val) { // val étant la valeur pour savoir si c'est calend
         // console.log(currentDivIndexEquipes);
         var newCurrentDiv = document.getElementById(currentDivIndexEquipes);
         newCurrentDiv.classList.add('currentDiv');
+        newCurrentDiv.scrollIntoView({ behavior: "smooth" });
+
     } else {
         var currentDiv = document.getElementById(currentDivIndexCalendrier);
         currentDiv.classList.remove('currentDiv');
@@ -265,6 +267,8 @@ function changeDiv(n, val) { // val étant la valeur pour savoir si c'est calend
         // console.log(currentDivIndexCalendrier);
         var newCurrentDiv = document.getElementById(currentDivIndexCalendrier);
         newCurrentDiv.classList.add('currentDiv');
+        newCurrentDiv.scrollIntoView({ behavior: "smooth" });
+
     }
 }
 
