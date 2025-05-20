@@ -27,3 +27,20 @@ collections:
             widget: "image"
             required: false
       - { label: "Contenu", name: "body", widget: "text", required: false }
+
+  - name: "programme"
+    label: "Programme du weekend"
+    files:
+      - file: "admin/programme.yml"
+        label: "Images du programme"
+        name: "images_programme"
+        fields:
+          - label: "Images"
+            name: "images"
+            widget: list
+            allow_add: true
+            max: 3
+            fields:
+              - label: "Image"
+                name: "image"
+                widget: image
