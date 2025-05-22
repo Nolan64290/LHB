@@ -9,6 +9,7 @@
     8. Espace reservé
     9. Newsletter
     10. Gestion des actualités
+    11. Gestion des images programme du we
 */
 
 // ================================================================================================================
@@ -551,3 +552,24 @@ try {
 }
 
 loadActus();
+
+
+
+// ================================================================================================================
+// Gestion des images programme du we :
+// ================================================================================================================
+fetch('/admin/programme.yml')
+    .then(res => res.text())
+    .then(text => jsyaml.load(text))
+    .then(data => {
+    const container = document.getElementById('toggle-div');
+    container.innerHTML = '';
+    data.images.forEach(obj => {
+        const img = document.createElement('img');
+        img.src = obj.image;
+        img.alt = "Programme du weekend";
+        container.appendChild(img);
+    });
+    })
+    .catch(err => console.error("Erreur lors du chargement du programme:", err));
+            
