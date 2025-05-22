@@ -270,6 +270,11 @@ function changeDiv(n, val) { // val étant la valeur pour savoir si c'est calend
         newCurrentDiv.classList.add('currentDiv');
         newCurrentDiv.scrollIntoView({ behavior: "smooth" });
 
+        var iframe = newCurrentDiv.querySelector('iframe');
+        if (iframe && !iframe.src) {
+            iframe.src = iframe.dataset.src;
+        }
+
     }
 }
 
