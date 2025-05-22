@@ -10,14 +10,27 @@
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
     <!-- Script pour enlever la catégorie programme pour les roles autres que "admin" -->
     <script>
-      const roles = window.netlifyIdentity.currentUser().app_metadata.roles || [];
-      if (!roles.includes('admin')) {
-        // Trouve le menu ou onglet 'Programme du weekend' et masque-le
-        const programmeTab = [...document.querySelectorAll('a')].find(el => el.textContent.includes('Programme du weekend'));
-        if (programmeTab) programmeTab.style.display = 'none';
-      }
+      window.netlifyIdentity.on('init', user => {
+        if (user) {
+          const roles = user.app_metadata.roles || [];
 
+          if (!roles.includes('admin')) {
+            const interval = setInterval(() => {
+              const links = [...document.querySelectorAll('a')];
+              const programmeTab = links.find(el => el.textContent.includes('Programme du weekend'));
+
+              if (programmeTab) {
+                programmeTab.style.display = 'none';
+                clearInterval(interval); // Arrête de chercher une fois masqué
+              }
+            }, 500); // vérifie toutes les 500ms (donne le temps au DOM de charger)
+          }
+        }
+      });
+
+      window.netlifyIdentity.init();
     </script>
+
 
 </body>
 </html>
