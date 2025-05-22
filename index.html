@@ -70,7 +70,7 @@
         <div class="newsletter-container">
             <h3>Inscrivez-vous à notre Newsletter !</h3>
             <form id="newsletter-form">
-                <input type="email" name="email" id="email2" placeholder="Votre email" required />
+                <input type="email" name="email" id="email2" placeholder="Votre email" required autocomplete="email"/>
                 <button type="submit">S'inscrire</button>
             </form>
         </div>
@@ -426,7 +426,7 @@
         <div id="login-form">
             <h2>Espace réservé</h2>
             <p>Mot de passe requis :</p>
-            <input type="password" id="password-input" placeholder="Mot de passe">
+            <input type="password" id="password-input" placeholder="Mot de passe" autocomplete="current-password">
             <button onclick="checkPassword()">Connexion</button>
             <p id="login-error" style="color: red; display: none;">Mot de passe incorrect</p>
         </div>
@@ -718,16 +718,16 @@
                 <div class="form-container">
                     <form id="contact-form" name="Formulaire LHB" method="POST" data-netlify="true">
                         <label for="firstName">Prénom :</label>
-                        <input type="text" id="firstName" name="firstName" required>
+                        <input type="text" id="firstName" name="firstName" required autocomplete="given-name">
 
                         <label for="lastName">Nom :</label>
-                        <input type="text" id="lastName" name="lastName" required>
+                        <input type="text" id="lastName" name="lastName" required autocomplete="family-name">
 
                         <label for="email">Email :</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" required autocomplete="email">
 
                         <label for="message">Message :</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <textarea id="message" name="message" rows="5" required autocomplete="off"></textarea>
                         <br>
                         <button type="submit">Envoyer</button>
                     </form>
