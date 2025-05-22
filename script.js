@@ -11,6 +11,18 @@
     10. Gestion des actualités
 */
 
+// Effacement des console.log externe (intégration de sites)
+const originalLog = console.log;
+    console.log = function (...args) {
+    const blacklist = [
+        "Loaded 17 block types",
+        "Mounted Smartfire Block Tree"
+    ];
+    if (!blacklist.some(msg => args[0]?.includes?.(msg))) {
+        originalLog.apply(console, args);
+    }
+};
+
 // ================================================================================================================
 // Fonction changement de section :
 // ================================================================================================================
