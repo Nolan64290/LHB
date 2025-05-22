@@ -8,6 +8,16 @@
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <!-- Script pour enlever la catégorie programme pour les roles autres que "admin" -->
+    <script>
+      const roles = window.netlifyIdentity.currentUser().app_metadata.roles || [];
+      if (!roles.includes('admin')) {
+        // Trouve le menu ou onglet 'Programme du weekend' et masque-le
+        const programmeTab = [...document.querySelectorAll('a')].find(el => el.textContent.includes('Programme du weekend'));
+        if (programmeTab) programmeTab.style.display = 'none';
+      }
+
+    </script>
 
 </body>
 </html>
