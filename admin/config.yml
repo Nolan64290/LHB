@@ -38,7 +38,6 @@ collections:
       update: ["admin"]
       create: ["admin"]
       delete: ["admin"]
-    view_filters: false
     editor:
       preview: false
     files:
