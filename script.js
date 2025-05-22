@@ -192,7 +192,7 @@ const sponsorImages = [
     "assets/partenaires/LIENNE STEPHANE.webp",
     "assets/partenaires/lopez.webp",
     "assets/partenaires/macon yannick lassalle-001.webp",
-    "assets/partenaires/manutech-Logo.webp",
+    "assets/partenaires/manutech-Logo.png",
     "assets/partenaires/Pedelaborde.webp",
     "assets/partenaires/phillippe fleur.png.webp",
     "assets/partenaires/point P.webp",
