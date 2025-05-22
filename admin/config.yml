@@ -11,6 +11,10 @@ collections:
     folder: "admin/actus"
     create: true
     slug: "{{slug}}"
+    access:
+      update: ["admin", "editeur"]
+      create: ["admin", "editeur"]
+      delete: ["admin", "editeur"]
     fields:
       - { label: "Date", name: "date", widget: "datetime", required: false }
       - { label: "Titre", name: "title", widget: "string", required: false }
@@ -30,6 +34,10 @@ collections:
 
   - name: "programme"
     label: "Programme du weekend"
+    access:
+      update: ["admin"]
+      create: ["admin"]
+      delete: ["admin"]
     files:
       - file: "admin/programme.yml"
         label: "Images du programme"
