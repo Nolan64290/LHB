@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light only"> <!-- Pas de darkmod -->
+    <!-- Filtrer les console log des cdn -->
+     <script>filterConsoleLog();</script>
     <!-- Liens Fontawesome -->
     <link xmlns="http://www.w3.org/1999/xhtml" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script src="https://kit.fontawesome.com/2ace140b7d.js" crossorigin="anonymous"></script>
@@ -728,7 +730,7 @@
                         <input type="email" id="email" name="email" required>
 
                         <label for="message">Message :</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <textarea  name="message" rows="5" required></textarea>
                         <br>
                         <button type="submit">Envoyer</button>
                     </form>
