@@ -17,7 +17,7 @@ html {
 
 header {
     /* Background */
-    background-image: url(assets/Header_BG.png);
+    background-image: url(assets/fond_header.png);
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -131,7 +131,7 @@ header {
 /* ===========================CORPS=========================== */
 section.corps {
     /* Background */
-    background-image: url(assets/fond1.png);
+    background-image: url(assets/fond.webp);
     background-size: cover;
     background-position: right;
     /* Display */
@@ -252,7 +252,7 @@ section.active {
 }
 .toggle-div {
     /* Background */
-    background-image: url(assets/Fond\ programme.png);
+    background-image: url(assets/fond_programme.webp);
     background-size: cover;
     /* Display */
     display: flex;

@@ -7,7 +7,7 @@
 @media (max-width: 767px) {
     /* ===========================All=========================== */
     section.corps {
-        background-image: url(assets/fond1.png);
+        background-image: url(assets/fond.webp);
         background-size: cover;
         flex-direction: column;
         background-position: right;
