@@ -36,6 +36,7 @@ header {
 .logo a img {
     padding-top: 2%;
     width: 100px;
+    height: 100px;
     transition: transform .1s;
 }
 .logo a img:hover {
@@ -115,6 +116,7 @@ header {
 }
 .reseaux img {
     width: 60px;
+    height: 60px;
     transition: all 0.2s ease-in-out
 }
 .instagram:hover {
@@ -139,7 +141,7 @@ section.corps {
     flex-direction: column;
     /* Sizes */
     height: max-content;
-    width: auto;
+    width: 100%;
     padding-bottom: 5%;
 }
 
@@ -274,6 +276,7 @@ section.active {
 .toggle-div img {
     /* height: 100%; */
     width: 33%;
+    height: 33%;
 }
 
 /* Le club */
@@ -329,6 +332,7 @@ section.active {
     /* Sizes */
     width: 110%;
     height: auto;
+    aspect-ratio: 8 / 5;
     /* Other */
     transition: transform 0.2s;
     /* cursor: pointer; */
@@ -364,6 +368,8 @@ section.active {
 }
 #bureau img {
     height: 80vh;
+    width: auto;
+    aspect-ratio: 437 / 310;
 }
 
 
@@ -515,6 +521,7 @@ section.active {
     user-select: none;
     width: 100%;
     height: auto;
+    aspect-ratio: 8 / 5;
 }
 
 
@@ -804,6 +811,7 @@ h2 {
 }
 .gallery img {
     width: 100%;
+    height: 100%;
     /* Other */
     transition: transform 0.2s;
     cursor: pointer;
@@ -888,6 +896,7 @@ h2 {
 .boutique img {
     width: 1200px;
     height: auto;
+    aspect-ratio: 620 / 877;
 }
 .boutique p {
     width: 1500px;
@@ -916,6 +925,8 @@ h2 {
 }
 .logos_sport img {
     width: 200px;
+    height: auto;
+    aspect-ratio: 256 / 135;
 }
 
 
@@ -1045,6 +1056,7 @@ footer .right p {
 
 footer img {
     width: 200px;
+    height: 200px;
 }
 
 footer p {
