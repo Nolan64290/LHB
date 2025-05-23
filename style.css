@@ -236,6 +236,18 @@ section.active {
     transform-origin: center;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 1.3);
 }
+#programme-bt{
+        /* Text */
+    text-align: center;
+    font-size: 1.6em;
+    /* Sizes */
+    width: 40px;
+    margin-top: 0%;
+    /* Other */
+    transition: all 0.2s ease-in-out;
+    transform-origin: center;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 1.3);
+}
 .pulse {
     animation: pulse 2s infinite ease-in-out;
 }
@@ -357,6 +369,11 @@ section.active {
 }
 .box-partenaires a:hover {
     background-color: rgba(185, 185, 185, 0.226);
+}
+#partenaire-plus {
+    width: 10.36px;
+    height: 19.72px;
+    transform: translateY(4px);
 }
 
 
@@ -955,10 +972,25 @@ h2 {
     font-size: 1.9em;
     padding: 1%;
     transition: all 0.2s ease-out;
+    width: 40px;
+    height: 50px;
 }
 .contactez-nous .infos a:hover {
     color: red;
     transition: all 0.2s ease-out;
+}
+.font-style-contact {
+    width: 28.813px;
+    height: 28.797px;
+    transform: translateY(6px);
+}
+.font-style-reseaux {
+    width: 50px;
+    height: 60px;
+}
+.icone-swap-red {
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 /* Formulaire */
@@ -1096,6 +1128,48 @@ footer a:hover {
     color: red;
     transition: all 0.2s ease-out;
 }
+
+.font-style-footer {
+    width: 16.64px;
+    height: 16.64px;
+    transform: translateY(3px);
+}
+.font-style-footer-reseaux {
+    width: 35px;
+    height: 45px;
+    transform: translateY(7px);
+}
+.font-style-loc {
+     width: 12.48px;
+     height: 17.64px;
+     transform: translateY(2px);
+}
+.image-container {
+  position: relative;
+  display: inline-block;
+  width: 12.48px;
+  height: 17.64px;
+  transform: translateX(-50px);
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease;
+}
+
+.img-hover {
+  opacity: 0;
+}
+.swap-wrapper:hover .img-hover {
+  opacity: 1;
+}
+
+.swap-wrapper:hover .img-original {
+  opacity: 0;
+}
+
 
 hr {
     /* Background */

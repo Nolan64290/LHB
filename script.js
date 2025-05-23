@@ -331,6 +331,33 @@ const form = document.getElementById("contact-form");
     }
 });
 
+// Changement des icones des réseaux de la page formulaire
+document.querySelectorAll('.icone-swap-red').forEach(img => {
+    const originalSrc = img.src;
+    const hoverSrc = img.dataset.hover;
+    img.addEventListener('mouseover', () => {
+        img.src = hoverSrc;
+    });
+    img.addEventListener('mouseout', () => {
+        img.src = originalSrc;
+    });
+});
+
+// Pareil pour le footer
+document.querySelectorAll('.swap-wrapper').forEach(link => {
+  const img = link.querySelector('.icone-swap-red');
+  if (!img) return;
+  const originalSrc = img.src;
+  const hoverSrc = img.dataset.hover;
+  link.addEventListener('mouseenter', () => {
+    img.src = hoverSrc;
+  });
+
+  link.addEventListener('mouseleave', () => {
+    img.src = originalSrc;
+  });
+});
+
 
 
 // ================================================================================================================

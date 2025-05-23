@@ -43,7 +43,7 @@
         <!-- Menu -->
         <div class="menu">
             <ul>
-                <li class="menu-button"><a href="#" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></a></li>
+                <li class="menu-button"><a href="#" onclick="toggleMenu()"><img src="assets/icones/bars-solid.svg" alt=""></a></li>
                 <li class="has-sous-nav onglet" id = "club-bt">
                     <a id="club-a-bt" class="prem" href="#" onclick="toggleSousMenu()">Le Club</a>
                     <ul class="sous-nav" id="sous-nav">
@@ -84,7 +84,7 @@
         <!-- Programme du Weekend -->
         <div class="programme" id="Programme">
             <h2>Programme du weekend</h2>
-            <i id="programme-bt" class="fa-solid fa-angles-down pulse" style="color: yellow;" onclick="programme()"></i>
+            <img id="programme-bt" class="pulse" src="assets/icones/angles-down-solid.svg" alt="" type="svg">
             <div class="toggle-div" id="toggle-div">
                 <!-- <img src="admin/medias/P_DOMICILE.jpg" alt="Programme du weekend à domicile"> -->
                 <!-- <img src="admin/medias/P_EXTERIEUR.jpg" alt="Programme du weekend à l'extérieur"> -->
@@ -119,7 +119,7 @@
                 <img id="sponsor4" alt="Partenaires n°4">
             </div>
             <div>
-                <a href="#" onclick="showSection('partenaires')">Voir plus  <i xmlns="http://www.w3.org/1999/xhtml" class="fa fa-caret-right"></i></a>
+                <a href="#" onclick="showSection('partenaires')">Voir plus  <img id="partenaire-plus" src="assets/icones/caret-right-solid.svg" alt=""></a>
             </div>
         </div>
     </section>
@@ -598,11 +598,11 @@
         <div class="contactez-nous">
             <div class="infos">
                 <p>
-                    <i class="fa-solid fa-phone"></i> 06.73.57.25.27 <br><i class="fa-solid fa-phone"></i> 06.79.50.99.39 <br><i class="fa-solid fa-envelope"></i> elsapouquet.lhb@outlook.fr
+                    <img src="assets/icones/phone-solid-white.svg" class="font-style-contact" alt="Icone téléphone"> 06.73.57.25.27 <br><img src="assets/icones/phone-solid-white.svg" class="font-style-contact" alt="Icone téléphone"> 06.79.50.99.39 <br><img src="assets/icones/envelope-solid-white.svg" class="font-style-contact" alt="icone enveloppe"> elsapouquet.lhb@outlook.fr
                 </p>
                 <p>
-                    <br><a href="https://www.facebook.com/lasseubehandball"><i class="fa-brands fa-facebook-f"></i></a> &nbsp;&nbsp;
-                    <a href="https://www.instagram.com/lasseube_handball/"><i class="fa-brands fa-instagram"></i></a>
+                    <br><a href="https://www.facebook.com/lasseubehandball"><img src="assets/icones/facebook-brands-white.svg" data-hover="assets/icones/facebook-brands-red.svg" class="font-style-reseaux icone-swap-red" alt="Icone Facebook"></a> &nbsp;&nbsp;
+                    <a href="https://www.instagram.com/lasseube_handball/"><img src="assets/icones/instagram-brands-white.svg" data-hover="assets/icones/instagram-brands-red.svg" class="font-style-reseaux icone-swap-red" alt="Icone Instagram"></a>
                 </p>
             </div>
 
@@ -636,17 +636,28 @@
             <img src="assets/Logo.webp" alt="Logo du club">
             <div class="contact">
                 <p>
-                    <i class="fa-solid fa-phone"></i> 06.73.57.25.27 <br><i class="fa-solid fa-phone"></i> 06.79.50.99.39 <br><i class="fa-solid fa-envelope"></i><br> elsapouquet.lhb@outlook.fr
+                    <img src="assets/icones/phone-solid-black.svg" class="font-style-footer" alt="Icone téléphone"> 06.73.57.25.27 <br><img src="assets/icones/phone-solid-black.svg" class="font-style-footer" alt="Icone téléphone"> 06.79.50.99.39 <br><img src="assets/icones/envelope-solid-black.svg" class="font-style-footer" alt="Icone enveloppe"><br> elsapouquet.lhb@outlook.fr
                 </p>
                 <p>
-                    <br><a href="https://www.facebook.com/lasseubehandball"><i class="fa-brands fa-facebook-f"></i></a> &nbsp;&nbsp;
-                    <a href="https://www.instagram.com/lasseube_handball/"><i class="fa-brands fa-instagram"></i></a>
+                    <br><a href="https://www.facebook.com/lasseubehandball"><img src="assets/icones/facebook-brands-black.svg" data-hover="assets/icones/facebook-brands-red.svg" class="font-style-footer-reseaux icone-swap-red" alt="Icone facebook"></a> &nbsp;&nbsp;
+                    <a href="https://www.instagram.com/lasseube_handball/"><img src="assets/icones/instagram-brands-black.svg" data-hover="assets/icones/instagram-brands-red.svg" class="font-style-footer-reseaux icone-swap-red" alt="Icone instagram"></a>
                 </p>
             </div>
         </div>
         <hr>
         <div class="right">
-            <a href="https://maps.app.goo.gl/XHGgzYvcUr2BwSN59"><p><i class="fa-solid fa-location-dot"></i> <br>Salle municipale polyvalente <br>Rue des Lavandières <br>64290 LASSEUBE</p></a>
+            <a href="https://maps.app.goo.gl/XHGgzYvcUr2BwSN59" class="swap-wrapper">
+            <div class="image-container">
+                <img src="assets/icones/location-dot-solid.svg" class="img-original font-style-loc" alt="Icone location">
+                <img src="assets/icones/location-dot-solid-red.svg" class="img-hover font-style-loc" alt="Icone location hover">
+            </div>
+            <p>
+                Salle municipale polyvalente <br>
+                Rue des Lavandières <br>
+                64290 LASSEUBE
+            </p>
+            </a>
+
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d432.18455539321286!2d-0.47634571359044714!3d43.22250139474528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5652452c82990b%3A0x14610ca04af36299!2sSalle%20Municipale%20Polyvalente!5e0!3m2!1sfr!2sfr!4v1721658578413!5m2!1sfr!2sfr"
                 width="200px" height="200px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
