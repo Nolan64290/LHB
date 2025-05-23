@@ -681,8 +681,18 @@
     footer .left {
         order: 3;
     }
-    footer .left img {
+    .font-style-footer {
+        width: 12.813px;
+        height: 12.797px;
+    }
+    #logo-footer {
         width: 130px;
+        height: 130px;
+    }
+    .font-style-footer-reseaux {
+        width: 25px;
+        height: 35px;
+        transform: translateY(7px);
     }
     footer .contact {
         display: flex;
@@ -695,6 +705,9 @@
     .contact p {
         margin: 0;
         font-size: 1em;
+    }
+    .font-style-loc {
+        transform: translateX(-29px);
     }
     .contact p:first-of-type br:last-of-type {
         display: none;
