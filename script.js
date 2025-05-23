@@ -153,6 +153,7 @@ fetch('/admin/programme.yml')
         const img = document.createElement('img');
         img.src = obj.image;
         img.alt = "Programme du weekend";
+        img.loading = "lazy";
         container.appendChild(img);
     });
     })
