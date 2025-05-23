@@ -651,6 +651,16 @@
     .contactez-nous .infos p:nth-of-type(2) i {
         margin-top: 7%;
     }
+    .font-style-contact {
+        width: 20.81px;
+        height: 20.80px;
+        transform: translateY(4px);
+    }
+    .font-style-reseaux {
+        margin-top: 6%;
+        width: 35px;
+        height: 55px;
+    }
 
     .formulaire {
         width: 100%;
