@@ -12,7 +12,7 @@
 */
 
 // ================================================================================================================
-// Fonction changement de section :
+// 1. Fonction changement de section :
 // ================================================================================================================
 // Fonction qui gère l'affichage des différentes pages
 function showSection(sectionId) {
@@ -46,7 +46,7 @@ document.querySelectorAll('a[href="#"]').forEach(link => {
 
 
 // ================================================================================================================
-// Gestion du Menu de navigation :
+// 2. Gestion du Menu de navigation :
 // ================================================================================================================
 // Fonction qui permet de désactiver le bouton 'le club' en mode pc
 document.addEventListener("DOMContentLoaded", function () {
@@ -126,7 +126,7 @@ function toggleSousMenu() {
 
 
 // ================================================================================================================
-// Accueil
+// 3. Accueil
 // ================================================================================================================
 // Fonction permettant de déplier le programme du WE
 let index = 1;
@@ -258,7 +258,7 @@ randomSponsors.forEach((image, index) => {
 
 
 // ================================================================================================================
-// Equipes et Calendrier
+// 4. Equipes et Calendrier
 // ================================================================================================================
 // Equipe va de 0 à 100 et Calendrier de 101 à +200
 // Changediv récupère le numéro de la div à afficher et en fonction de val
@@ -297,7 +297,7 @@ function changeDiv(n, val) { // val étant la valeur pour savoir si c'est calend
 
 
 // ================================================================================================================
-// Téléchargement de favoris :
+// 5. Téléchargement de favoris :
 // ================================================================================================================
 function generateBookmarks() {
     const checkboxes = document.querySelectorAll('#favorites-form input[type="checkbox"]:checked');
@@ -325,7 +325,7 @@ function generateBookmarks() {
 
 
 // ================================================================================================================
-// Formulaire de contact (à revoir) :
+// 6. Formulaire de contact (à revoir) :
 // ================================================================================================================
 // Envoie de formulaire
 const form = document.getElementById("contact-form");
@@ -376,7 +376,7 @@ document.querySelectorAll('.swap-wrapper').forEach(link => {
 
 
 // ================================================================================================================
-// Gestion de la gallerie :
+// 7. Gestion de la gallerie :
 // ================================================================================================================
 // Sélection des éléments
 const modal = document.getElementById("imageModal");
@@ -445,7 +445,7 @@ if (closeBtn) {
 
 
 // ================================================================================================================
-// Espace reservé :
+// 8. Espace reservé :
 // ================================================================================================================
 async function hashPassword(password) {
     const encoder = new TextEncoder();
@@ -478,7 +478,7 @@ document.getElementById("password-input").addEventListener("keydown", function(e
 
 
 // ================================================================================================================
-// Newsletter :
+// 9. Newsletter :
 // ================================================================================================================
 document.getElementById("newsletter-form").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -504,7 +504,7 @@ document.getElementById("newsletter-form").addEventListener("submit", function (
 
 
 // ================================================================================================================
-// Gestion des actualités :
+// 10. Gestion des actualités :
 // ================================================================================================================
 // Redirige sur la page de register de admin à partir du lien envoyé par mail lors d'une invitation si il y a un invite_token sur la page
 const urlParams = new
