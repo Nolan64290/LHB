@@ -268,7 +268,7 @@ var currentDivIndexEquipes = 0;
 var currentDivIndexCalendrier = 101;
 function changeDiv(n, val) { // val étant la valeur pour savoir si c'est calendrier ou equipe
     console.log(val);
-    if (val == 0){
+    if (val == 0){ // Cas 'Équipes'
         var currentDiv = document.getElementById(currentDivIndexEquipes);
         currentDiv.classList.remove('currentDiv');
         currentDivIndexEquipes = n;
@@ -277,20 +277,20 @@ function changeDiv(n, val) { // val étant la valeur pour savoir si c'est calend
         newCurrentDiv.classList.add('currentDiv');
         newCurrentDiv.scrollIntoView({ behavior: "smooth" });
 
-    } else {
+    } else { // Cas 'Calendrier'
         var currentDiv = document.getElementById(currentDivIndexCalendrier);
         currentDiv.classList.remove('currentDiv');
+        document.querySelectorAll('#calendrier iframe').forEach(iframe => {
+            iframe.removeAttribute('src');
+        });
         currentDivIndexCalendrier = n;
-        // console.log(currentDivIndexCalendrier);
         var newCurrentDiv = document.getElementById(currentDivIndexCalendrier);
         newCurrentDiv.classList.add('currentDiv');
         newCurrentDiv.scrollIntoView({ behavior: "smooth" });
-
         var iframe = newCurrentDiv.querySelector('iframe');
-        if (iframe && !iframe.src) {
+        if (iframe && !iframe.getAttribute('src')) {
             iframe.src = iframe.dataset.src;
         }
-
     }
 }
 
