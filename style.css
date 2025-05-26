@@ -93,6 +93,7 @@ header {
     width: max-content;
     /* Other */
     border: 1px solid black;
+    z-index: 1000;
 }
 .sous-nav li {
     padding: 10px;
