@@ -15,6 +15,12 @@
 /assets/icones/*.svg
   Cache-Control: public, max-age=1814400, immutable
 
+/assets/partenaires/*.webp
+  Cache-Control: no-cache
+  
+/assets/Photos_gellerie/*.webp
+  Cache-Control: no-cache
+
 /*.woff2
   Cache-Control: public, max-age=1814400, immutable
 
