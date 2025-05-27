@@ -1033,6 +1033,18 @@ h2 {
     max-height: 370px;
     min-height: 100px;
 }
+.form-container label[for="consent"] {
+    font-weight: normal;
+    font-size: 0.85em;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.form-container label[for="consent"] input {
+    margin-top: 2px;
+    width: auto;
+}
 .form-container button {
     /* Background */
     background-color: #28a745;

@@ -675,6 +675,20 @@
         padding: 20px;
     }
 
+    .form-container label[for="consent"] {
+        font-weight: normal;
+        font-size: 0.85rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .form-container label[for="consent"] input {
+        margin-top: 4px;
+        flex-shrink: 0;
+    }
+
     /* ===========================Footer=========================== */
     footer {
         display : flex;
