@@ -108,6 +108,7 @@
         border-radius: 25px;
         height: 100%;
         color: white;
+        transform: translateY(4px);
     }
     .onglet {
         height: 0;

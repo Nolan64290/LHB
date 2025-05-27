@@ -1,0 +1,28 @@
+/* 
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+
+/assets/*.webp
+  Cache-Control: public, max-age=1814400, immutable
+
+/assets/*.png
+  Cache-Control: public, max-age=1814400, immutable
+
+/assets/icones/*.svg
+  Cache-Control: public, max-age=1814400, immutable
+
+/*.woff2
+  Cache-Control: public, max-age=1814400, immutable
+
+/*.css
+  Cache-Control: no-cache
+
+/*.js
+  Cache-Control: no-cache
+
+/
+  Cache-Control: no-cache
