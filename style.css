@@ -249,6 +249,8 @@ section.active {
     /* Sizes */
     width: 40px;
     margin-top: 0%;
+    height: 45.7px;
+    width: 40px;
     /* Other */
     transition: all 0.2s ease-in-out;
     transform-origin: center;
