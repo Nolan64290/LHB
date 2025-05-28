@@ -496,7 +496,7 @@ document.getElementById("newsletter-form").addEventListener("submit", function (
       body: `email=${encodeURIComponent(email)}`
     });
 
-    message.textContent = "Merci ! Votre inscription a bien été prise en compte.";
+    message.innerHTML = `Merci ! Votre inscription a bien été prise en compte.<br>Si vous voulez en savoir plus, consultez notre <a href="mentions_legales.html" taget="_blanck">page mentions légales<a/>`;
     message.style.color = "green";
     this.reset();
   });

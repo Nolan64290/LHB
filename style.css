@@ -209,6 +209,11 @@ section.active {
     color: white;
     text-align: center;
 }
+#consent-modal {
+    display: none;
+    display: flex;
+}
+
 
 /* Programme */
 .programme {
@@ -340,7 +345,7 @@ section.active {
     gap: 70px;
     /* Sizes */
     width: 90%;
-    padding: 2% 5%;
+    padding: 2% 4.5%;
 }
 .partenaires img {
     /* Sizes */
