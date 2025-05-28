@@ -693,6 +693,12 @@
 
     /* ===========================Footer=========================== */
     footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    footer .top {
         display : flex;
         flex-direction: column;
         align-items: center;
@@ -703,10 +709,14 @@
         display: flex;
         align-items: center;
         width: 100%;
-        padding: 6% 0;
     }
     footer .left {
         order: 3;
+        padding-top: 6%;
+        padding-bottom: 1%;
+    }
+    footer .right {
+        padding: 6% 0;
     }
     .font-style-footer {
         width: 12.813px;
@@ -755,6 +765,9 @@
         font-size: 1em;
         margin: 0;
         text-align: center;
+    }
+    footer .bottom span {
+        font-size: 0.7em;
     }
     
     
