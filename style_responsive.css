@@ -713,7 +713,7 @@
     footer .left {
         order: 3;
         padding-top: 6%;
-        padding-bottom: 1%;
+        padding-bottom: 4%;
     }
     footer .right {
         padding: 6% 0;
@@ -768,6 +768,7 @@
     }
     footer .bottom span {
         font-size: 0.7em;
+        padding-bottom: 2%;
     }
     
     
