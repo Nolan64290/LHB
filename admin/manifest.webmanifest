@@ -2,7 +2,7 @@
   "name": "Lasseube Handball",
   "short_name": "LHB",
   "start_url": "../",
-  "display": "fullscreen",
+  "display": "standalone",
   "icons": [
     {
       "src": "../assets/Logo_app_512.png",
