@@ -603,7 +603,9 @@ loadActus();
 
 
 
-
+// ================================================================================================================
+// 11. Lancement du service worker :
+// ================================================================================================================
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/service-worker.js')
@@ -614,4 +616,30 @@ if ('serviceWorker' in navigator) {
         console.error('Erreur d\'enregistrement du Service Worker :', err);
       });
   });
+}
+
+
+
+
+
+
+
+
+
+
+// ================================================================================================================
+// 12. Popup pour installer la webApp sur mobile :
+// ================================================================================================================
+document.addEventListener("DOMContentLoaded", () => {
+  const maxShows = 2;
+  let shownCount = parseInt(localStorage.getItem("installPromptShown")) || 0;
+
+  if (window.innerWidth <= 768 && shownCount < maxShows) {
+    showInstallPopup();
+    localStorage.setItem("installPromptShown", shownCount + 1);
+  }
+});
+
+function showInstallPopup() {
+  alert("📲 Vous pouvez installer notre site comme une application sur votre téléphone !\n\nPour cela, utilisez le menu de votre navigateur et choisissez « Ajouter à l’écran d’accueil ».");
 }
