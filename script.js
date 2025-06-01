@@ -9,6 +9,8 @@
     8. Espace reservé
     9. Newsletter
     10. Gestion des actualités
+    11. Lancement du service worker
+    12. Popup pour installer la webApp sur mobile
 */
 
 // ================================================================================================================
@@ -592,14 +594,7 @@ try {
     container.innerHTML = "<p>Impossible de charger les actualités.</p>";
 }
 }
-
 loadActus();
-
-
-
-
-
-
 
 
 
@@ -620,33 +615,10 @@ if ('serviceWorker' in navigator) {
 
 
 
-
-
-
-
-
-
-
 // ================================================================================================================
 // 12. Popup pour installer la webApp sur mobile :
 // ================================================================================================================
-/*document.addEventListener("DOMContentLoaded", () => {
-  const maxShows = 2;
-  let shownCount = parseInt(localStorage.getItem("installPromptShown")) || 0;
-
-  if (window.innerWidth <= 768 && shownCount < maxShows) {
-    showInstallPopup();
-    localStorage.setItem("installPromptShown", shownCount + 1);
-  }
-});
-
-function showInstallPopup() {
-  alert("📲 Vous pouvez installer notre site comme une application sur votre téléphone !\n\nPour cela, utilisez le menu de votre navigateur et choisissez « Ajouter à l’écran d’accueil ».");
-}
-*/
-
 let deferredPrompt;
-
 window.addEventListener('beforeinstallprompt', (e) => {
   // Empêche l’affichage automatique de la fenêtre d’installation
   e.preventDefault();
@@ -657,7 +629,6 @@ window.addEventListener('beforeinstallprompt', (e) => {
     document.getElementById("install-popup").style.display = "flex";
   }
 });
-
 document.getElementById("install-btn").addEventListener("click", async () => {
   if (!deferredPrompt) return;
 
@@ -672,7 +643,6 @@ document.getElementById("install-btn").addEventListener("click", async () => {
   document.getElementById("install-popup").style.display = "none";
   localStorage.setItem("installPromptShown", "true");
 });
-
 document.getElementById("close-popup").addEventListener("click", () => {
   document.getElementById("install-popup").style.display = "none";
   localStorage.setItem("installPromptShown", "true");
