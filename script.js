@@ -484,7 +484,7 @@ document.getElementById("newsletter-form").addEventListener("submit", function (
     e.preventDefault();
 
     const email = document.getElementById("email2").value;
-    const message = document.getElementById("message");
+    const message = document.getElementById("message2");
 
     // Lien à changer à chaque nouveau déploiement du script
     fetch("https://script.google.com/macros/s/AKfycbyEZpyQNwTtuFl5dWMxp2ipvKjV0hl0OKnr-uJYdsacUrGkZMu_K2UoNlIQFqRJ3m2m/exec", {
