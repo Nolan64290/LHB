@@ -148,8 +148,8 @@ header {
 }
 
 .popup-content {
-  background: #004d00; /* un vert foncé en accord avec ton site ? */
-  color: white;
+  background: white; /* un vert foncé en accord avec ton site ? */
+  color: black;
   padding: 20px 30px;
   border-radius: 10px;
   max-width: 300px;
@@ -159,7 +159,7 @@ header {
 }
 
 .popup-content button {
-  background-color: #007700;
+  background-color: #218838;
   color: white;
   border: none;
   padding: 10px 18px;
