@@ -630,7 +630,7 @@ if ('serviceWorker' in navigator) {
 // ================================================================================================================
 // 12. Popup pour installer la webApp sur mobile :
 // ================================================================================================================
-document.addEventListener("DOMContentLoaded", () => {
+/*document.addEventListener("DOMContentLoaded", () => {
   const maxShows = 2;
   let shownCount = parseInt(localStorage.getItem("installPromptShown")) || 0;
 
@@ -643,3 +643,37 @@ document.addEventListener("DOMContentLoaded", () => {
 function showInstallPopup() {
   alert("📲 Vous pouvez installer notre site comme une application sur votre téléphone !\n\nPour cela, utilisez le menu de votre navigateur et choisissez « Ajouter à l’écran d’accueil ».");
 }
+*/
+
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Empêche l’affichage automatique de la fenêtre d’installation
+  e.preventDefault();
+  deferredPrompt = e;
+
+  // Affiche le popup uniquement si pas déjà affiché, et si mobile
+  if (!localStorage.getItem("installPromptShown") && window.innerWidth < 768) {
+    document.getElementById("install-popup").style.display = "flex";
+  }
+});
+
+document.getElementById("install-btn").addEventListener("click", async () => {
+  if (!deferredPrompt) return;
+
+  deferredPrompt.prompt();
+  const choiceResult = await deferredPrompt.userChoice;
+  if (choiceResult.outcome === 'accepted') {
+    console.log('Utilisateur a accepté l’installation');
+  } else {
+    console.log('Utilisateur a refusé l’installation');
+  }
+  deferredPrompt = null;
+  document.getElementById("install-popup").style.display = "none";
+  localStorage.setItem("installPromptShown", "true");
+});
+
+document.getElementById("close-popup").addEventListener("click", () => {
+  document.getElementById("install-popup").style.display = "none";
+  localStorage.setItem("installPromptShown", "true");
+});

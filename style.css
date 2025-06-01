@@ -132,6 +132,48 @@ header {
     transition: all 0.2s ease-in-out;
 }
 
+/* Popup installation webApp */
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background: #004d00; /* un vert foncé en accord avec ton site ? */
+  color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  max-width: 300px;
+  text-align: center;
+  font-size: 1.2em;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+.popup-content button {
+  background-color: #007700;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  margin: 10px 5px 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.popup-content button:hover {
+  background-color: #005500;
+}
+
 
 /* ===========================CORPS=========================== */
 section.corps {
