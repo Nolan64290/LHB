@@ -575,6 +575,10 @@ try {
         .join("");
     }
 
+    if (!meta.images || meta.images.length === 0) {
+        article.classList.add("no-image");
+    }
+
     article.innerHTML = `
     <div class="actu-text">
         ${meta.date ? `<p class="actu-date">${meta.date.toLocaleDateString()}</p>` : ""}

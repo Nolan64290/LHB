@@ -672,6 +672,17 @@ section.active {
   align-items: stretch;
 }
 
+.actu-card.no-image {
+  width: 80%;      /* même largeur que les autres */
+  flex-direction: row; /* garder le flex row */
+}
+.actu-card.no-image .actu-images {
+  display: none;   /* masquer la div images */
+}
+.actu-card.no-image .actu-text {
+  flex: 1;         /* prendre toute la place disponible */
+}
+
 .actu-text {
   flex: 1;
   min-width: 250px;
