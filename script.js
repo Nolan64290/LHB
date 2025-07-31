@@ -489,7 +489,7 @@ document.getElementById("newsletter-form").addEventListener("submit", function (
     const message = document.getElementById("message2");
 
     // Lien à changer à chaque nouveau déploiement du script
-    fetch("https://script.google.com/macros/s/AKfycbyEZpyQNwTtuFl5dWMxp2ipvKjV0hl0OKnr-uJYdsacUrGkZMu_K2UoNlIQFqRJ3m2m/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbzkevhE0rUOPleskzZJV90z-31r2oHmM3OUHgvZMnD-uDY3V1-D_4ONqGHFQC_fZLox/exec", {
       method: "POST",
       mode: "no-cors", // pas de retour, mais fonctionne sans problème
       headers: {
