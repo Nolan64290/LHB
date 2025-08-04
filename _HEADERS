@@ -16,10 +16,10 @@
   Cache-Control: public, max-age=1814400, immutable
 
 /assets/partenaires/*.webp
-  Cache-Control: no-cache
+  Cache-Control: public, max-age=1209600, immutable
   
 /assets/Photos_gallerie/*.webp
-  Cache-Control: no-cache
+  Cache-Control: public, max-age=604800, immutable
 
 /*.woff2
   Cache-Control: public, max-age=1814400, immutable
