@@ -18,7 +18,7 @@
 /assets/partenaires/*.webp
   Cache-Control: no-cache
   
-/assets/Photos_gellerie/*.webp
+/assets/Photos_gallerie/*.webp
   Cache-Control: no-cache
 
 /*.woff2
