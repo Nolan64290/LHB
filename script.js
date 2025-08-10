@@ -496,34 +496,55 @@ document.getElementById("newsletter-form").addEventListener("submit", function (
 // ================================================================================================================
 async function afficherActualites() {
   try {
-    const response = await fetch('/.netlify/functions/get-actus');
-    if (!response.ok) throw new Error('Erreur API');
-    const actualites = await response.json();
+    // Récupérer les actus depuis ton API (ta Netlify function)
+    const response = await fetch('/.netlify/functions/get-actus')
+    if (!response.ok) throw new Error('Erreur lors de la récupération des actualités')
 
-    const container = document.getElementById('actus-container');
-    container.innerHTML = ''; // vide le contenu avant ajout
+    const actus = await response.json()
 
-    actualites.forEach(actu => {
-      const date = new Date(actu.date).toLocaleDateString();
-      const imagesHTML = (actu.images || []).map(img => 
-        `<img src="${img.asset.url}" alt="${img.alt || 'Image'}" style="max-width:100px; margin-right:5px;">`
-      ).join('');
+    // Container où tu veux insérer les actus
+    const container = document.getElementById('actualites')
+    container.innerHTML = '' // vide avant remplissage
 
-      const html = `
-        <article class="actualite-item" style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
-          <h3>${actu.titre}</h3>
-          <small>${date}</small>
-          <p>${actu.contenu}</p>
-          <div class="galerie-images">${imagesHTML}</div>
-        </article>
-      `;
-      container.insertAdjacentHTML('beforeend', html);
-    });
-  } catch (err) {
-    console.error(err);
-    document.getElementById('actus-container').innerText = 'Impossible de charger les actualités.';
+    actus.forEach(actu => {
+      // Créer un élément article (ou div) par actu
+      const article = document.createElement('article')
+
+      // Titre
+      const h2 = document.createElement('h2')
+      h2.textContent = actu.titre
+      article.appendChild(h2)
+
+      // Date (formatage simple)
+      const date = new Date(actu.date)
+      const pDate = document.createElement('p')
+      pDate.textContent = date.toLocaleDateString()
+      article.appendChild(pDate)
+
+      // Contenu
+      const pContenu = document.createElement('p')
+      pContenu.textContent = actu.contenu
+      article.appendChild(pContenu)
+
+      // Images (si présentes)
+      if (Array.isArray(actu.images)) {
+        actu.images.forEach(image => {
+          if (image.asset && image.asset.url) {
+            const img = document.createElement('img')
+            img.src = image.asset.url
+            img.alt = image.alt || 'Image actualité'
+            article.appendChild(img)
+          }
+        })
+      }
+
+      container.appendChild(article)
+    })
+  } catch (error) {
+    console.error('Erreur affichage actualités :', error)
   }
 }
+
 
 // Lance l'affichage au chargement de la page
 document.addEventListener('DOMContentLoaded', afficherActualites);
