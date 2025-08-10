@@ -503,7 +503,7 @@ async function afficherActualites() {
     const actus = await response.json()
 
     // Container où tu veux insérer les actus
-    const container = document.getElementById('actualites')
+    const container = document.getElementById('actus-container')
     container.innerHTML = '' // vide avant remplissage
 
     actus.forEach(actu => {
