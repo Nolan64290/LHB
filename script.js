@@ -496,7 +496,7 @@ document.getElementById("newsletter-form").addEventListener("submit", function (
 // ================================================================================================================
 async function afficherActualites() {
   try {
-    const response = await fetch('/admin/functions/get-actus');
+    const response = await fetch('/.netlify/functions/get-actus');
     if (!response.ok) throw new Error('Erreur API');
     const actualites = await response.json();
 
