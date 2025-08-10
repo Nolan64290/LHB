@@ -145,22 +145,8 @@ function programme() {
         index = 1;
     }
 }
-fetch('/admin/programme.yml')
-    .then(res => res.text())
-    .then(text => jsyaml.load(text))
-    .then(data => {
-    const container = document.getElementById('toggle-div');
-    container.innerHTML = '';
-    data.images.forEach(obj => {
-        const img = document.createElement('img');
-        img.src = obj.image;
-        img.alt = "Programme du weekend";
-        img.loading = "lazy";
-        container.appendChild(img);
-    });
-    })
-    .catch(err => console.error("Erreur lors du chargement du programme:", err));
-            
+
+
 // Affichage aléatoire de sponsors
 // Liste des images disponibles dans le dossier
 const sponsorImages = [
@@ -508,97 +494,6 @@ document.getElementById("newsletter-form").addEventListener("submit", function (
 // ================================================================================================================
 // 10. Gestion des actualités :
 // ================================================================================================================
-// Redirige sur la page de register de admin à partir du lien envoyé par mail lors d'une invitation si il y a un invite_token sur la page
-const urlParams = new
-URLSearchParams(window.location.hash.substring(1));
-const inviteToken = urlParams.get('invite_token');
-if(inviteToken) {
-    window.location.replace(`/admin/#/invite?invite_token=${inviteToken}`);
-}
-
-// Affiche les actus du format .md => .html
-const container = document.getElementById("actus-container");
-async function loadActus() {
-try {
-    const res = await fetch("https://api.github.com/repos/Nolan64290/LHB/contents/admin/actus");
-    const files = await res.json();
-
-    if (!Array.isArray(files)) throw new Error("Dossier actus vide ou erreur API");
-
-    const articles = [];
-
-    for (const file of files) {
-    if (file.name.endsWith(".md")) {
-        const mdRes = await fetch(file.download_url);
-        const mdText = await mdRes.text();
-
-        const match = mdText.match(/^---\s*([\s\S]*?)\s*---\s*([\s\S]*)$/);
-        let meta = {};
-        let content = mdText;
-
-        if (match) {
-        const yamlRaw = match[1];
-        content = match[2];
-        try {
-            meta = jsyaml.load(yamlRaw); // ✅ utilise js-yaml
-        } catch (e) {
-            console.error("Erreur YAML", e);
-        }
-        }
-
-        articles.push({
-        title: meta.title || "Titre non défini",
-        date: meta.date ? new Date(meta.date) : new Date(0),
-        content: content,
-        images: Array.isArray(meta.images) ? meta.images : (meta.image ? [meta.image] : [])
-        });
-    }
-    }
-
-    // 🔽 Tri des articles par date décroissante
-    articles.sort((a, b) => b.date - a.date);
-
-    for (const meta of articles) {
-    const article = document.createElement("article");
-    article.classList.add("actu-card");
-    // article.style.padding = "1.5rem";
-    // article.style.marginBottom = "2rem";
-    // article.style.background = "#ffffff";
-    // article.style.border = "1px solid #ddd";
-    // article.style.borderRadius = "8px";
-    // article.style.boxShadow = "0 0 10px rgba(0,0,0,0.1)";
-
-    let imagesHTML = "";
-    if (Array.isArray(meta.images)) {
-        imagesHTML = meta.images
-        .map(img => `<img src="${img}" alt="Image actu" class="actu-image">`)
-        .join("");
-    }
-
-    if (!meta.images || meta.images.length === 0) {
-        article.classList.add("no-image");
-    }
-
-    article.innerHTML = `
-    <div class="actu-text">
-        ${meta.date ? `<p class="actu-date">${meta.date.toLocaleDateString()}</p>` : ""}
-        <h3 class="actu-title">${meta.title}</h3>
-        <div class="actu-content">${marked.parse(meta.content)}</div>
-    </div>
-    <div class="actu-images">
-        ${meta.images.map(img => `<img src="${img}" alt="Image actu" class="actu-image">`).join("")}
-    </div>
-    `;
-
-
-    container.appendChild(article);
-    }
-} catch (error) {
-    console.error("Erreur de chargement des actus :", error);
-    container.innerHTML = "<p>Impossible de charger les actualités.</p>";
-}
-}
-loadActus();
 
 
 
