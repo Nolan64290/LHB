@@ -510,34 +510,53 @@ async function afficherActualites() {
     container.innerHTML = '';
 
     actus.forEach(actu => {
-      const article = document.createElement('article');
+        const article = document.createElement('article');
 
-      const h3 = document.createElement('h3');
-      h3.textContent = actu.titre || 'Titre manquant';
-      article.appendChild(h3);
+        // div texte
+        const textDiv = document.createElement('div');
+        textDiv.classList.add('text-content');
 
-      const date = new Date(actu.date);
-      const pDate = document.createElement('p');
-      pDate.textContent = date.toLocaleDateString();
-      article.appendChild(pDate);
+        const h3 = document.createElement('h3');
+        h3.textContent = actu.titre || 'Titre manquant';
+        textDiv.appendChild(h3);
 
-      const pContenu = document.createElement('p');
-      pContenu.textContent = actu.contenu || 'Contenu manquant';
-      article.appendChild(pContenu);
+        const pDate = document.createElement('p');
+        pDate.textContent = new Date(actu.date).toLocaleDateString();
+        pDate.classList.add('date');
+        textDiv.appendChild(pDate);
 
-      if (Array.isArray(actu.images)) {
-        actu.images.forEach(image => {
-          if (image.asset && image.asset.url) {
-            const img = document.createElement('img');
-            img.src = image.asset.url;
-            img.alt = image.alt || 'Image actualité';
-            article.appendChild(img);
-          }
+        const pContenu = document.createElement('p');
+        pContenu.textContent = actu.contenu || 'Contenu manquant';
+        textDiv.appendChild(pContenu);
+
+        article.appendChild(textDiv);
+
+        // div images
+        const imagesDiv = document.createElement('div');
+        imagesDiv.classList.add('images-container');
+
+        if (Array.isArray(actu.images) && actu.images.length > 0) {
+            imagesDiv.classList.add(
+            actu.images.length === 1 ? 'one' :
+            actu.images.length === 2 ? 'two' :
+            actu.images.length >= 3 ? 'three' : ''
+            );
+
+            actu.images.slice(0, 3).forEach(image => {
+            if (image.asset && image.asset.url) {
+                const img = document.createElement('img');
+                img.src = image.asset.url;
+                img.alt = image.alt || 'Image actualité';
+                imagesDiv.appendChild(img);
+            }
+            });
+        }
+
+        article.appendChild(imagesDiv);
+
+        container.appendChild(article);
         });
-      }
 
-      container.appendChild(article);
-    });
   } catch (error) {
     console.error('Erreur affichage actualités :', error);
   }
