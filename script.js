@@ -494,6 +494,39 @@ document.getElementById("newsletter-form").addEventListener("submit", function (
 // ================================================================================================================
 // 10. Gestion des actualités :
 // ================================================================================================================
+async function afficherActualites() {
+  try {
+    const response = await fetch('/admin/functions/get-actus');
+    if (!response.ok) throw new Error('Erreur API');
+    const actualites = await response.json();
+
+    const container = document.getElementById('actus-container');
+    container.innerHTML = ''; // vide le contenu avant ajout
+
+    actualites.forEach(actu => {
+      const date = new Date(actu.date).toLocaleDateString();
+      const imagesHTML = (actu.images || []).map(img => 
+        `<img src="${img.asset.url}" alt="${img.alt || 'Image'}" style="max-width:100px; margin-right:5px;">`
+      ).join('');
+
+      const html = `
+        <article class="actualite-item" style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
+          <h3>${actu.titre}</h3>
+          <small>${date}</small>
+          <p>${actu.contenu}</p>
+          <div class="galerie-images">${imagesHTML}</div>
+        </article>
+      `;
+      container.insertAdjacentHTML('beforeend', html);
+    });
+  } catch (err) {
+    console.error(err);
+    document.getElementById('actus-container').innerText = 'Impossible de charger les actualités.';
+  }
+}
+
+// Lance l'affichage au chargement de la page
+document.addEventListener('DOMContentLoaded', afficherActualites);
 
 
 
