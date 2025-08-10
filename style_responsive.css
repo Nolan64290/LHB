@@ -445,6 +445,7 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        width: 85%;
     }
 
     #actus-container article {
@@ -469,27 +470,20 @@
         line-height: 1.4;
     }
 
-    /* Images en responsive */
     #actus-container article img {
-        width: calc(100% / 2 - 0.5rem); /* 2 images par ligne sur mobile */
+        width: 100%;        /* pleine largeur */
         max-width: 100%;
         height: auto;
         object-fit: cover;
         border-radius: 6px;
     }
 
-    /* Si une seule image → pleine largeur */
-    #actus-container article img:only-child {
-        width: 100%;
-    }
-
-    /* Conteneur d'images */
+    /* Conteneur d'images vertical */
     #actus-container article .images-container {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column; /* empile les images */
         gap: 0.5rem;
         margin-top: 0.5rem;
-        justify-content: center;
     }
 
 

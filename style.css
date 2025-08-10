@@ -701,7 +701,6 @@ section.active {
 .images-container {
   display: flex;
   gap: 0.5rem;
-  box-shadow: 0 1px 6px rgb(0 0 0 / 0.1);
 }
 .images-container img {
   width: calc((100% / 3) - (0.5rem * 2 / 3));
