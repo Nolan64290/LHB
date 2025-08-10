@@ -1,12 +1,12 @@
-const sanityClient = require('@sanity/client');
+const { createClient } = require('@sanity/client')
 
-const client = sanityClient({
+const client = createClient({
   projectId: process.env.SANITY_PROJECT_ID,
   dataset: process.env.SANITY_DATASET || 'production',
-  apiVersion: '2025-08-09', // format YYYY-MM-DD
-  useCdn: false, // false = données à jour
-  token: process.env.SANITY_API_TOKEN // requis si dataset privé
-});
+  apiVersion: '2025-08-09',
+  useCdn: false,
+  token: process.env.SANITY_API_TOKEN
+})
 
 exports.handler = async () => {
   try {
@@ -16,9 +16,9 @@ exports.handler = async () => {
       date,
       body,
       "images": images[].asset->url
-    }`;
+    }`
 
-    const actus = await client.fetch(query);
+    const actus = await client.fetch(query)
 
     return {
       statusCode: 200,
@@ -28,12 +28,12 @@ exports.handler = async () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(actus)
-    };
+    }
   } catch (error) {
-    console.error('Erreur get-actus:', error);
+    console.error('Erreur get-actus:', error)
     return {
       statusCode: 500,
       body: JSON.stringify({ error: 'Impossible de récupérer les actualités' })
-    };
+    }
   }
-};
+}
