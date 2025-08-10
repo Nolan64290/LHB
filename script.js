@@ -496,52 +496,50 @@ document.getElementById("newsletter-form").addEventListener("submit", function (
 // ================================================================================================================
 async function afficherActualites() {
   try {
-    // Récupérer les actus depuis ton API (ta Netlify function)
-    const response = await fetch('/.netlify/functions/get-actus')
-    if (!response.ok) throw new Error('Erreur lors de la récupération des actualités')
+    const response = await fetch('/.netlify/functions/get-actus');
+    if (!response.ok) throw new Error('Erreur lors de la récupération des actualités');
 
-    const actus = await response.json()
+    const actus = await response.json();
+    console.log('Données reçues:', actus);
 
-    // Container où tu veux insérer les actus
-    const container = document.getElementById('actus-container')
-    container.innerHTML = '' // vide avant remplissage
+    const container = document.getElementById('actus-container');
+    if (!container) {
+      console.error("Le container #actus-container n'existe pas dans le DOM");
+      return;
+    }
+    container.innerHTML = '';
 
     actus.forEach(actu => {
-      // Créer un élément article (ou div) par actu
-      const article = document.createElement('article')
+      const article = document.createElement('article');
 
-      // Titre
-      const h2 = document.createElement('h2')
-      h2.textContent = actu.titre
-      article.appendChild(h2)
+      const h3 = document.createElement('h3');
+      h3.textContent = actu.titre || 'Titre manquant';
+      article.appendChild(h3);
 
-      // Date (formatage simple)
-      const date = new Date(actu.date)
-      const pDate = document.createElement('p')
-      pDate.textContent = date.toLocaleDateString()
-      article.appendChild(pDate)
+      const date = new Date(actu.date);
+      const pDate = document.createElement('p');
+      pDate.textContent = date.toLocaleDateString();
+      article.appendChild(pDate);
 
-      // Contenu
-      const pContenu = document.createElement('p')
-      pContenu.textContent = actu.contenu
-      article.appendChild(pContenu)
+      const pContenu = document.createElement('p');
+      pContenu.textContent = actu.contenu || 'Contenu manquant';
+      article.appendChild(pContenu);
 
-      // Images (si présentes)
       if (Array.isArray(actu.images)) {
         actu.images.forEach(image => {
           if (image.asset && image.asset.url) {
-            const img = document.createElement('img')
-            img.src = image.asset.url
-            img.alt = image.alt || 'Image actualité'
-            article.appendChild(img)
+            const img = document.createElement('img');
+            img.src = image.asset.url;
+            img.alt = image.alt || 'Image actualité';
+            article.appendChild(img);
           }
-        })
+        });
       }
 
-      container.appendChild(article)
-    })
+      container.appendChild(article);
+    });
   } catch (error) {
-    console.error('Erreur affichage actualités :', error)
+    console.error('Erreur affichage actualités :', error);
   }
 }
 
