@@ -442,29 +442,40 @@
 
     /* ===========================Actualités=========================== */
     .actu-card {
-        flex-direction: column;         /* empile le texte et les images */
-        width: 85%;                     /* un peu plus large sur mobile */
+        flex-direction: column; /* texte au-dessus des images */
+        width: 90%;
         padding: 1rem;
+        margin: 0 auto; /* centrer sur mobile */
     }
+
     .actu-text {
         width: 100%;
         min-width: auto;
-        border-radius: 10px;
+        border-radius: 8px;
     }
-    .actu-images {
-        grid-template-columns: 1fr;     /* images empilées sur une colonne */
+
+    /* Les images s’empilent */
+    .images-container {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+
+    .images-container img {
         width: 100%;
-        flex: unset;
         max-width: 100%;
+        height: auto; /* éviter les crop forcés */
+        object-fit: cover;
     }
-    .actu-image {
-        aspect-ratio: 16/9;             /* un peu plus étiré pour mobile */
-    }
+
     .actu-title {
         font-size: 1.2rem;
+        margin-bottom: 0.3rem;
     }
+
     .actu-content {
-        font-size: 0.95rem;
+        font-size: 1rem;
+        line-height: 1.4;
     }
 
 
