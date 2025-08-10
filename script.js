@@ -542,8 +542,6 @@ async function afficherActualites() {
     console.error('Erreur affichage actualités :', error);
   }
 }
-
-
 // Lance l'affichage au chargement de la page
 document.addEventListener('DOMContentLoaded', afficherActualites);
 

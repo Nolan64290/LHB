@@ -11,12 +11,16 @@ const client = createClient({
 exports.handler = async () => {
   try {
     const query = `*[_type == "actualite"] | order(date desc){
-      _id,
-      title,
-      date,
-      body,
-      "images": images[].asset->url
+        _id,
+        titre,
+        date,
+        contenu,
+        images[]{ 
+            alt,
+            asset->{ url }
+        }
     }`
+
 
     const actus = await client.fetch(query)
 
