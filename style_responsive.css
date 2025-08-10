@@ -441,41 +441,55 @@
 
 
     /* ===========================Actualités=========================== */
-    .actu-card {
-        flex-direction: column; /* texte au-dessus des images */
+    #actus-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #actus-container article {
+        display: flex;
+        flex-direction: column;
         width: 90%;
+        margin: 0 auto;
         padding: 1rem;
-        margin: 0 auto; /* centrer sur mobile */
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
 
-    .actu-text {
-        width: 100%;
-        min-width: auto;
-        border-radius: 8px;
-    }
-
-    /* Les images s’empilent */
-    .images-container {
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        justify-content: center;
-    }
-
-    .images-container img {
-        width: 100%;
-        max-width: 100%;
-        height: auto; /* éviter les crop forcés */
-        object-fit: cover;
-    }
-
-    .actu-title {
+    /* Titres et textes */
+    #actus-container article h3 {
         font-size: 1.2rem;
         margin-bottom: 0.3rem;
     }
 
-    .actu-content {
+    #actus-container article p {
         font-size: 1rem;
         line-height: 1.4;
+    }
+
+    /* Images en responsive */
+    #actus-container article img {
+        width: calc(100% / 2 - 0.5rem); /* 2 images par ligne sur mobile */
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 6px;
+    }
+
+    /* Si une seule image → pleine largeur */
+    #actus-container article img:only-child {
+        width: 100%;
+    }
+
+    /* Conteneur d'images */
+    #actus-container article .images-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+        justify-content: center;
     }
 
 
