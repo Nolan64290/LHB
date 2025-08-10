@@ -654,83 +654,66 @@ section.active {
 #actus-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 3%;
-}
-
-.actu-card {
-  display: flex;
-  flex-direction: row;
-  width: 80%;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
   gap: 2rem;
-  align-items: stretch;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
-.actu-card.no-image {
-  width: 80%;      /* même largeur que les autres */
-  flex-direction: row; /* garder le flex row */
-}
-.actu-card.no-image .actu-images {
-  display: none;   /* masquer la div images */
-}
-.actu-card.no-image .actu-text {
-  flex: 1;         /* prendre toute la place disponible */
-}
-
-.actu-text {
-  flex: 1;
-  min-width: 250px;
-  background-color: #bfbfbf;      /* gris très clair */
-  padding: 1rem 1.2rem;
-  border-radius: 10px;
-  /* height: 100%;                   permet de suivre la hauteur des images */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  box-sizing: border-box;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
-
+#actus-container article {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  padding: 1.5rem;
+  transition: box-shadow 0.3s ease;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-.actu-title {
-  font-size: 1.4rem;
+#actus-container article:hover {
+  box-shadow: 0 6px 18px rgb(0 0 0 / 0.15);
+}
+
+#actus-container article h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.3rem;
   color: #222;
-  margin: 0.5rem 0;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-.actu-date {
-  color: #777;
-  font-size: 0.9em;
-  margin-bottom: 0.5rem;
-}
-
-.actu-content {
-  color: #444;
+#actus-container article p {
+  margin: 0.4rem 0 1rem 0;
+  line-height: 1.5;
+  color: #555;
   font-size: 1rem;
-  margin-top: 0.5rem;
 }
 
-.actu-images {
-  flex: 1.5; /* plus large que le texte */
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+#actus-container article p:first-of-type {
+  font-style: italic;
+  color: #888;
+  font-size: 0.9rem;
 }
 
-.actu-image {
-  width: 100%;
-  aspect-ratio: 4/3; /* assure une taille homogène */
-  object-fit: cover;
+#actus-container article img {
+  max-width: 100%;
   border-radius: 6px;
+  margin-top: 1rem;
+  display: block;
+  object-fit: cover;
+  box-shadow: 0 1px 6px rgb(0 0 0 / 0.1);
 }
 
+@media (max-width: 600px) {
+  #actus-container article {
+    padding: 1rem;
+    margin: 0 1rem;
+  }
+
+  #actus-container article h3 {
+    font-size: 1.3rem;
+  }
+}
 
 /* ===========================Calendrier=========================== */
 #calendrier,
