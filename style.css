@@ -700,7 +700,7 @@ section.active {
 
 .images-container {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 .images-container img {
   width: calc((100% / 3) - (0.5rem * 2 / 3));
