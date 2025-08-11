@@ -341,6 +341,7 @@ section.active {
 /* Titres */
 .toggle-div h3 {
     font-size: 2.5rem;
+    font-weight: 600;
     margin: 0.5rem 0 1rem;
     color: white; /* ou ta couleur */
     text-align: center;
