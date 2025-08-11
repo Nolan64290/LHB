@@ -623,30 +623,50 @@ document.getElementById("close-popup").addEventListener("click", () => {
 
 
 
-document.addEventListener("DOMContentLoaded", async () => {
-    const programmeData = await getProgramme();
-    if (!programmeData) return;
+// ==== Charger le programme & résultats depuis Sanity ====
+async function chargerProgramme() {
+    try {
+        const res = await fetch('/.netlify/functions/get-programme');
+        if (!res.ok) throw new Error('Erreur lors du fetch des données');
 
-    const programmeDiv = document.getElementById("programme_we");
-    const resultatsDiv = document.getElementById("resultats_we");
+        const data = await res.json();
+        if (!data || !data.length) return;
 
-    // Affiche les images du programme
-    programmeData.programme_we?.forEach(img => {
-        if (img?.url) {
-            const imageEl = document.createElement("img");
-            imageEl.src = img.url;
-            imageEl.alt = img.alt || "";
-            programmeDiv.appendChild(imageEl);
+        // On prend le premier (dernier en date)
+        const programme = data[0];
+
+        // Sélecteurs des divs
+        const programmeDiv = document.getElementById('programme_we');
+        const resultatsDiv = document.getElementById('resultats_we');
+
+        // Nettoyage (au cas où)
+        programmeDiv.innerHTML = '';
+        resultatsDiv.innerHTML = '';
+
+        // Ajout des images programme weekend
+        if (programme.programmeWeekend && programme.programmeWeekend.length) {
+            programme.programmeWeekend.forEach(img => {
+                const imageEl = document.createElement('img');
+                imageEl.src = img.asset?.url || '';
+                imageEl.alt = img.alt || '';
+                programmeDiv.appendChild(imageEl);
+            });
         }
-    });
 
-    // Affiche les images des résultats
-    programmeData.resultats_we?.forEach(img => {
-        if (img?.url) {
-            const imageEl = document.createElement("img");
-            imageEl.src = img.url;
-            imageEl.alt = img.alt || "";
-            resultatsDiv.appendChild(imageEl);
+        // Ajout des images résultats weekend
+        if (programme.resultatsWeekend && programme.resultatsWeekend.length) {
+            programme.resultatsWeekend.forEach(img => {
+                const imageEl = document.createElement('img');
+                imageEl.src = img.asset?.url || '';
+                imageEl.alt = img.alt || '';
+                resultatsDiv.appendChild(imageEl);
+            });
         }
-    });
-});
+
+    } catch (err) {
+        console.error('Erreur affichage programme:', err);
+    }
+}
+
+// Lancer au chargement de la page
+document.addEventListener('DOMContentLoaded', chargerProgramme);
