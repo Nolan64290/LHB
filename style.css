@@ -344,6 +344,7 @@ section.active {
     margin: 0.5rem 0 1rem;
     color: white; /* ou ta couleur */
     text-align: center;
+    text-decoration: underline;
 }
 
 /* Conteneur d'images */
