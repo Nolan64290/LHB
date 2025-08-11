@@ -629,23 +629,17 @@ async function chargerProgramme() {
         const res = await fetch('/.netlify/functions/get-programme');
         if (!res.ok) throw new Error('Erreur lors du fetch des données');
 
-        const data = await res.json();
-        if (!data || !data.length) return;
+        const programme = await res.json();
+        if (!programme) return;
 
-        // On prend le premier (dernier en date)
-        const programme = data[0];
-
-        // Sélecteurs des divs
         const programmeDiv = document.getElementById('programme_we');
         const resultatsDiv = document.getElementById('resultats_we');
 
-        // Nettoyage (au cas où)
         programmeDiv.innerHTML = '';
         resultatsDiv.innerHTML = '';
 
-        // Ajout des images programme weekend
-        if (programme.programmeWeekend && programme.programmeWeekend.length) {
-            programme.programmeWeekend.forEach(img => {
+        if (programme.programme_we && programme.programme_we.length) {
+            programme.programme_we.forEach(img => {
                 const imageEl = document.createElement('img');
                 imageEl.src = img.asset?.url || '';
                 imageEl.alt = img.alt || '';
@@ -653,9 +647,8 @@ async function chargerProgramme() {
             });
         }
 
-        // Ajout des images résultats weekend
-        if (programme.resultatsWeekend && programme.resultatsWeekend.length) {
-            programme.resultatsWeekend.forEach(img => {
+        if (programme.resultats_we && programme.resultats_we.length) {
+            programme.resultats_we.forEach(img => {
                 const imageEl = document.createElement('img');
                 imageEl.src = img.asset?.url || '';
                 imageEl.alt = img.alt || '';
@@ -668,5 +661,5 @@ async function chargerProgramme() {
     }
 }
 
-// Lancer au chargement de la page
 document.addEventListener('DOMContentLoaded', chargerProgramme);
+
