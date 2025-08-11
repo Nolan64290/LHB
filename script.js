@@ -618,3 +618,35 @@ document.getElementById("close-popup").addEventListener("click", () => {
   document.getElementById("install-popup").style.display = "none";
   localStorage.setItem("installPromptShown", "true");
 });
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", async () => {
+    const programmeData = await getProgramme();
+    if (!programmeData) return;
+
+    const programmeDiv = document.getElementById("programme_we");
+    const resultatsDiv = document.getElementById("resultats_we");
+
+    // Affiche les images du programme
+    programmeData.programme_we?.forEach(img => {
+        if (img?.url) {
+            const imageEl = document.createElement("img");
+            imageEl.src = img.url;
+            imageEl.alt = img.alt || "";
+            programmeDiv.appendChild(imageEl);
+        }
+    });
+
+    // Affiche les images des résultats
+    programmeData.resultats_we?.forEach(img => {
+        if (img?.url) {
+            const imageEl = document.createElement("img");
+            imageEl.src = img.url;
+            imageEl.alt = img.alt || "";
+            resultatsDiv.appendChild(imageEl);
+        }
+    });
+});

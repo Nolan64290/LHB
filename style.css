@@ -322,6 +322,7 @@ section.active {
     background-size: cover;
     /* Display */
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     overflow: hidden;
     /* Sizes */
@@ -337,10 +338,31 @@ section.active {
     height: max-content;
     transition: all 0.3s ease-out;
 }
+/* Titres */
+.toggle-div h3 {
+    font-size: 2.5rem;
+    margin: 0.5rem 0 1rem;
+    color: white; /* ou ta couleur */
+    text-align: center;
+}
+
+/* Conteneur d'images */
+.toggle-div #programme_we,
+.toggle-div #resultats_we {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap; /* pour s'adapter si ça ne tient pas sur une ligne */
+    margin-bottom: 1.5rem;
+}
+
+/* Images */
 .toggle-div img {
-    /* height: 100%; */
-    width: 33%;
-    height: 33%;
+    max-width: calc(33.33% - 80px); /* 3 images sur la ligne avec gap */
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 /* Le club */
