@@ -358,13 +358,17 @@ section.active {
 .club p {
     /* Background */
     background-color: rgba(185, 185, 185, 0.226);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     /* Text */
     color: whitesmoke;
     font-size: 1.1em;
     text-align: center;
     /* Sizes */
     padding: 30px;
-    width: 600px;
+    width: 40%;
     height: max-content;
     /* Other */
     border-radius: 15px;
@@ -522,6 +526,10 @@ section.active {
 .obj p {
     /* Background */
     background-color: rgba(185, 185, 185, 0.226);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     /* Text */
     color: whitesmoke;
     font-size: 1.1em;
@@ -663,7 +671,7 @@ section.active {
 #actus-container article {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0rem;
   background: #fff;
   border-left: 5px solid red;
   border-radius: 15px;

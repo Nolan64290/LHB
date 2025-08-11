@@ -525,9 +525,12 @@ async function afficherActualites() {
         pDate.classList.add('date');
         textDiv.appendChild(pDate);
 
-        const pContenu = document.createElement('p');
-        pContenu.textContent = actu.contenu || 'Contenu manquant';
-        textDiv.appendChild(pContenu);
+        if (actu.contenu && actu.contenu.trim() !== '') {
+            const pContenu = document.createElement('p');
+            pContenu.textContent = actu.contenu;
+            textDiv.appendChild(pContenu);
+        }
+
 
         article.appendChild(textDiv);
 
