@@ -350,7 +350,7 @@ section.active {
 .toggle-div #programme_we,
 .toggle-div #resultats_we {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 10px;
     flex-wrap: wrap; /* pour s'adapter si ça ne tient pas sur une ligne */
     margin-bottom: 1.5rem;
