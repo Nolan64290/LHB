@@ -663,7 +663,7 @@ section.active {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 0;
+  padding-top: 2%;
   margin: 0 auto;
   width: 70%; /* largeur plus large */
 }
