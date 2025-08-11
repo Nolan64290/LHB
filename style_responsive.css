@@ -6,6 +6,9 @@
 /*============*/
 @media (max-width: 767px) {
     /* ===========================All=========================== */
+    * {
+        -webkit-tap-highlight-color: transparent; /* Supprimer le highlight bleu sur mobile */
+    }
     section.corps {
         background-image: url(assets/fond.webp);
         background-size: cover;
