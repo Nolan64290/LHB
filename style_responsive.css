@@ -284,6 +284,7 @@
     }
     .toggle-div hr {
         width: 90%;
+        margin-bottom: 3%;
     }
     .toggle-div #programme_we,
     .toggle-div #resultats_we {

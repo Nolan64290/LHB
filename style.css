@@ -352,7 +352,6 @@ section.active {
     width: 50%;
     background-color: rgba(255, 255, 255, 0.685);
     height: 2px;
-    margin-bottom: 3%;
 }
 /* Conteneur d'images */
 .toggle-div #programme_we,
@@ -440,7 +439,8 @@ section.active {
     transform: scale(1.05);
 }
 .box-partenaires div {
-    margin-top: 2%;
+    margin-top: 4%;
+    margin-bottom: 2%;
 }
 .box-partenaires a {
     /* Text */
@@ -452,7 +452,7 @@ section.active {
     font-size: 0.65em;
     text-decoration: none;
     /* Sizes */
-    margin-top: 30px;
+    /* margin-top: 30px; */
     padding: 0.5% 1%;
     /* Other */
     border-radius: 15px;
