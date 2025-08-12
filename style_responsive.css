@@ -287,6 +287,9 @@
         font-size: 1.45rem;
         margin: 0.5rem 0 0.3rem;
     }
+    .toggle-div h3:first-of-type {
+        margin-top: 2%;
+    }
     .toggle-div hr {
         width: 90%;
         margin-bottom: 3%;
