@@ -440,8 +440,8 @@ section.active {
     transform: scale(1.05);
 }
 .box-partenaires div {
-    margin-top: 4%;
-    margin-bottom: 2%;
+    margin-top: 2%;
+    margin-bottom: 0;
 }
 .box-partenaires a {
     /* Text */

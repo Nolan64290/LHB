@@ -365,6 +365,10 @@
         user-select: none;
         padding: 2%;
     }
+    .box-partenaires div {
+        margin-top: 4%;
+        margin-bottom: 2%;
+    }
     .box-partenaires a {
         color: white;
         background-color: rgba(185, 185, 185, 0.226);
