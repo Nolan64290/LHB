@@ -352,6 +352,7 @@ section.active {
     width: 50%;
     background-color: rgba(255, 255, 255, 0.685);
     height: 2px;
+    margin-bottom: 2%;
 }
 /* Conteneur d'images */
 .toggle-div #programme_we,
@@ -365,7 +366,7 @@ section.active {
 
 /* Images */
 .toggle-div img {
-    max-width: calc(33.33% - 80px); /* 3 images sur la ligne avec gap */
+    max-width: calc(33.33% - 110px); /* 3 images sur la ligne avec gap */
     height: auto;
     border-radius: 8px;
     object-fit: contain;
