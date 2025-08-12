@@ -276,9 +276,11 @@
         align-items: center;
         background: none;
         background-image: none; /* On enlève l'image */
-        background-color: rgba(255, 255, 255, 0.082); /* Couleur semi-transparente */
-        backdrop-filter: blur(10px); /* Effet flou derrière */
-        -webkit-backdrop-filter: blur(10px); /* Compatibilité Safari */
+        background-color: rgba(185, 185, 185, 0.226);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         margin-top: 3%;
         border-radius: 15px;
     }
