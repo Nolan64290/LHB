@@ -279,7 +279,11 @@
         margin-top: 3%;
     }
     .toggle-div h3 {
-        font-size: 1.8rem;
+        font-size: 1.45rem;
+        margin: 0.5rem 0 0.3rem;
+    }
+    .toggle-div hr {
+        width: 90%;
     }
     .toggle-div #programme_we,
     .toggle-div #resultats_we {

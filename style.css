@@ -324,6 +324,7 @@ section.active {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
     overflow: hidden;
     /* Sizes */
     margin-top: 1%;
@@ -345,9 +346,13 @@ section.active {
     margin: 0.5rem 0 1rem;
     color: white; /* ou ta couleur */
     text-align: center;
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
-
+.toggle-div hr {
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.685);
+    height: 2px;
+}
 /* Conteneur d'images */
 .toggle-div #programme_we,
 .toggle-div #resultats_we {
