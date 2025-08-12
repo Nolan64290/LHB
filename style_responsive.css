@@ -280,6 +280,7 @@
         backdrop-filter: blur(10px); /* Effet flou derrière */
         -webkit-backdrop-filter: blur(10px); /* Compatibilité Safari */
         margin-top: 3%;
+        border-radius: 15px;
     }
     .toggle-div h3 {
         font-size: 1.45rem;
