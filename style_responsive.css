@@ -275,7 +275,10 @@
         flex-direction: column;
         align-items: center;
         background: none;
-        background-color: rgba(255, 255, 255, 0);
+        background-image: none; /* On enlève l'image */
+        background-color: rgba(255, 255, 255, 0.082); /* Couleur semi-transparente */
+        backdrop-filter: blur(10px); /* Effet flou derrière */
+        -webkit-backdrop-filter: blur(10px); /* Compatibilité Safari */
         margin-top: 3%;
     }
     .toggle-div h3 {
