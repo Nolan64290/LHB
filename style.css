@@ -1002,12 +1002,12 @@ h2 {
     align-items: center;
 }
 .boutique img {
-    width: 1200px;
+    width: 50%;
     height: auto;
     aspect-ratio: 620 / 877;
 }
 .boutique p {
-    width: 1500px;
+    width: 85%;
     color: white;
     font-size: larger;
 }
@@ -1029,7 +1029,7 @@ h2 {
     justify-content: center;
     /* Sizes */
     padding-top: 2%;
-    padding-bottom: 3%;
+    /* padding-bottom: 1%; */
 }
 .logos_sport img {
     width: 200px;
