@@ -52,19 +52,29 @@ document.querySelectorAll('a[href="#"]').forEach(link => {
 // ================================================================================================================
 // Fonction qui permet de désactiver le bouton 'le club' en mode pc
 document.addEventListener("DOMContentLoaded", function () {
-    let clubButton = document.getElementById("club-a-bt");
-    function updateClubButton() {
-        if (window.innerWidth > 767) { // Si écran PC
+    const clubButton = document.getElementById("club-a-bt");
+
+    function updateClubButton(width) {
+        if (width > 767) { // Si écran PC
             clubButton.removeAttribute("onclick"); // Supprime l'événement de clic
         } else { // Si mobile
             clubButton.setAttribute("onclick", "toggleSousMenu()");
         }
     }
-    // Exécuter au chargement
-    updateClubButton();
-    // Mettre à jour quand on redimensionne la fenêtre
-    window.addEventListener("resize", updateClubButton);
+
+    // Exécution initiale
+    updateClubButton(window.innerWidth);
+
+    // Gestion du resize avec debounce pour éviter plusieurs recalculs de layout
+    let resizeTimeout;
+    window.addEventListener("resize", function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            updateClubButton(window.innerWidth);
+        }, 100); // 100ms après la fin du redimensionnement
+    });
 });
+
 
 // Fonction qui gère le menu en mode responsive
 let state = 1;
