@@ -10,11 +10,13 @@
     <link rel="stylesheet" href="style_responsive.css">
     <!-- Lier le manifest (webapp mobile) -->
      <link rel="manifest" href="admin/manifest.webmanifest">
-    <!-- Lier les polices d'écriture -->
-    <link rel="preload" href="https://fonts.gstatic.com/s/kanit/v16/nKKU-Go6G5tXcr4uPhWnVaFrNlJz.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="https://fonts.gstatic.com/s/kanit/v16/nKKU-Go6G5tXcr5mOBWnVaFrNlJz.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="https://fonts.gstatic.com/s/kanit/v16/nKKZ-Go6G5tXcraVGwCKd6xB.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Préchargement des polices Kanit -->
+    <link rel="preload" href="assets/fonts/kanit-v16-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/kanit-v16-latin-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/kanit-v16-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/kanit-v16-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/kanit-v16-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/kanit-v16-latin-800.woff2" as="font" type="font/woff2" crossorigin>
     <!-- Titre de l'onglet -->
     <title>Lasseube handball</title>
     <!-- Icone de l'onglet -->
@@ -87,7 +89,7 @@
 
     <!----------- CORPS DE LA PAGE ----------->
     <!-- Accueil -->
-    <section class="corps active" id="accueil">
+    <section class="corps active" id="accueil" fetchpriority="high">
         <div class="newsletter-container">
             <!-- <button onclick="localStorage.removeItem('installPromptShown'); alert('localStorage reset!')">Reset popup test</button> -->
             <h3>Inscrivez-vous à notre Newsletter !</h3>
@@ -696,8 +698,8 @@
     </footer>
 
     <!-- Lier le script -->
-    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script> -->
     <script src="script.js" defer></script>
 </body>
 
