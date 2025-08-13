@@ -643,6 +643,7 @@ async function chargerProgramme() {
                 const imageEl = document.createElement('img');
                 imageEl.src = img.asset?.url || '';
                 imageEl.alt = img.alt || '';
+                imageEl.loading = 'lazy';
                 programmeDiv.appendChild(imageEl);
             });
         }
@@ -652,6 +653,7 @@ async function chargerProgramme() {
                 const imageEl = document.createElement('img');
                 imageEl.src = img.asset?.url || '';
                 imageEl.alt = img.alt || '';
+                imageEl.loading = 'lazy';
                 resultatsDiv.appendChild(imageEl);
             });
         }
