@@ -560,7 +560,7 @@ async function afficherActualites() {
                 const img = document.createElement('img');
                 img.src = image.asset.url;
                 img.alt = image.alt || 'Image actualité';
-                img.draggable = 'false';
+                img.draggable = false;
                 imagesDiv.appendChild(img);
             }
             });
@@ -655,7 +655,7 @@ async function chargerProgramme() {
                 imageEl.src = img.asset?.url || '';
                 imageEl.alt = img.alt || '';
                 imageEl.loading = 'lazy';
-                imageEl.draggable = 'false';
+                imageEl.draggable = false;
                 programmeDiv.appendChild(imageEl);
             });
         }
@@ -666,7 +666,7 @@ async function chargerProgramme() {
                 imageEl.src = img.asset?.url || '';
                 imageEl.alt = img.alt || '';
                 imageEl.loading = 'lazy';
-                imageEl.draggable = 'false';
+                imageEl.draggable = false;
                 resultatsDiv.appendChild(imageEl);
             });
         }
