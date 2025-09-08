@@ -172,6 +172,8 @@
     <section class="corps" id="equipes">
         <h2 class="mobile-title">Nos équipes</h2>
         <div class="nav-bar">
+            <p onclick="changeDiv(17, 0)">Nos arbitres</p>
+            <hr>
             <p onclick="changeDiv(1, 0)">Séniors Garçons 1</p>
             <hr>
             <p onclick="changeDiv(2, 0)">Séniors Garçons 2</p>
@@ -204,11 +206,10 @@
             <hr>
             <p onclick="changeDiv(16, 0)">École de Hand</p>
             <hr>
-            <p onclick="changeDiv(17, 0)">Nos arbitres</p>
-            <hr>
         </div>
         <div class="mobile-select">
             <select id="categorySelect" onchange="changeDiv(this.value, 0)">
+                <option value="17">Nos arbitres</option>
                 <option value="1">Séniors Garçons 1</option>
                 <option value="2">Séniors Garçons 2</option>
                 <option value="3">Séniors Filles</option>
@@ -225,10 +226,9 @@
                 <option value="14">-11 Garçons</option>
                 <option value="15">-11 Filles</option>
                 <option value="16">École de Hand</option>
-                <option value="17">Nos arbitres</option>
             </select>
         </div>
-        <div class="team currentDiv" id="0">
+        <div class="team" id="0">
             <h2>Nos équipes</h2>
             <form id="favorites-form">
             <label><input type="checkbox" name="favorite-form-cb" value="https://www.ffhandball.fr/competitions/saison-2024-2025-20/regional/excellence-regionale-masculine-25827/">Séniors garçons 1</label><br>
@@ -248,7 +248,6 @@
             <label><input type="checkbox" name="favorite-form-cb" value="https://www.ffhandball.fr/competitions/saison-2024-2025-20/departemental/championnat-11-ans-mixtes-26175/">-11 filles</label><br>
             <button type="button" onclick="generateBookmarks()">Télécharger mes favoris</button>
             </form>
-
         </div>
         <div class="team" id="1">
             <h2>Séniors Garçons 1</h2>
@@ -298,7 +297,7 @@
         <div class="team" id="16">
             <h2>École de Hand</h2>
         </div>
-        <div class="team" id="17">
+        <div class="team currentDiv" id="17">
             <h2>Nos arbitres</h2>
         </div>
     </section>
