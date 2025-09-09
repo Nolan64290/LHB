@@ -36,7 +36,7 @@ async function updateUI() {
 
     const user = await auth0.getUser();
     const token = await auth0.getTokenSilently();
-
+    console.log(token)
     const res = await fetch("/.netlify/functions/private", {
       headers: { Authorization: `Bearer ${token}` }
     });
