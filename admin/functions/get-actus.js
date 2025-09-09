@@ -23,7 +23,7 @@ exports.handler = async () => {
         }
     }`
 
-    const actus = await client.fetch(query)
+    let actus = await client.fetch(query)
 
     actus = actus.map(actu => ({
       ...actu,
