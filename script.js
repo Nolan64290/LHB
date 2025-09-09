@@ -649,26 +649,29 @@ async function chargerProgramme() {
         programmeDiv.innerHTML = '';
         resultatsDiv.innerHTML = '';
 
-        if (programme.programme_we && programme.programme_we.length) {
-            programme.programme_we.forEach(img => {
+        const renderImages = (container, images) => {
+            images.forEach(img => {
                 const imageEl = document.createElement('img');
-                imageEl.src = img.asset?.url || '';
+                imageEl.src = img.urls.medium; // image par défaut
+                imageEl.srcset = `
+                    ${img.urls.small} 400w,
+                    ${img.urls.medium} 800w,
+                    ${img.urls.large} 1200w
+                `;
+                imageEl.sizes = "(max-width: 600px) 400px, 800px"; // ajuste selon ton design
                 imageEl.alt = img.alt || '';
                 imageEl.loading = 'lazy';
                 imageEl.draggable = false;
-                programmeDiv.appendChild(imageEl);
+                container.appendChild(imageEl);
             });
+        };
+
+        if (programme.programme_we?.length) {
+            renderImages(programmeDiv, programme.programme_we);
         }
 
-        if (programme.resultats_we && programme.resultats_we.length) {
-            programme.resultats_we.forEach(img => {
-                const imageEl = document.createElement('img');
-                imageEl.src = img.asset?.url || '';
-                imageEl.alt = img.alt || '';
-                imageEl.loading = 'lazy';
-                imageEl.draggable = false;
-                resultatsDiv.appendChild(imageEl);
-            });
+        if (programme.resultats_we?.length) {
+            renderImages(resultatsDiv, programme.resultats_we);
         }
 
     } catch (err) {

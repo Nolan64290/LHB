@@ -8,6 +8,12 @@ const client = createClient({
   token: process.env.SANITY_API_TOKEN
 })
 
+const transformUrl = (url) => ({
+  small: `${url}?w=400&auto=format`,
+  medium: `${url}?w=800&auto=format`,
+  large: `${url}?w=1200&auto=format`
+})
+
 exports.handler = async () => {
   try {
     const query = `
@@ -26,6 +32,20 @@ exports.handler = async () => {
     `
 
     const programme = await client.fetch(query)
+
+    if (programme.programme_we) {
+      programme.programme_we = programme.programme_we.map((item) => ({
+        alt: item.alt,
+        urls: transformUrl(item.asset.url)
+      }))
+    }
+
+    if (programme.resultats_we) {
+      programme.resultats_we = programme.resultats_we.map((item) => ({
+        alt: item.alt,
+        urls: transformUrl(item.asset.url)
+      }))
+    }
 
     return {
       statusCode: 200,
