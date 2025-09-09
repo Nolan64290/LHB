@@ -446,33 +446,33 @@ if (closeBtn) {
 // ================================================================================================================
 // 8. Espace reservé :
 // ================================================================================================================
-async function hashPassword(password) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(password);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-    return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
-}
+// async function hashPassword(password) {
+//     const encoder = new TextEncoder();
+//     const data = encoder.encode(password);
+//     const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+//     return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+// }
 
-// Console => hashPassword(mon_mot_de_passe);
-const correctHash = "dc766349c0ea0573832c437a343bba65cb5abe73ef2320702f2f7d4bf05064d5" // <-- Remplace ici par le vrai hash
+// // Console => hashPassword(mon_mot_de_passe);
+// const correctHash = "dc766349c0ea0573832c437a343bba65cb5abe73ef2320702f2f7d4bf05064d5" // <-- Remplace ici par le vrai hash
 
-async function checkPassword() {
-    const password = document.getElementById("password-input").value;
-    const hash = await hashPassword(password);
-    if (hash === correctHash) {
-        document.getElementById("login-form").style.display = "none";
-        document.getElementById("protected-content").style.display = "block";
-    } else {
-        document.getElementById("login-error").style.display = "block";
-    }
-}
-// Lecture de validation par touche "entrée"
-document.getElementById("password-input").addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault(); // Empêche le comportement par défaut (si nécessaire)
-        checkPassword(); // Appelle la fonction de vérification
-    }
-});
+// async function checkPassword() {
+//     const password = document.getElementById("password-input").value;
+//     const hash = await hashPassword(password);
+//     if (hash === correctHash) {
+//         document.getElementById("login-form").style.display = "none";
+//         document.getElementById("protected-content").style.display = "block";
+//     } else {
+//         document.getElementById("login-error").style.display = "block";
+//     }
+// }
+// // Lecture de validation par touche "entrée"
+// document.getElementById("password-input").addEventListener("keydown", function(event) {
+//     if (event.key === "Enter") {
+//         event.preventDefault(); // Empêche le comportement par défaut (si nécessaire)
+//         checkPassword(); // Appelle la fonction de vérification
+//     }
+// });
 
 
 
@@ -680,7 +680,7 @@ document.addEventListener('DOMContentLoaded', chargerProgramme);
 // ================================================================================================================
 // 13. Espace réservé via auth0 :
 // ================================================================================================================
-import { createAuth0Client } from "https://cdn.jsdelivr.net/npm/@auth0/auth0-spa-js@2.1.0/dist/auth0-spa-js.production.esm.min.js";
+import createAuth0Client from "@auth0/auth0-spa-js";
 
 let auth0;
 
@@ -717,7 +717,7 @@ async function updateUI() {
     const user = await auth0.getUser();
     const token = await auth0.getTokenSilently();
 
-    // Vérifie le token auprès de la fonction Netlify
+    // Vérifie le token avec Netlify Function
     const res = await fetch("/.netlify/functions/private", {
       headers: { Authorization: `Bearer ${token}` }
     });
@@ -726,22 +726,19 @@ async function updateUI() {
       const data = await res.json();
       privateDiv.style.display = "block";
 
-      // Récupère les rôles depuis le token
+      // Récupère les rôles
       const claims = await auth0.getIdTokenClaims();
       const roles = claims["https://lasseubehb.netlify.app/roles"] || [];
 
-      // Injecte dynamiquement le contenu selon le rôle
       if (roles.includes("coach")) {
         privateDiv.innerHTML = `
           <h2>Bienvenue ${user.nickname} (Coach)</h2>
           <h3>Planning des matchs</h3>
           <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSH-WKQ-lQufjHdzKI6j3ZpvHJpD8fqSYTy1RauOtkSLxTNzIXn06IrOuyFV9A3iSWob1aVKGpILFf1/pubhtml?gid=718844545&single=true&widget=true&headers=false" width="100%" height="600"></iframe>
-          <div id="coach-div">Contenu spécifique pour coach</div>
         `;
       } else if (roles.includes("seniors")) {
         privateDiv.innerHTML = `
           <h2>Bienvenue ${user.nickname} (Seniors)</h2>
-          <h3>Planning des seniors</h3>
           <div id="seniors-div">Contenu spécifique pour seniors</div>
         `;
       } else {
@@ -750,7 +747,6 @@ async function updateUI() {
     } else {
       privateDiv.innerHTML = `<p>Token invalide, accès refusé.</p>`;
     }
-
   } else {
     loginBtn.style.display = "inline-block";
     logoutBtn.style.display = "none";
