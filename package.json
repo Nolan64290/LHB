@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Nolan64290/LHB#readme",
   "dependencies": {
     "@sanity/cli": "^4.3.0",
-    "@sanity/client": "^7.8.2"
+    "@sanity/client": "^7.8.2",
+    "jose": "^6.1.0"
   }
 }
