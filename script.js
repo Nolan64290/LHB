@@ -680,6 +680,8 @@ document.addEventListener('DOMContentLoaded', chargerProgramme);
 // ================================================================================================================
 // 13. Espace réservé via auth0 :
 // ================================================================================================================
+import { createAuth0Client } from "https://cdn.jsdelivr.net/npm/@auth0/auth0-spa-js@2.1.0/dist/auth0-spa-js.production.esm.min.js";
+
 let auth0;
 
 async function initAuth0() {
@@ -689,9 +691,7 @@ async function initAuth0() {
     authorizationParams: {
       redirect_uri: window.location.origin,
       audience: "https://lasseubehb.netlify.app/api"
-    },
-    cacheLocation: "memory",
-    useRefreshTokens: false
+    }
   });
 
   if (window.location.search.includes("code=") && window.location.search.includes("state=")) {
@@ -702,6 +702,7 @@ async function initAuth0() {
   updateUI();
 }
 
+// UI login/logout et contenu privé
 async function updateUI() {
   const isAuthenticated = await auth0.isAuthenticated();
   const loginBtn = document.getElementById("login-btn");
@@ -715,16 +716,14 @@ async function updateUI() {
     const user = await auth0.getUser();
     const token = await auth0.getTokenSilently();
 
-    // Vérifie le token avec Netlify Function
     const res = await fetch("/.netlify/functions/private", {
-      headers: { Authorization: "Bearer " + token }
+      headers: { Authorization: `Bearer ${token}` }
     });
 
     if (res.ok) {
       const data = await res.json();
       privateDiv.style.display = "block";
 
-      // Récupère les rôles
       const claims = await auth0.getIdTokenClaims();
       const roles = claims["https://lasseubehb.netlify.app/roles"] || [];
 
@@ -745,6 +744,7 @@ async function updateUI() {
     } else {
       privateDiv.innerHTML = `<p>Token invalide, accès refusé.</p>`;
     }
+
   } else {
     loginBtn.style.display = "inline-block";
     logoutBtn.style.display = "none";
@@ -753,17 +753,13 @@ async function updateUI() {
   }
 }
 
-// Boutons login/logout
-document.getElementById("login-btn").onclick = () => auth0.loginWithRedirect();
-document.getElementById("logout-btn").onclick = () => auth0.logout({ returnTo: window.location.origin });
+// Login/logout sécurisés
+document.getElementById("login-btn").addEventListener("click", async () => {
+  if (auth0) await auth0.loginWithRedirect();
+});
+document.getElementById("logout-btn").addEventListener("click", () => {
+  if (auth0) auth0.logout({ returnTo: window.location.origin });
+});
 
-function waitForAuth0(callback) {
-  if (window.createAuth0Client) {
-    callback();
-  } else {
-    setTimeout(() => waitForAuth0(callback), 50);
-  }
-}
-
-// Au lieu de initAuth0(); direct
-waitForAuth0(initAuth0);
+// Lancement : on attend que le CDN soit chargé
+initAuth0();
