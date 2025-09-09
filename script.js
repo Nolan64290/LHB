@@ -756,5 +756,3 @@ async function updateUI() {
 // Boutons login/logout
 document.getElementById("login-btn").onclick = () => auth0.loginWithRedirect();
 document.getElementById("logout-btn").onclick = () => auth0.logout({ returnTo: window.location.origin });
-
-initAuth0();
