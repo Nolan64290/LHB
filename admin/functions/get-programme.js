@@ -32,14 +32,14 @@ exports.handler = async () => {
     if (programme.programme_we) {
       programme.programme_we = programme.programme_we.map((item) => ({
         alt: item.alt,
-        urls: transformUrl(item.asset.url)
+        url: transformUrl(item.asset.url)
       }))
     }
 
     if (programme.resultats_we) {
       programme.resultats_we = programme.resultats_we.map((item) => ({
         alt: item.alt,
-        urls: transformUrl(item.asset.url)
+        url: transformUrl(item.asset.url)
       }))
     }
 
