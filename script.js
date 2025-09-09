@@ -520,56 +520,55 @@ async function afficherActualites() {
     container.innerHTML = '';
 
     actus.forEach(actu => {
-        const article = document.createElement('article');
+      const article = document.createElement('article');
 
-        // div texte
-        const textDiv = document.createElement('div');
-        textDiv.classList.add('text-content');
+      // div texte
+      const textDiv = document.createElement('div');
+      textDiv.classList.add('text-content');
 
-        const h3 = document.createElement('h3');
-        h3.textContent = actu.titre || 'Titre manquant';
-        textDiv.appendChild(h3);
+      const h3 = document.createElement('h3');
+      h3.textContent = actu.titre || 'Titre manquant';
+      textDiv.appendChild(h3);
 
-        const pDate = document.createElement('p');
-        pDate.textContent = new Date(actu.date).toLocaleDateString();
-        pDate.classList.add('date');
-        textDiv.appendChild(pDate);
+      const pDate = document.createElement('p');
+      pDate.textContent = new Date(actu.date).toLocaleDateString();
+      pDate.classList.add('date');
+      textDiv.appendChild(pDate);
 
-        if (actu.contenu && actu.contenu.trim() !== '') {
-            const pContenu = document.createElement('p');
-            pContenu.textContent = actu.contenu;
-            textDiv.appendChild(pContenu);
-        }
+      if (actu.contenu && actu.contenu.trim() !== '') {
+        const pContenu = document.createElement('p');
+        pContenu.textContent = actu.contenu;
+        textDiv.appendChild(pContenu);
+      }
 
+      article.appendChild(textDiv);
 
-        article.appendChild(textDiv);
+      // div images
+      const imagesDiv = document.createElement('div');
+      imagesDiv.classList.add('images-container');
 
-        // div images
-        const imagesDiv = document.createElement('div');
-        imagesDiv.classList.add('images-container');
+      if (Array.isArray(actu.images) && actu.images.length > 0) {
+        imagesDiv.classList.add(
+          actu.images.length === 1 ? 'one' :
+          actu.images.length === 2 ? 'two' :
+          actu.images.length >= 3 ? 'three' : ''
+        );
 
-        if (Array.isArray(actu.images) && actu.images.length > 0) {
-            imagesDiv.classList.add(
-            actu.images.length === 1 ? 'one' :
-            actu.images.length === 2 ? 'two' :
-            actu.images.length >= 3 ? 'three' : ''
-            );
-
-            actu.images.slice(0, 3).forEach(image => {
-            if (image.asset && image.asset.url) {
-                const img = document.createElement('img');
-                img.src = image.asset.url;
-                img.alt = image.alt || 'Image actualité';
-                img.draggable = false;
-                imagesDiv.appendChild(img);
-            }
-            });
-        }
-
-        article.appendChild(imagesDiv);
-
-        container.appendChild(article);
+        actu.images.slice(0, 3).forEach(image => {
+          if (image.url) {
+            const img = document.createElement('img');
+            img.src = image.url; // URL optimisée
+            img.alt = image.alt || 'Image actualité';
+            img.draggable = false;
+            img.loading = 'lazy'; // lazy loading ajouté
+            imagesDiv.appendChild(img);
+          }
         });
+      }
+
+      article.appendChild(imagesDiv);
+      container.appendChild(article);
+    });
 
   } catch (error) {
     console.error('Erreur affichage actualités :', error);

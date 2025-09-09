@@ -8,6 +8,8 @@ const client = createClient({
   token: process.env.SANITY_API_TOKEN
 })
 
+const transformUrl = (url) => `${url}?w=1200&auto=format`
+
 exports.handler = async () => {
   try {
     const query = `*[_type == "actualite"] | order(date desc){
@@ -21,8 +23,15 @@ exports.handler = async () => {
         }
     }`
 
-
     const actus = await client.fetch(query)
+
+    actus = actus.map(actu => ({
+      ...actu,
+      images: actu.images?.map(img => ({
+        alt: img.alt,
+        url: transformUrl(img.asset.url)
+      })) || []
+    }))
 
     return {
       statusCode: 200,
