@@ -652,13 +652,7 @@ async function chargerProgramme() {
         const renderImages = (container, images) => {
             images.forEach(img => {
                 const imageEl = document.createElement('img');
-                imageEl.src = img.urls.medium; // image par défaut
-                imageEl.srcset = `
-                    ${img.urls.small} 400w,
-                    ${img.urls.medium} 800w,
-                    ${img.urls.large} 1200w
-                `;
-                imageEl.sizes = "(max-width: 600px) 400px, 800px"; // ajuste selon ton design
+                imageEl.src = img.url; // une seule URL optimisée
                 imageEl.alt = img.alt || '';
                 imageEl.loading = 'lazy';
                 imageEl.draggable = false;

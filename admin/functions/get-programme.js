@@ -8,11 +8,7 @@ const client = createClient({
   token: process.env.SANITY_API_TOKEN
 })
 
-const transformUrl = (url) => ({
-  small: `${url}?w=400&auto=format`,
-  medium: `${url}?w=800&auto=format`,
-  large: `${url}?w=1200&auto=format`
-})
+const transformUrl = (url) => `${url}?w=1200&auto=format`
 
 exports.handler = async () => {
   try {
