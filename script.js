@@ -680,8 +680,6 @@ document.addEventListener('DOMContentLoaded', chargerProgramme);
 // ================================================================================================================
 // 13. Espace réservé via auth0 :
 // ================================================================================================================
-import createAuth0Client from "@auth0/auth0-spa-js";
-
 let auth0;
 
 async function initAuth0() {
@@ -719,7 +717,7 @@ async function updateUI() {
 
     // Vérifie le token avec Netlify Function
     const res = await fetch("/.netlify/functions/private", {
-      headers: { Authorization: `Bearer ${token}` }
+      headers: { Authorization: "Bearer " + token }
     });
 
     if (res.ok) {
