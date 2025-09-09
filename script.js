@@ -411,12 +411,13 @@ let touchEndX = 0;
 // Détecte quand l'utilisateur commence à toucher l'écran
 modal.addEventListener("touchstart", (e) => {
     touchStartX = e.touches[0].clientX;
-});
+}, { passive: true });
 // Détecte quand l'utilisateur lève son doigt
 modal.addEventListener("touchend", (e) => {
     touchEndX = e.changedTouches[0].clientX;
     handleSwipe();
-});
+}, { passive: true });
+
 // Fonction qui gère le swipe gauche/droite
 function handleSwipe() {
     let swipeDistance = touchEndX - touchStartX;
