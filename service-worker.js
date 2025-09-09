@@ -41,19 +41,22 @@ self.addEventListener('fetch', event => {
 
 // Fetch network-first (priorité au réseau, fallback cache)
 self.addEventListener('fetch', event => {
+  // On n’essaie de mettre en cache que les requêtes GET
+  if (event.request.method !== 'GET') return;
+
   event.respondWith(
     fetch(event.request)
-    .then(response => {
-      // On met à jour le cache avec la réponse réseau fraîche
-      return caches.open(CACHE_NAME).then(cache => {
-        cache.put(event.request, response.clone());
-        return response;
-      });
-    })
-    .catch(() => {
-      // En cas d'échec (offline), on sert la version en cache si disponible
-      return caches.match(event.request);
-    })
+      .then(response => {
+        // On met à jour le cache avec la réponse réseau fraîche
+        return caches.open(CACHE_NAME).then(cache => {
+          cache.put(event.request, response.clone());
+          return response;
+        });
+      })
+      .catch(() => {
+        // En cas d'échec (offline), on sert la version en cache si disponible
+        return caches.match(event.request);
+      })
   );
 });
 
