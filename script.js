@@ -756,3 +756,14 @@ async function updateUI() {
 // Boutons login/logout
 document.getElementById("login-btn").onclick = () => auth0.loginWithRedirect();
 document.getElementById("logout-btn").onclick = () => auth0.logout({ returnTo: window.location.origin });
+
+function waitForAuth0(callback) {
+  if (window.createAuth0Client) {
+    callback();
+  } else {
+    setTimeout(() => waitForAuth0(callback), 50);
+  }
+}
+
+// Au lieu de initAuth0(); direct
+waitForAuth0(initAuth0);
