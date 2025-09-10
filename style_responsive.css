@@ -328,19 +328,26 @@
         border-radius: 15px;
         user-select: none;
     }
-    #trait {
-        order: 3;
-        padding-top: 0;
+
+    #trait_programme {
+        display: none;
     }
-    #trait2 {
-        display: flex; 
+    #trait_mobile {
+        display: flex;
         justify-content: center;
+        margin-top: 0%;
+    }
+    #trait_club {
         margin-top: 6%;
         margin-bottom: 2%;
     }
-    #trait3 {
+    #trait_labels {
         display: none;
     }
+    .newsletter-container {
+        margin-bottom: 2%;
+    }
+
     .box-partenaires {
         order: 4;
         padding-top: 2%;
@@ -379,12 +386,15 @@
         border-radius: 15px;
     }
 
-    /* Bureau */
+    .labels {
+        display: none;
+    }
+
+    /* ===========================Le bureau=========================== */
     #bureau img {
         height: auto;
         width: 90%;
     }
-
 
     /* ===========================Nos équipes=========================== */
     #favorites-form {
