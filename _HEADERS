@@ -7,9 +7,6 @@
 
 
 /assets/*.webp
-  Cache-Control: public, max-age=31536000, immutable
-
-/assets/bureau.webp
   Cache-Control: no-cache
 
 /assets/*.png
