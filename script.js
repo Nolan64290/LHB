@@ -511,7 +511,6 @@ async function afficherActualites() {
     if (!response.ok) throw new Error('Erreur lors de la récupération des actualités');
 
     const actus = await response.json();
-    console.log('Données reçues:', actus);
 
     const container = document.getElementById('actus-container');
     if (!container) {
