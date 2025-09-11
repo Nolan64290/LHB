@@ -672,6 +672,7 @@ section.active {
 .obj span {
     font-size: 2em;
     font-weight: 500;
+    text-decoration: underline;
 }
 
 
