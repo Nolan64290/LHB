@@ -799,7 +799,20 @@ section.active {
     height: 100vh;
     border : none;
 }
-
+.bt_protocole {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+.bt_protocole a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.4em;
+    background-color: #218838;
+    padding: 0.5% 1.5%;
+    border-radius: 15px;
+}
 
 /* ===========================Actualités=========================== */
 #actus-container {
