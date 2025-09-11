@@ -8,19 +8,10 @@ export async function handler(event) {
 
   const { password } = JSON.parse(event.body);
 
-  // Hash le mdp saisi
-  const encoder = new TextEncoder();
-  const data = encoder.encode(password);
-  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-  const hash = Array.from(new Uint8Array(hashBuffer))
-    .map(b => b.toString(16).padStart(2, "0"))
-    .join("");
-
-  // Compare avec celui en variable d'env
-  const correctHash = process.env.PASSWORD_HASH;
-
-  if (hash === correctHash) {
-    const filePath = path.resolve("protected-content.html");
+  // Vérification du mot de passe (triple égal !)
+  if (password === process.env.PASSWORD) {
+    // Lecture du fichier HTML protégé
+    const filePath = path.resolve("protected-content.html"); 
     const protectedHtml = fs.readFileSync(filePath, "utf8");
 
     return {
@@ -31,15 +22,3 @@ export async function handler(event) {
 
   return { statusCode: 401, body: JSON.stringify({ success: false }) };
 }
-
-/*
-Fonctions pour hasher un mdp et stocker sa valeur dans les var d'env
-
-async function hashPassword(password) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(password);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-    return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
-*/
