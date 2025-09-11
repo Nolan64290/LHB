@@ -37,15 +37,15 @@ self.addEventListener('fetch', event => {
   event.respondWith(
     fetch(event.request)
       .then(response => {
-        // On met à jour le cache avec la réponse réseau fraîche
-        return caches.open(CACHE_NAME).then(cache => {
-          cache.put(event.request, response.clone());
-          return response;
-        });
+        // On ne met en cache que les GET
+        if (event.request.method === 'GET') {
+          return caches.open(CACHE_NAME).then(cache => {
+            cache.put(event.request, response.clone());
+            return response;
+          });
+        }
+        return response;
       })
-      .catch(() => {
-        // En cas d'échec (offline), on sert la version en cache si disponible
-        return caches.match(event.request);
-      })
+      .catch(() => caches.match(event.request))
   );
 });

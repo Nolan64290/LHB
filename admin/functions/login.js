@@ -6,12 +6,18 @@ export async function handler(event) {
     return { statusCode: 405, body: "Méthode non autorisée" };
   }
 
-  const { password } = JSON.parse(event.body);
+    let password;
+    try {
+    password = JSON.parse(event.body).password;
+    } catch (e) {
+    return { statusCode: 400, body: JSON.stringify({ success: false, message: "Mauvais JSON" }) };
+    }
+
 
   // Vérification du mot de passe (triple égal !)
   if (password === process.env.PASSWORD) {
     // Lecture du fichier HTML protégé
-    const filePath = path.resolve("protected-content.html"); 
+    const filePath = path.resolve("./admin/functions/protected-content.html"); 
     const protectedHtml = fs.readFileSync(filePath, "utf8");
 
     return {
