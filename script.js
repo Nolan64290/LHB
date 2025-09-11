@@ -446,32 +446,32 @@ if (closeBtn) {
 // ================================================================================================================
 // 8. Espace reservé :
 // ================================================================================================================
-async function hashPassword(password) {
-    const encoder = new TextEncoder();
-    const data = encoder.encode(password);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-    return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
-// Console => hashPassword(mon_mot_de_passe);
-const correctHash = "dc766349c0ea0573832c437a343bba65cb5abe73ef2320702f2f7d4bf05064d5" // <-- Remplace ici par le vrai hash
-
 async function checkPassword() {
-    const password = document.getElementById("password-input").value;
-    const hash = await hashPassword(password);
-    if (hash === correctHash) {
-        document.getElementById("login-form").style.display = "none";
-        document.getElementById("protected-content").style.display = "block";
-    } else {
-        document.getElementById("login-error").style.display = "block";
-    }
+  const password = document.getElementById("password-input").value;
+
+  const response = await fetch("/.netlify/functions/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ password }),
+  });
+
+  const result = await response.json();
+
+  if (result.success) {
+    document.getElementById("login-form").style.display = "none";
+    document.getElementById("protected-content").innerHTML = result.html;
+    document.getElementById("protected-content").style.display = "block";
+  } else {
+    document.getElementById("login-error").style.display = "block";
+  }
 }
-// Lecture de validation par touche "entrée"
+
+// Lecture par touche "Entrée"
 document.getElementById("password-input").addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault(); // Empêche le comportement par défaut (si nécessaire)
-        checkPassword(); // Appelle la fonction de vérification
-    }
+  if (event.key === "Enter") {
+    event.preventDefault();
+    checkPassword();
+  }
 });
 
 
