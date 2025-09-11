@@ -730,6 +730,21 @@ section.active {
 }
 
 
+.bt_plaquette {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+.bt_plaquette a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.4em;
+    background-color: #218838;
+    padding: 0.5% 1.5%;
+    border-radius: 15px;
+}
+
 /* ============================Espace réservé============================ */
 #login-form {
     color: white;
