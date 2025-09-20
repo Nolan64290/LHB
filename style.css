@@ -1374,37 +1374,39 @@ footer a:hover {
     transform: translateY(7px);
 }
 .font-style-loc {
-     width: 12.48px;
-     height: 17.64px;
-     transform: translateY(2px);
+    width: 12.48px;
+    height: 17.64px;
+    transform: translateY(2px);
 }
 .image-container {
-  position: relative;
-  display: inline-block;
-  width: 12.48px;
-  height: 17.64px;
-  transform: translateX(-50px);
+    position: relative;
+    display: inline-block;
+    width: 12.48px;
+    height: 17.64px;
+    transform: translateX(-50px);
 }
 
 .image-container img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: opacity 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease;
 }
 
 .img-hover {
-  opacity: 0;
+    opacity: 0;
 }
 .swap-wrapper:hover .img-hover {
-  opacity: 1;
+    opacity: 1;
 }
 
 .swap-wrapper:hover .img-original {
-  opacity: 0;
+    opacity: 0;
 }
 
-
+#logo_mairie_footer >img:hover {
+    transform: scale(1.05);
+}
 
 
 
